@@ -1,0 +1,196 @@
+/* Empty. Add your own CSS if you like */
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video_lugar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sub_caja_img_tipo{
+  text-align: center;
+  width: 40%;
+  display: inline-block;
+  padding: 0rem;
+  margin-right:0.5rem ;
+  margin-left:0.5rem ;
+  margin-bottom: 1.5rem;
+}
+.a_img_tipo{
+  text-align: center;
+  border-width: 0rem;
+  padding: 0rem;
+}
+.img_atractivo{
+  width: 100%;
+  height: 170px;
+}
+.span_img_tipo{
+  text-align:center;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.titulo_inicio{
+  margin-bottom: 0rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+  color: darkslategrey;
+  text-decoration: underline;
+}
+.ancla-principal{
+  text-align: center;
+  padding: 0.5rem;
+}
+.title-categoria{
+  padding-top: 1rem;
+  text-align: center;
+}
+.selec-catego{
+  text-align: center;
+  text-decoration: underline;
+}
+.ancla-cat{
+  font-weight: 700;
+}
+.titu-lugar{
+  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  text-align: center;
+}
+.caja-img-vid-map{
+  text-align: center;
+  padding-bottom: 0.4rem;
+}
+.btn-img-vid-map{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 150%;
+  font-size: 1.2em;
+  color: whitesmoke;
+  background: #0a9dc7;
+  border: 1px solid ;
+}
+
+.scroll {
+  height: 100%;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+.dat-gene{
+  margin-top: 2rem;
+  text-align: center;
+  text-decoration: underline;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif
+}
+.titu-da-ge{
+  font-weight: bold;
+}
+
+
+ion-content{
+  /*background-color: grey;*/
+}
+
+.container{
+  background-color: grey;
+}
+
+.scrollCanvas{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.image{
+  width: 100%;
+  height: 550px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center, center;
+}
+
+.box-emergencia{
+  display: table;
+  height:80px;
+}
+.cont_emer{
+  display: table-cell;
+  vertical-align: middle;
+}
+.item_menu{
+  border: none;
+}
+.header-tr{
+  padding-top: .2rem;
+  /*border: 1px solid darkgrey;*/
+  white-space: normal;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  background-color: #11c1f3;
+  /*background-color: #387EF5;*/
+}
+.body-tr{
+  padding: .5rem;
+  /*border: 1px solid darkgrey;*/
+  white-space: normal;
+}
+.body-tr-icon{
+  color: rgb(128, 173, 249);
+  /*color: #387EF5;*/
+  text-align: center;
+  font-size: 2rem;
+  padding: .5rem;
+  border-left: 1px solid darkgrey;
+  /*border: 1px solid darkgrey;*/
+  white-space: normal;
+}
+.title_item_agencia{
+  display: inline-block;
+  margin: 0rem;
+  font-weight: bold;
+}
+.text_agencia{
+  font-weight: 400;
+}
+
+
+.box-avatar{
+  text-align: center;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/*.loading-container.active{*/
+  /*margin-top: 44px; /!*loading should stay under the header*!/*/
+  /*background-color: rgb(246, 246, 246)*/
+/*}*/
+
+/*.loading-container .loading {*/
+  /*color: #387EF5;*/
+  /*font-weight: bold;*/
+  /*padding: 20px;*/
+  /*border-radius: 5px;*/
+  /*background-color: rgba(0, 0, 0, 0);*/
+/*}*/

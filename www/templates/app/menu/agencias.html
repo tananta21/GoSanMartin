@@ -1,0 +1,15 @@
+<ion-view view-title="Agencias de Turismo">
+  <ion-content>
+    <div class="list card" ng-repeat="agencia in agencias">
+      <a  ui-sref="app.agencia({id: $index})" style="text-decoration: none">
+      <div class="item item-image">
+        <img src="{{agencia.img}}" style="height: 170px">
+      </div>
+      <div class="item item-text-wrap">
+         <h2 style="font-weight: bold">{{agencia.nombre}}</h2>
+         <h4>{{agencia.lema}}</h4>
+      </div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

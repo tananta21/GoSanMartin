@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "666428588839",
+    "firebase_url": "https://turismo-94a9b.firebaseio.com",
+    "project_id": "turismo-94a9b",
+    "storage_bucket": "turismo-94a9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666428588839:android:e78459088f2c76d7",
+        "android_client_info": {
+          "package_name": "com.ionicframework.appturismo829024"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666428588839-e204mq91f5jqmf551oitggqfqgd85fcn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADl3gg74hWM5tUUUh56uKCHZj7FSdu6CI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,20 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">My Modal title</h1>
+    <button class="button button-positive"  ng-click="closeModal()">
+      <span class="share-button">Share</span>
+    </button>
+  </ion-header-bar>
+  <ion-content>
+    <div style="text-align: center">
+      <button class="button button-positive" ng-click="shareFacebook()">
+        <span class="share-button">Facebook</span>
+      </button>
+      <button onclick="window.plugins.socialsharing.shareViaFacebookWithPasteMessageHint('Message via Facebook', null /* img */, null /* url */, 'Paste it dude!', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>
+      <button onclick="window.plugins.socialsharing.shareViaInstagram('Message via Instagram', null, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Instagram</button>
+      <button onclick="window.plugins.socialsharing.shareViaWhatsApp('Message via WhatsApp', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via WhatsApp (with errcallback)</button>
+      <button onclick="window.plugins.socialsharing.shareVia('com.facebook.orca', 'The message', null, null, 'https://www.google.com/', function () { console.log('share ok') }, function (errormsg) { alert(errormsg) });">msg via messenger (with errcallback)</button>
+    </div>
+  </ion-content>
+</ion-modal-view>
+

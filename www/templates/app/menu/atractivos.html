@@ -1,0 +1,30 @@
+<ion-view view-title="Atractivos Turísticos">
+  <ion-content>
+    <div class="box-atractivo">
+      <div class="bar bar-header item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" placeholder="Buscar atractivo" ng-model="busqueda">
+        </label>
+      </div>
+      <div class="box-content" ng-repeat="atractivo in resultados =( atractivos[0] | filter: busqueda)">
+        <a class="ancla-atractivo" ui-sref="app.atractivo({id: atractivo.id})">
+          <!--<img class="img-atractivo" src="img/ahuashiyacu/1.jpg" alt="img_atractivo">-->
+          <img class="img-atractivo" src="http://{{dominio_img}}/{{atractivo.foto}}" alt="img_atractivo">
+          <!--<img class="img-atractivo" src="http://voydeviaje.info/dist/atractivos/1518197689.jpg" alt="img_atractivo">-->
+          <h4 class="nombre-atractivo bold">{{atractivo.atractivo}}</h4>
+          <h5 class="ubicacion-atractivo light">{{atractivo.categoria}}</h5>
+        </a>
+      </div>
+    </div>
+    <div class="card" ng-if="!resultados.length">
+      <div class="item item-text-wrap">
+        <strong>No se encontraron resultados...</strong>
+      </div>
+
+      <!--<div ng-repeat="atractivo in atractivos">-->
+      <!--<span>{{atractivo.nombre}}</span>-->
+      <!--</div>-->
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,88 @@
+<ion-view view-title="Transporte">
+  <ion-content>
+    <div class="list card" style="margin-top: 10px">
+      <img class="full-image" src="{{agencia.img}}" style="width: 100%; height: 200px">
+      <div class="item item-text-wrap" style="background-color: #2A8FFF">
+        <h2 style="font-weight: bold; margin-top: 0rem; color: white">{{agencia.nombre}}</h2>
+        <h4 style="color: white">{{agencia.lema}}</h4>
+      </div>
+
+      <!-- direccion-->
+      <div class="item item-divider titu-da-ge">
+        <div style="padding-bottom: .5rem">
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  <h4 style="font-size: 1em"  class="title_item_agencia">Direccion</h4>
+        </div>
+        <div class="item item-text-wrap">
+          <h3 class="text_agencia">{{agencia.direccion}}</h3>
+        </div>
+      </div>
+      <!-- horario-->
+      <div class="item item-divider titu-da-ge">
+        <div style="padding-bottom: .5rem">
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  <h4 style="font-size: 1em"  class="title_item_agencia">Horario</h4>
+        </div>
+        <div class="item item-text-wrap">
+          <h3 class="text_agencia"  style="text-align: justify">
+            {{agencia.horario}}
+          </h3>
+        </div>
+      </div>
+      <!-- contacto-->
+      <div class="item item-divider titu-da-ge">
+        <div style="padding-bottom: .5rem">
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  <h4 style="font-size: 1em"  class="title_item_agencia">Contacto</h4>
+        </div>
+        <div class="item item-text-wrap">
+          <h3 class="text_agencia"  style="text-align: justify">
+            <div class="row" style="margin-bottom: 2rem">
+              <h3 class="cont_emer col-75" style="width:100%">
+                Telefono
+                <br><span style="font-weight: bold">{{agencia.telefono}}</span>
+              </h3>
+              <a href="tel:{{agencia.telefono}}" target="_blank" class="cont_emer  col-10">
+                <button class="button button-positive button-small" style="border-radius: 150%; padding: 3px 5px 3px 5px; font-size: 1.7rem">
+                  <i class="ion ion-android-call"></i>
+                </button>
+              </a>
+            </div>
+            <div class="row" style="margin-bottom: 2rem">
+              <h3 class="cont_emer col-75" style="width:100%">
+                Celular
+                <br><span style="font-weight: bold">{{agencia.celular}}</span>
+              </h3>
+              <a href="tel:{{agencia.celular}}" target="_blank" class="cont_emer  col-10">
+                <button class="button button-positive button-small" style="border-radius: 150%; padding: 3px 5px 3px 5px; font-size: 1.7rem">
+                  <i class="ion ion-android-call"></i>
+                </button>
+              </a>
+            </div>
+            <div class="row" style="margin-bottom: 2rem">
+              <h3 class="cont_emer col-75" style="width:100%">
+                Correo
+                <br><span style="font-weight: bold">{{agencia.correo}}</span>
+              </h3>
+              <a href="mailto:kevintananta96@gmail.com" class="cont_emer  col-10">
+                <button class="button button-positive button-small" style="border-radius: 150%; padding: 3px 5px 3px 5px; font-size: 1.7rem">
+                  <i class="ion ion-email"></i>
+                </button>
+              </a>
+            </div>
+          </h3>
+        </div>
+      </div>
+
+      <!-- descripcion-->
+      <div class="item item-divider titu-da-ge">
+        <div style="padding-bottom: .5rem">
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  <h4 style="font-size: 1em"  class="title_item_agencia">Descripción</h4>
+        </div>
+        <div class="item item-text-wrap">
+          <h3 class="text_agencia"  style="text-align: justify">
+            {{agencia.descripcion}}
+          </h3>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://E:/ionic/myApp/www/css/style.css" charset="UTF-8" />
+    <file url="file://E:/ionic/myApp/www/js/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/platforms/android/build.gradle" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/css/colores.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/css/content.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/css/not_internet.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/css/style.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/css/tour_sanmartin.styl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/css/turismo.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/controllers.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/js/services.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/lib/ionic/scss/_variables.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/main.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/agencias/agencia.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/agencias/paquetes.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/atractivos/atractivo.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/login.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/menu/acerca.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/menu/agencias.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/menu/atractivos.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/menu/emergencias.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/menu/offline.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/menu/transportes.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/transportes/transporte.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/util/modal_share.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/app/videos.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/menu.html" charset="UTF-8" />
+  </component>
+</project>

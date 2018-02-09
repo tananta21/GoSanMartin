@@ -1,0 +1,19 @@
+.offline {
+  display: inline-block;
+  text-align: center;
+  height: 90%;
+}
+.offline__boxImage {
+  padding: 90px 35px 0px 35px;
+}
+.offline__image {
+  height: 170px;
+  width: 70%;
+}
+.offline__textUpps {
+  font-weight: bold;
+  font-size: 18px;
+}
+.offline__text {
+  font-size: 16px;
+}

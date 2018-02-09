@@ -1,0 +1,29 @@
+.boxBtnsAtractivo {
+  display: inline-block;
+  margin: 0.5rem;
+}
+.btnsAtractivo {
+  border-radius: 150%;
+  border-radius: 1px solid $colorCalm;
+}
+.textBtnsAtractivo {
+  margin-top: 0.5rem;
+  color: #808080;
+}
+.contentDetalle {
+  box-shadow: none !important;
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
+.contentDetalle__textDescription {
+  text-align: justify;
+  line-height: 25px;
+  padding-top: 10px;
+  margin-left: 7px;
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
+.modal-backdrop,
+.modal-backdrop-bg {
+  top: 60%;
+}
