@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
-  .run(function ($ionicPlatform, $cordovaNetwork, $ionicPopup, $state, $ionicLoading) {
+  .run(function ($ionicPlatform, $cordovaNetwork, $ionicPopup, FirebaseDB, $state, $ionicLoading) {
     $ionicPlatform.ready(function () {
       if (window.Connection) {
         if (!$cordovaNetwork.isOnline()) {
