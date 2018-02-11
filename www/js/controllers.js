@@ -50,56 +50,15 @@ angular.module('starter.controllers', [])
     }, false)
   })
 
-  .controller('AtractivosCtrl', function ($scope, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicPopup, Atractivos, Prueba) {
-    $ionicLoading.show({
-      template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
-    });
-    $.ajax({
-      type: 'GET',
-      url: api+"atractivos",
-      dataType: 'JSON',
-      error: function () {
-        alert("hay un error");
-      },
-      success: function (data) {
-        //console.log(data)
-      }
-    });
-    //var ref = firebase.database().ref("data/atractivos");
-    //ref.on("value", function (snapshot) {
-    //  var atractivos = snapshot.val();
-    //  var array = [];
-    //  for (var prop in atractivos) {
-    //    array.push(atractivos[prop]);
-    //  }
-    //  $ionicLoading.hide();
-    //  $scope.atractivos = array;
-    //}, function (error) {
-    //  $ionicLoading.hide();
-    //  console.log("Error: " + error.code);
-    //});
-
-    $scope.atractivos = Prueba.getAtractivos();
+  .controller('AtractivosCtrl', function ($scope, Atractivos) {
     $scope.dominio_img = dominio_img;
-    $scope.prueba = Atractivos.getAtractivos();
-
-    $ionicLoading.hide();
+    $scope.atractivos = Atractivos.getAtractivos();
 
   })
-
-  .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal) {
+  .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos) {
     var atractivoId = $stateParams.id;
-    var ref = firebase.database().ref("data/atractivos").orderByChild("id").equalTo(atractivoId);
-    ref.on("value", function (snapshot) {
-      var atractivo = snapshot.val();
-      var array = [];
-      for (var prop in atractivo) {
-        array.push(atractivo[prop]);
-      }
-      $scope.atractivo = array[0];
-    }, function (error) {
-      console.log("Error: " + error.code);
-    });
+    $scope.atractivo = Atractivos.getAtractivo(atractivoId);
+    var result = Atractivos.getAtractivo(atractivoId);
 
     $scope.informacion = function () {
       $('.informacion').addClass("activo");
