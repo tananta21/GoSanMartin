@@ -50,6 +50,10 @@ angular.module('starter.controllers', [])
     }, false)
   })
 
+  .controller('HomeCtrl', function () {
+
+  })
+
   .controller('AtractivosCtrl', function ($scope, Atractivos) {
     $scope.dominio_img = dominio_img;
     $scope.atractivos = Atractivos.getAtractivos();
@@ -58,7 +62,7 @@ angular.module('starter.controllers', [])
   .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos) {
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
-    var result = Atractivos.getAtractivo(atractivoId);
+    $scope.dominio_img = dominio_img;
 
     $scope.informacion = function () {
       $('.informacion').addClass("activo");

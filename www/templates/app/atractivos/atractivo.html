@@ -1,43 +1,72 @@
 <ion-view view-title="Atractivo">
   <ion-content>
-
-    <div class="list card" style="margin-top: 10px">
-      <div class="padding">
-        <h4 class="titu-lugar">{{atractivo[0].nombre}}</h4>
-      </div>
-      <img class="full-image" src="{{atractivo[0].url_imagen}}" style="width: 100%; height: 250px">
-      <div class="item item-body">
-          <div class="caja-img-vid-map">
-            <div class="boxBtnsAtractivo">
-              <a href="#/app/mapa/{{atractivo.lat}}/{{atractivo.long}}" class="button button-calm btnsAtractivo">
-                <i class="ion ion-ios-location"></i>
-              </a>
-              <h4 class="textBtnsAtractivo">Ubicacion</h4>
-            </div>
-            <div class="boxBtnsAtractivo">
-              <a href="#/app/imagenes/{{atractivo.id}}" class="button button-calm btnsAtractivo">
-                <i class="ion ion-image"></i>
-              </a>
-              <h4 class="textBtnsAtractivo">Galería</h4>
-            </div>
-            <div class="boxBtnsAtractivo">
-              <a href="#/app/videos/{{atractivo.id}}" class="button button-calm btnsAtractivo">
-                <i class="ion ion-social-youtube"></i>
-              </a>
-              <h4 class="textBtnsAtractivo">Video</h4>
-            </div>
-            <div class="boxBtnsAtractivo">
-              <a ng-click="shareAnywhere()" class="button button-calm btnsAtractivo">
-                <i class="ion ion-android-share-alt"></i>
-              </a>
-              <h4 class="textBtnsAtractivo">Compartir</h4>
-            </div>
-            <button class="button button-positive"  ng-click="openModal()">
-              <span class="share-button">Share</span>
+    <div class="atractivoDetail__boxHeader">
+      <h4 class="atractivoDetail__titleLugar">
+        {{atractivo[0].nombre}}
+      </h4>
+      <div class="atractivoDetail__boxPortada">
+        <img class="atractivoDetail__imgPortada" src="http://{{dominio_img}}/{{atractivo[0].url_imagen}}">
+        <div class="row atractivoDetail__boxBtns">
+          <div class="col text-center">
+            <button class="button button-calm atractivoDetail__boxBtns__btn">
+              <i class="ion ion-information"></i>
             </button>
-
           </div>
+          <div class="col text-center">
+            <button class="button button-calm atractivoDetail__boxBtns__btn">
+              <i class="ion ion-image"></i>
+            </button>
+          </div>
+          <div class="col text-center">
+            <button class="button button-calm atractivoDetail__boxBtns__btn">
+              <i class="ion ion-social-youtube-outline"></i>
+            </button>
+          </div>
+          <div class="col text-center">
+            <button class="button button-calm atractivoDetail__boxBtns__btn">
+              <i class="ion ion-android-share-alt"></i>
+            </button>
+          </div>
+
+
         </div>
+      </div>
+    </div>
+
+
+    <div class="" style="display: none">
+      <div class="item item-body">
+        <div class="caja-img-vid-map">
+          <div class="boxBtnsAtractivo">
+            <a href="#/app/mapa/{{atractivo.lat}}/{{atractivo.long}}" class="button button-calm btnsAtractivo">
+              <i class="ion ion-ios-location"></i>
+            </a>
+            <h4 class="textBtnsAtractivo">Ubicacion</h4>
+          </div>
+          <div class="boxBtnsAtractivo">
+            <a href="#/app/imagenes/{{atractivo.id}}" class="button button-calm btnsAtractivo">
+              <i class="ion ion-image"></i>
+            </a>
+            <h4 class="textBtnsAtractivo">Galería</h4>
+          </div>
+          <div class="boxBtnsAtractivo">
+            <a href="#/app/videos/{{atractivo.id}}" class="button button-calm btnsAtractivo">
+              <i class="ion ion-social-youtube"></i>
+            </a>
+            <h4 class="textBtnsAtractivo">Video</h4>
+          </div>
+          <div class="boxBtnsAtractivo">
+            <a ng-click="shareAnywhere()" class="button button-calm btnsAtractivo">
+              <i class="ion ion-android-share-alt"></i>
+            </a>
+            <h4 class="textBtnsAtractivo">Compartir</h4>
+          </div>
+          <button class="button button-positive" ng-click="openModal()">
+            <span class="share-button">Share</span>
+          </button>
+
+        </div>
+      </div>
 
       <div style="text-align: center">
         <div class="informacion tipo-informacion activo" ng-click="informacion()">
@@ -57,105 +86,104 @@
 
       <div class="content-informacion card contentDetalle">
         <div class="item item-divider titu-da-ge">
-          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  Características
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Características
         </div>
-              <div class="item item-text-wrap">
-                <div style="width: 100%">
-                  <h3 style="display: inline-block; width: 30%">Categoría: </h3><span>{{atractivo.categoria}}</span>
-                </div>
-                <div style="width: 100%">
-                  <h3 style="display: inline-block; width: 30%">Tipo: </h3><span>{{atractivo.tipo}}</span>
-                </div>
-                <div style="width: 100%">
-                  <h3 style="display: inline-block; width: 30%">Sub-tipo: </h3><span>{{atractivo.subtipo}}</span>
-                </div>
-              </div>
+        <div class="item item-text-wrap">
+          <div style="width: 100%">
+            <h3 style="display: inline-block; width: 30%">Categoría: </h3><span>{{atractivo.categoria}}</span>
+          </div>
+          <div style="width: 100%">
+            <h3 style="display: inline-block; width: 30%">Tipo: </h3><span>{{atractivo.tipo}}</span>
+          </div>
+          <div style="width: 100%">
+            <h3 style="display: inline-block; width: 30%">Sub-tipo: </h3><span>{{atractivo.subtipo}}</span>
+          </div>
+        </div>
         <div class="item item-divider titu-da-ge">
-          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  Ubicación geográfica
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Ubicación geográfica
         </div>
-              <div class="item item-text-wrap">
-                <div style="width: 100%">
-                  <h3 style="display: inline-block; width: 35%">Departamento: </h3><span>{{atractivo.departamento}}</span>
-                </div>
-                <div style="width: 100%">
-                  <h3 style="display: inline-block; width: 35%">Provincia: </h3><span>{{atractivo.provincia}}</span>
-                </div>
-                <div style="width: 100%">
-                  <h3 style="display: inline-block; width: 35%">Distrito: </h3><span>{{atractivo.distrito}}</span>
-                </div>
-              </div>
-
-
-
-        <div class="item item-divider titu-da-ge">
-          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  Horario de Atencion
+        <div class="item item-text-wrap">
+          <div style="width: 100%">
+            <h3 style="display: inline-block; width: 35%">Departamento: </h3><span>{{atractivo.departamento}}</span>
+          </div>
+          <div style="width: 100%">
+            <h3 style="display: inline-block; width: 35%">Provincia: </h3><span>{{atractivo.provincia}}</span>
+          </div>
+          <div style="width: 100%">
+            <h3 style="display: inline-block; width: 35%">Distrito: </h3><span>{{atractivo.distrito}}</span>
+          </div>
         </div>
-              <div class="item item-text-wrap">
-                <span>{{atractivo.horario}}</span>
-              </div>
+
 
         <div class="item item-divider titu-da-ge">
-          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  Tipo de Ingreso
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Horario de Atencion
         </div>
-              <div class="item item-text-wrap">
+        <div class="item item-text-wrap">
+          <span>{{atractivo.horario}}</span>
+        </div>
+
+        <div class="item item-divider titu-da-ge">
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Tipo de Ingreso
+        </div>
+        <div class="item item-text-wrap">
                 <span>
                   {{atractivo.ingreso}}
                 </span>
-              </div>
+        </div>
 
         <div class="item item-divider titu-da-ge">
-          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  Estado
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Estado
         </div>
-              <div class="item item-text-wrap">
+        <div class="item item-text-wrap">
                 <span>
                   {{atractivo.estado}}
                 </span>
-              </div>
-        <div class="item item-divider titu-da-ge">
-          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  Actividades dentro el Atractivo
         </div>
-              <div class="item item-text-wrap">
-                <div class="row">
-                  <div class="header-tr col-50">Actividad</div>
-                  <div class="header-tr col-50">Logo</div>
-                </div>
-                <div class="row" ng-repeat="actividad in atractivo.actividades">
-                  <div class="body-tr col-50">{{actividad.actividad}}</div>
-                  <div class="body-tr-icon col-50"><i class="ion {{actividad.icono}}"></i></div>
-                </div>
-              </div>
+        <div class="item item-divider titu-da-ge">
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Actividades dentro el Atractivo
+        </div>
+        <div class="item item-text-wrap">
+          <div class="row">
+            <div class="header-tr col-50">Actividad</div>
+            <div class="header-tr col-50">Logo</div>
+          </div>
+          <div class="row" ng-repeat="actividad in atractivo.actividades">
+            <div class="body-tr col-50">{{actividad.actividad}}</div>
+            <div class="body-tr-icon col-50"><i class="ion {{actividad.icono}}"></i></div>
+          </div>
+        </div>
 
         <div class="item item-divider titu-da-ge">
-          <i class="ion-ios-information" style="margin-right: 0.5rem"></i>  Ruta de Acceso
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Ruta de Acceso
         </div>
-            <div class="item item-text-wrap">
-              <ion-scroll direction="xy" style="overflow: scroll; white-space: nowrap">
-                <div class="row">
-                  <div class="header-tr col-40">Tramo</div>
-                  <div class="header-tr col-40">Acceso</div>
-                  <div class="header-tr col-40">Medio de Transporte</div>
-                  <div class="header-tr col-40">Vía de Acceso</div>
-                  <div class="header-tr col-40">Distancia / Tiempo</div>
-                </div>
-                <div class = "row" ng-repeat="ruta in atractivo.rutas">
-                  <div class="body-tr col-40">
-                    {{ruta.tramo}}
-                  </div>
-                  <div class="body-tr col-40">
-                    {{ruta.acceso}}
-                  </div>
-                  <div class="body-tr col-40">
-                    {{ruta.medio}}
-                  </div>
-                  <div class="body-tr col-40">
-                    {{ruta.via}}
-                  </div>
-                  <div class="body-tr col-40">
-                    {{ruta.tiempo}}
-                  </div>
-                </div>
-              </ion-scroll>
+        <div class="item item-text-wrap">
+          <ion-scroll direction="xy" style="overflow: scroll; white-space: nowrap">
+            <div class="row">
+              <div class="header-tr col-40">Tramo</div>
+              <div class="header-tr col-40">Acceso</div>
+              <div class="header-tr col-40">Medio de Transporte</div>
+              <div class="header-tr col-40">Vía de Acceso</div>
+              <div class="header-tr col-40">Distancia / Tiempo</div>
             </div>
+            <div class="row" ng-repeat="ruta in atractivo.rutas">
+              <div class="body-tr col-40">
+                {{ruta.tramo}}
+              </div>
+              <div class="body-tr col-40">
+                {{ruta.acceso}}
+              </div>
+              <div class="body-tr col-40">
+                {{ruta.medio}}
+              </div>
+              <div class="body-tr col-40">
+                {{ruta.via}}
+              </div>
+              <div class="body-tr col-40">
+                {{ruta.tiempo}}
+              </div>
+            </div>
+          </ion-scroll>
+        </div>
 
       </div>
     </div>
