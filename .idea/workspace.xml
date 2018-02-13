@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b97bdd9-1b9a-44ec-a403-7dcef68280be" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/www/img/not_found_img.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/www/templates/app/atractivos/detalle.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/www/templates/app/atractivos/descripcion.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/www/css/tour_sanmartin.css" afterPath="$PROJECT_DIR$/www/css/tour_sanmartin.css" />
-      <change beforePath="$PROJECT_DIR$/www/css/utils.styl" afterPath="$PROJECT_DIR$/www/css/utils.styl" />
-      <change beforePath="$PROJECT_DIR$/www/css/voydeviaje.styl" afterPath="$PROJECT_DIR$/www/css/voydeviaje.styl" />
-      <change beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
-      <change beforePath="$PROJECT_DIR$/www/templates/app/atractivos/atractivo.html" afterPath="$PROJECT_DIR$/www/templates/app/atractivos/atractivo.html" />
-      <change beforePath="$PROJECT_DIR$/www/templates/app/imagenes.html" afterPath="$PROJECT_DIR$/www/templates/app/imagenes.html" />
     </list>
     <ignored path="appTurismo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,29 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="atractivo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/atractivo.html">
+      <file leaf-file-name="descripcion.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/descripcion.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="48" />
-              <folding>
-                <element signature="n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#3;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detalle.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/detalle.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="55" column="43" lean-forward="false" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
-              <caret line="56" column="43" lean-forward="false" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
-              <caret line="57" column="43" lean-forward="false" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
-              <caret line="58" column="43" lean-forward="false" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-              <caret line="59" column="43" lean-forward="false" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+            <state relative-caret-position="273">
+              <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -163,6 +137,7 @@
         <option value="$PROJECT_DIR$/www/css/utils.styl" />
         <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/templates/app/atractivos/detalle.html" />
+        <option value="$PROJECT_DIR$/www/templates/app/atractivos/descripcion.html" />
       </list>
     </option>
   </component>
@@ -180,7 +155,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="width" value="1378" />
     <option name="height" value="744" />
@@ -252,7 +227,7 @@
     <property name="editor.config.accepted" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="atra&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;uti&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;contro&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;app&#9;FILE&#9;file://E:/menu/appTurismo/www/js/app.js&#10;atractivo&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;menu&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/menu.html&#10;serv&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;.nombre-atractivo&#9;null&#9;null&#10;acerc&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/acerca.html&#10;contr&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;col&#9;FILE&#9;file://E:/menu/appTurismo/www/css/colores.styl&#10;emergen&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/emergencias.html&#10;color&#9;FILE&#9;file://E:/menu/appTurismo/www/css/colores.styl&#10;atract&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/atractivos.html&#10;atracti&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;.image&#9;null&#9;null&#10;co&#9;FILE&#9;file://E:/menu/appTurismo/www/css/colores.styl&#10;colore&#9;FILE&#9;file://E:/menu/appTurismo/www/css/colores.styl&#10;.loading&#9;null&#9;null&#10;.tipo-informacion&#9;null&#9;null&#10;body-tr-icon&#9;null&#9;null&#10;variables.scss&#9;FILE&#9;file://E:/menu/appTurismo/www/lib/ionic/scss/_variables.scss&#10;.img-atractivo&#9;null&#9;null&#10;.box-content&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="atractivo&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;atra&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;uti&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;contro&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;app&#9;FILE&#9;file://E:/menu/appTurismo/www/js/app.js&#10;menu&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/menu.html&#10;serv&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;.nombre-atractivo&#9;null&#9;null&#10;acerc&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/acerca.html&#10;contr&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;col&#9;FILE&#9;file://E:/menu/appTurismo/www/css/colores.styl&#10;emergen&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/emergencias.html&#10;color&#9;FILE&#9;file://E:/menu/appTurismo/www/css/colores.styl&#10;atract&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/atractivos.html&#10;atracti&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;.image&#9;null&#9;null&#10;co&#9;FILE&#9;file://E:/menu/appTurismo/www/css/colores.styl&#10;colore&#9;FILE&#9;file://E:/menu/appTurismo/www/css/colores.styl&#10;.loading&#9;null&#9;null&#10;.tipo-informacion&#9;null&#9;null&#10;body-tr-icon&#9;null&#9;null&#10;variables.scss&#9;FILE&#9;file://E:/menu/appTurismo/www/lib/ionic/scss/_variables.scss&#10;.img-atractivo&#9;null&#9;null&#10;.box-content&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -263,11 +238,11 @@
       <recent name="E:\menu\appTurismo\www\templates\app\menu" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\menu\appTurismo\www\templates\app\atractivos" />
       <recent name="E:\menu\appTurismo\www\img" />
       <recent name="E:\menu\appTurismo\www\css" />
       <recent name="E:\menu\appTurismo\www\templates\app\menu" />
       <recent name="E:\menu\appTurismo\resources" />
-      <recent name="E:\menu\appTurismo\www\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -336,12 +311,12 @@
       <option name="presentableId" value="Default" />
       <updated>1491255440019</updated>
       <workItem from="1518452500033" duration="137000" />
-      <workItem from="1518461459601" duration="27583000" />
+      <workItem from="1518461459601" duration="28638000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27720000" />
+    <option name="totallyTimeSpent" value="28775000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,11 +328,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23660715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23660715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789558" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
@@ -419,13 +394,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="111" column="6" lean-forward="false" selection-start-line="111" selection-start-column="6" selection-end-line="114" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/jquery-3.1.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -742,6 +710,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/turismo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="77" column="1" lean-forward="false" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/utils.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="150" column="27" lean-forward="false" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/detalle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="55" column="43" lean-forward="false" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+          <caret line="56" column="43" lean-forward="false" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+          <caret line="57" column="43" lean-forward="false" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
+          <caret line="58" column="43" lean-forward="false" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
+          <caret line="59" column="43" lean-forward="false" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/atractivo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="106" column="8" lean-forward="false" selection-start-line="106" selection-start-column="8" selection-end-line="108" selection-end-column="12" />
+          <folding>
+            <element signature="n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -767,50 +781,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/turismo.css">
+    <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/descripcion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="77" column="1" lean-forward="false" selection-start-line="77" selection-start-column="1" selection-end-line="77" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/utils.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/atractivo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="48" />
-          <folding>
-            <element signature="n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#3;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="150" column="27" lean-forward="false" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/detalle.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="55" column="43" lean-forward="false" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
-          <caret line="56" column="43" lean-forward="false" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
-          <caret line="57" column="43" lean-forward="false" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
-          <caret line="58" column="43" lean-forward="false" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-          <caret line="59" column="43" lean-forward="false" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+        <state relative-caret-position="273">
+          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
           <folding />
         </state>
       </provider>
