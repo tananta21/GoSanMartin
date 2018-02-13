@@ -121,6 +121,26 @@ angular.module('starter.controllers', [])
     });
   })
 
+  .controller('AtractivoDetalleCtrl', function ($http, $scope, $stateParams, Atractivos) {
+    var atractivoId = $stateParams.id;
+    $scope.atractivo = Atractivos.getAtractivo(atractivoId);
+    $scope.dominio_img = dominio_img;
+
+    $scope.informacion = function () {
+      $('.informacion').addClass("activo");
+      $('.descripcion').removeClass("activo");
+      $('.content-descripcion').css("display", "none");
+      $('.content-informacion').css("display", "block");
+    };
+    $scope.descripcion = function () {
+      $('.descripcion').addClass("activo");
+      $('.informacion').removeClass("activo");
+      $('.content-descripcion').css("display", "block");
+      $('.content-informacion').css("display", "none");
+    };
+  })
+
+
   .controller('AgenciasCtrl', function ($scope, Agencias) {
     $scope.agencias = Agencias.getAgencias();
   })
@@ -198,12 +218,7 @@ angular.module('starter.controllers', [])
     $scope.dominio_img = dominio_img;
 
     $scope.data = {};
-    $scope.data.bgColors = [];
     $scope.data.currentPage = 0;
-
-    for (var i = 0; i < 10; i++) {
-      $scope.data.bgColors.push("bgColor_" + i);
-    }
 
     var setupSlider = function() {
       //some options to pass to our slider
@@ -229,14 +244,6 @@ angular.module('starter.controllers', [])
     };
 
     setupSlider();
-
-    // $scope.slideVisible = function (index) {
-    //   if (index < $ionicSlideBoxDelegate.currentIndex() - 1
-    //     || index > $ionicSlideBoxDelegate.currentIndex() + 1) {
-    //     return false;
-    //   }
-    //   return true;
-    // }
     $scope.atractivo = Atractivos.getImgByAtractivo(atractivoId);
   }
 )

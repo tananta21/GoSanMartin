@@ -1,35 +1,24 @@
 <ion-view view-title="Galeria">
-  <ion-content>
-    <ion-slides options="data.sliderOptions" slider="data.sliderDelegate" class="galery__boxSlide">
-      <ion-slide-page ng-repeat="image in atractivo[0]">
-        <div class="box">
-          <img src="http://{{dominio_img}}/{{image.url_imagen}}" alt="images atractivos" class="galery__img">
-          <p class="galery__description">{{image.descripcion}}</p>
-        </div>
-      </ion-slide-page>
-    </ion-slides>
-    <!--<ion-slide-box>-->
-      <!--<ion-slide ng-repeat="image in atractivo[0]">-->
-        <!--<div class="container" ng-if="slideVisible($index)" class="scrollCanvas">-->
-          <!--<ion-scroll class="scrollCanvas" zooming="true" min-zoom="1" direction="xy" locked="false">-->
-            <!--<div class="image" style="width: 100%;">-->
-              <!--<div ng-if="image.url_imagen == '' ">-->
-                <!--<img src="img/image_not_found.png" alt="" style="width: 100% ; height: 280px; margin-top: 6rem">-->
-              <!--</div>-->
-              <!--<div ng-if="image.url_imagen != '' ">-->
-                <!--<img src="http://{{dominio_img}}/{{image.url_imagen}}" alt="" style="width: 100% ; height: 280px; margin-top: 6rem">-->
-              <!--</div>-->
-            <!--</div>-->
-          <!--</ion-scroll>-->
-
-        <!--</div>-->
-        <!--&lt;!&ndash; añadimos un espacio vacio para evitar problemas con slidebox y las diapositivas ocultas. Ver post dedicado a SlideBox para más información. &ndash;&gt;-->
-        <!--<div>&nbsp;</div>-->
-
-      <!--</ion-slide>-->
-
-    <!--</ion-slide-box>-->
+  <div ng-if="atractivo[0].length > 0 ">
+    <ion-content>
+      <ion-slides options="data.sliderOptions" slider="data.sliderDelegate" class="galery__boxSlide">
+        <ion-slide-page ng-repeat="image in atractivo[0]">
+          <div class="box">
+            <img src="http://{{dominio_img}}/{{image.url_imagen}}" alt="images atractivos" class="galery__img">
+            <p class="galery__description">{{image.descripcion}}</p>
+          </div>
+        </ion-slide-page>
+      </ion-slides>
 
 
-  </ion-content>
+    </ion-content>
+  </div>
+  <div ng-if="atractivo[0].length == 0 ">
+    <ion-content>
+      <img src="img/not_found_img.png" alt="" class="galery__imgEmpty">
+      <p class="galery__textEmpty">No se encontró la imágen</p>
+      <p class="galery__textEmpty">...</p>
+    </ion-content>
+  </div>
+  </div>
 </ion-view>

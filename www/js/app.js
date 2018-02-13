@@ -64,6 +64,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
+          .state('app.detalle', {
+            url: '/atractivo/detalle/:id',
+            views: {
+              'menuContent': {
+                templateUrl: 'templates/app/atractivos/detalle.html',
+                controller: 'AtractivoDetalleCtrl'
+              }
+            }
+          })
       .state('app.modal_share', {
         url: '/share',
         views: {
@@ -96,7 +105,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         url: '/paquetes',
         views: {
           'menuContent': {
-            templateUrl: 'templates/app/agencias/paquetes.html',
+            templateUrl: 'templates/app/agencias/paquetes.html'
           }
         }
       })

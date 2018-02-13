@@ -1,0 +1,86 @@
+<ion-view view-title="Detalle atractivo">
+  <ion-content>
+    <div class="atractivoDetail__boxHeader">
+      <div class="atractivoDetail__boxPortada">
+        <h4 class="atractivoDetail__titleLugar">
+          {{atractivo[0].nombre}}
+        </h4>
+        <img class="atractivoDetail__imgPortada" src="http://{{dominio_img}}/{{atractivo[0].url_imagen}}">
+      </div>
+    </div>
+    <div class="">
+      <div class="card contentDetalle">
+        <div class="item item-divider titu-da-ge">
+          <i class="ion-ios-information mr_0_5r"></i> Horario de Atencion
+        </div>
+        <div class="item item-text-wrap">
+          <span>{{atractivo[0].horario}}</span>
+          <span ng-if="atractivo[0].horario == '' ">Sin especificar.</span>
+        </div>
+
+        <div class="item item-divider titu-da-ge">
+          <i class="ion-ios-information mr_0_5r"></i> Tipo de Ingreso
+        </div>
+        <div class="item item-text-wrap">
+          <span>{{atractivo[0].tipo_ingreso}}</span>
+          <span ng-if="atractivo[0].tipo_ingreso == '' ">Sin especificar.</span>
+        </div>
+
+        <div class="item item-divider titu-da-ge">
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Estado
+        </div>
+        <div class="item item-text-wrap">
+          <span>{{atractivo[0].estado}}</span>
+          <span ng-if="atractivo[0].estado == '' ">Sin especificar.</span>
+        </div>
+        <div class="item item-divider titu-da-ge">
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Actividades dentro el Atractivo
+        </div>
+        <div class="item item-text-wrap">
+          <div class="row">
+            <div class="header-tr bg-azul col-50">Actividad</div>
+            <div class="header-tr bg-azul col-50">Logo</div>
+          </div>
+          <div class="row" ng-repeat="actividad in atractivo.actividades">
+            <div class="body-tr col-50">{{actividad.actividad}}</div>
+            <div class="body-tr-icon col-50"><i class="ion {{actividad.icono}}"></i></div>
+          </div>
+        </div>
+
+        <div class="item item-divider titu-da-ge">
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Ruta de Acceso
+        </div>
+        <div class="item item-text-wrap">
+          <ion-scroll direction="xy" style="overflow: scroll; white-space: nowrap">
+            <div class="row">
+              <div class="header-tr bg-azul col-40">Tramo</div>
+              <div class="header-tr bg-azul col-40">Acceso</div>
+              <div class="header-tr bg-azul col-40">Medio de Transporte</div>
+              <div class="header-tr bg-azul col-40">Vía de Acceso</div>
+              <div class="header-tr bg-azul col-40">Distancia / Tiempo</div>
+            </div>
+            <div class="row" ng-repeat="ruta in atractivo.rutas">
+              <div class="body-tr col-40">
+                {{ruta.tramo}}
+              </div>
+              <div class="body-tr col-40">
+                {{ruta.acceso}}
+              </div>
+              <div class="body-tr col-40">
+                {{ruta.medio}}
+              </div>
+              <div class="body-tr col-40">
+                {{ruta.via}}
+              </div>
+              <div class="body-tr col-40">
+                {{ruta.tiempo}}
+              </div>
+            </div>
+          </ion-scroll>
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

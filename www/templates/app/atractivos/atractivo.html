@@ -8,9 +8,9 @@
         <img class="atractivoDetail__imgPortada" src="http://{{dominio_img}}/{{atractivo[0].url_imagen}}">
         <div class="row atractivoDetail__boxBtns">
           <div class="col text-center">
-            <button class="button button-calm atractivoDetail__boxBtns__btn">
+            <a class="button button-calm atractivoDetail__boxBtns__btn" href="#/app/atractivo/detalle/{{atractivo[0].id}}">
               <i class="ion ion-information"></i>
-            </button>
+            </a>
             <span class="atractivoDetail__boxBtns__span">Detalles</span>
           </div>
           <div class="col text-center">
@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    <div class="atractivoDetail__boxDescription">
+    <div ng-if="atractivo[0].descripcion != '' " class="atractivoDetail__boxDescription">
       <p class="atractivoDetail__boxDescription__text">
         {{atractivo[0].descripcion}}
       </p>
