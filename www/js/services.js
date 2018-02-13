@@ -51,6 +51,30 @@ angular.module('starter.services', [])
         return data;
         //return atractivos[id];
       },
+
+      getImgByAtractivo: function (id) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        var atractivo_id = id;
+        $.ajax({
+          type: 'GET',
+          url: api + "atractivo/imagen/by_id",
+          data:{
+            id :atractivo_id
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("hay un error");
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+      },
     }
 
   })

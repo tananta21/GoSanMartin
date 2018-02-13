@@ -143,3 +143,18 @@ body {
   color: #fff;
   box-shadow: 2px 3px rgba(0,0,0,0.2);
 }
+.galery__boxSlide {
+  background: rgba(0,0,0,0.949);
+}
+.galery__img {
+  width: 100%;
+  height: 300px !important;
+  margin-top: 5rem;
+}
+.galery__description {
+  color: #fff;
+  padding: 0px 15px;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 12px;
+}

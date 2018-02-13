@@ -59,6 +59,7 @@ angular.module('starter.controllers', [])
     $scope.atractivos = Atractivos.getAtractivos();
 
   })
+
   .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos) {
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
@@ -192,26 +193,51 @@ angular.module('starter.controllers', [])
     //});
   })
 
-  .controller('ImagenCtrl', function ($scope, $stateParams, $ionicSlideBoxDelegate) {
+  .controller('ImagenCtrl', function ($scope, $stateParams, $ionicSlideBoxDelegate, Atractivos) {
     var atractivoId = $stateParams.id;
-    var ref = firebase.database().ref("data/atractivos").orderByChild("id").equalTo(atractivoId);
-    ref.on("value", function (snapshot) {
-      var atractivo = snapshot.val();
-      var array = [];
-      for (var prop in atractivo) {
-        array.push(atractivo[prop]);
-      }
-      $scope.atractivo = array[0];
-    }, function (error) {
-      console.log("Error: " + error.code);
-    });
-    $scope.slideVisible = function (index) {
-      if (index < $ionicSlideBoxDelegate.currentIndex() - 1
-        || index > $ionicSlideBoxDelegate.currentIndex() + 1) {
-        return false;
-      }
-      return true;
+    $scope.dominio_img = dominio_img;
+
+    $scope.data = {};
+    $scope.data.bgColors = [];
+    $scope.data.currentPage = 0;
+
+    for (var i = 0; i < 10; i++) {
+      $scope.data.bgColors.push("bgColor_" + i);
     }
+
+    var setupSlider = function() {
+      //some options to pass to our slider
+      $scope.data.sliderOptions = {
+        initialSlide: 0,
+        direction: 'horizontal', //or vertical
+        speed: 300 //0.3s transition
+      };
+
+      //create delegate reference to link with slider
+      $scope.data.sliderDelegate = null;
+
+      //watch our sliderDelegate reference, and use it when it becomes available
+      $scope.$watch('data.sliderDelegate', function(newVal, oldVal) {
+        if (newVal != null) {
+          $scope.data.sliderDelegate.on('slideChangeEnd', function() {
+            $scope.data.currentPage = $scope.data.sliderDelegate.activeIndex;
+            //use $scope.$apply() to refresh any content external to the slider
+            $scope.$apply();
+          });
+        }
+      });
+    };
+
+    setupSlider();
+
+    // $scope.slideVisible = function (index) {
+    //   if (index < $ionicSlideBoxDelegate.currentIndex() - 1
+    //     || index > $ionicSlideBoxDelegate.currentIndex() + 1) {
+    //     return false;
+    //   }
+    //   return true;
+    // }
+    $scope.atractivo = Atractivos.getImgByAtractivo(atractivoId);
   }
 )
   .controller('VideoCtrl', function ($scope, $stateParams, $ionicLoading, Atractivos) {
