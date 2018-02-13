@@ -1,37 +1,62 @@
 <ion-view view-title="Atractivo">
   <ion-content>
     <div class="atractivoDetail__boxHeader">
-      <h4 class="atractivoDetail__titleLugar">
-        {{atractivo[0].nombre}}
-      </h4>
       <div class="atractivoDetail__boxPortada">
+        <h4 class="atractivoDetail__titleLugar">
+          {{atractivo[0].nombre}}
+        </h4>
         <img class="atractivoDetail__imgPortada" src="http://{{dominio_img}}/{{atractivo[0].url_imagen}}">
         <div class="row atractivoDetail__boxBtns">
           <div class="col text-center">
             <button class="button button-calm atractivoDetail__boxBtns__btn">
               <i class="ion ion-information"></i>
             </button>
+            <span class="atractivoDetail__boxBtns__span">Detalles</span>
           </div>
           <div class="col text-center">
             <button class="button button-calm atractivoDetail__boxBtns__btn">
               <i class="ion ion-image"></i>
             </button>
+            <span class="atractivoDetail__boxBtns__span">Galería</span>
           </div>
           <div class="col text-center">
             <button class="button button-calm atractivoDetail__boxBtns__btn">
               <i class="ion ion-social-youtube-outline"></i>
             </button>
+            <span class="atractivoDetail__boxBtns__span">Videos</span>
           </div>
           <div class="col text-center">
             <button class="button button-calm atractivoDetail__boxBtns__btn">
               <i class="ion ion-android-share-alt"></i>
             </button>
+            <span class="atractivoDetail__boxBtns__span">Compartir</span>
           </div>
-
-
         </div>
       </div>
     </div>
+
+    <div class="text-center atractivoDetail__boxCompartir">
+      <div class="atractivoDetail__boxCompartir__btn">
+        <a class="atractivoDetail__boxCompartir__ancla" href="">
+          <div class="row">
+            <div class="col text-right">
+              <i class="ion ion-ios-location atractivoDetail__boxCompartir__icono"></i>
+            </div>
+            <div class="col col-75 text-left atractivoDetail__boxCompartir__text">
+              Ver ubicación en el mapa
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="atractivoDetail__boxDescription">
+      <p class="atractivoDetail__boxDescription__text">
+        {{atractivo[0].descripcion}}
+      </p>
+      <a class="atractivoDetail__boxDescription__ancla" href="">Leer Más</a>
+    </div>
+
 
 
     <div class="" style="display: none">

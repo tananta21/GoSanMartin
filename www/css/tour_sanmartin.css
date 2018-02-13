@@ -17,6 +17,16 @@
 .offline__text {
   font-size: 16px;
 }
+.bg-green {
+  background: #1ab696 !important;
+  color: #fff;
+  border-color: #1ab696 !important;
+}
+.bg-azul {
+  background: #2e3c50 !important;
+  color: #fff;
+  border-color: #2e3c50 !important;
+}
 .boxBtnsAtractivo {
   display: inline-block;
   margin: 0.5rem;
@@ -55,24 +65,81 @@ body {
 }
 .atractivoDetail__titleLugar {
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   margin-top: 15px;
+  position: absolute;
+  top: 20%;
+  z-index: 1000;
+  color: #fff;
+  padding: 0px 25px;
+  width: 100%;
 }
 .atractivoDetail__boxPortada {
   height: 100%;
 }
 .atractivoDetail__imgPortada {
+  filter: brightness(0.6);
   width: 100%;
   height: 100%;
 }
 .atractivoDetail__boxBtns {
   position: absolute;
-  top: 305px;
+  top: 275px;
   z-index: 1000;
 }
 .atractivoDetail__boxBtns__btn {
   border-radius: 50%;
   font-size: 23px;
-  background: #1ab696 !important;
-  box-shadow: 5px 10px rgba(170,170,170,0.11);
+  background: #2e3c50 !important;
+  box-shadow: 0px 6px rgba(0,0,0,0.1);
+}
+.atractivoDetail__boxBtns__span {
+  font-size: 12px;
+  color: #575757;
+}
+.atractivoDetail__boxDescription {
+  margin-top: 15px;
+  padding: 0px 10px;
+  text-align: center;
+}
+.atractivoDetail__boxDescription__text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+  color: #575757;
+}
+.atractivoDetail__boxDescription__ancla {
+  color: #1ab696;
+  font-weight: bold;
+  text-decoration: none;
+}
+.atractivoDetail__boxCompartir {
+  margin-top: 60px;
+  padding: 0px 15px;
+}
+.atractivoDetail__boxCompartir__btn {
+  border-radius: 5px;
+  border: 1px dashed #575757;
+  color: #fff;
+}
+.atractivoDetail__boxCompartir__ancla {
+  text-decoration: none;
+}
+.atractivoDetail__boxCompartir__icono {
+  margin-right: 7px;
+  font-size: 21px;
+  color: #1ab696;
+}
+.atractivoDetail__boxCompartir__text {
+  color: #575757;
+}
+.emergency__btn {
+  background: #2e3c50;
+  border-radius: 150%;
+  font-size: 30px;
+  color: #fff;
+  box-shadow: 2px 3px rgba(0,0,0,0.2);
 }
