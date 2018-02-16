@@ -1,3 +1,7 @@
+//SERVIDOR ==================================
+// var dominio = "voydeviaje.ml";
+
+//LOCALMENTE ================================
 var dominio = "voydeviaje.info";
 var api = "http://" + dominio + "/api/";
 

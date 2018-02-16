@@ -1,5 +1,11 @@
+//SERVIDOR ==================================
+// var dominio = "http://voydeviaje.ml";
+// var dominio_img = "voydeviaje.ml";
+
+//LOCALMENTE ================================
 var dominio = "http://voydeviaje.info";
 var dominio_img = "voydeviaje.info";
+
 var api = dominio+"/api/";
 
 angular.module('starter.controllers', [])

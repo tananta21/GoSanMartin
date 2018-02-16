@@ -1,6 +1,30 @@
 body
   font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
 
+.home
+  &__content
+    height 100%
+  &__boxSlider
+    display block
+    height 50%
+  &__boxModulos
+    height 50%
+    display block
+    &__row
+      height 50%
+      padding-top 50px !important
+    &__item
+      &__ancla
+        text-decoration none
+      &__icon
+        color $azulOscuro
+        font-size 45px
+      &__name
+        color $green
+        font-size 16px
+
+
+
 
 .atractivoDetail
   &__boxHeader
@@ -24,7 +48,7 @@ body
     height 100%
   &__boxBtns
     position absolute
-    top 275px
+    top 45%
     z-index 1000
     &__btn
       border-radius 50%

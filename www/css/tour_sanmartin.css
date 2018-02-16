@@ -18,9 +18,9 @@
   font-size: 16px;
 }
 .bg-green {
-  background: #1ab696 !important;
+  background: #3ab7b8 !important;
   color: #fff;
-  border-color: #1ab696 !important;
+  border-color: #3ab7b8 !important;
 }
 .bg-azul {
   background: #2e3c50 !important;
@@ -62,6 +62,32 @@
 body {
   font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
 }
+.home__content {
+  height: 100%;
+}
+.home__boxSlider {
+  display: block;
+  height: 50%;
+}
+.home__boxModulos {
+  height: 50%;
+  display: block;
+}
+.home__boxModulos__row {
+  height: 50%;
+  padding-top: 50px !important;
+}
+.home__boxModulos__item__ancla {
+  text-decoration: none;
+}
+.home__boxModulos__item__icon {
+  color: #2e3c50;
+  font-size: 45px;
+}
+.home__boxModulos__item__name {
+  color: #3ab7b8;
+  font-size: 16px;
+}
 .atractivoDetail__boxHeader {
   display: block;
   height: 50%;
@@ -87,7 +113,7 @@ body {
 }
 .atractivoDetail__boxBtns {
   position: absolute;
-  top: 275px;
+  top: 45%;
   z-index: 1000;
 }
 .atractivoDetail__boxBtns__btn {
@@ -115,7 +141,7 @@ body {
   color: #575757;
 }
 .atractivoDetail__boxDescription__ancla {
-  color: #1ab696;
+  color: #3ab7b8;
   font-weight: bold;
   text-decoration: none;
 }
@@ -134,7 +160,7 @@ body {
 .atractivoDetail__boxCompartir__icono {
   margin-right: 7px;
   font-size: 21px;
-  color: #1ab696;
+  color: #3ab7b8;
 }
 .atractivoDetail__boxCompartir__text {
   color: #575757;
