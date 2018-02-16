@@ -56,8 +56,19 @@ angular.module('starter.controllers', [])
     }, false)
   })
 
-  .controller('HomeCtrl', function () {
+  .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate) {
+    $scope.nextSlide = function() {
+      $ionicSlideBoxDelegate.next();
+    },
 
+      $scope.images = [
+        "img/prueba/cultural.jpg",
+        "img/prueba/arqueologico.jpg",
+        "img/prueba/arqueologico2.jpg",
+        "img/prueba/gastronomia.jpg",
+        "img/prueba/vivencial.jpg",
+        "img/prueba/ecoturismo.jpg"
+      ];
   })
 
   .controller('AtractivosCtrl', function ($scope, Atractivos) {
@@ -168,6 +179,7 @@ angular.module('starter.controllers', [])
   .controller('MapaCtrl', function ($scope, $state, $cordovaGeolocation, $ionicLoading, $stateParams) {
     var lat = $stateParams.lat;
     var long = $stateParams.long;
+    var nombre = $stateParams.name;
 
     $ionicLoading.show({
       template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando Ubicacion!'
@@ -199,17 +211,17 @@ angular.module('starter.controllers', [])
       });
 
       var infoWindow = new google.maps.InfoWindow({
-        content: "Punto del Atractivo!"
+        content: nombre +"!!"
       });
 
       infoWindow.open($scope.map, marker);
 
       $ionicLoading.hide();
 
-      //google.maps.event.addListener(marker, 'click', function () {
-      //  infoWindow.open($scope.map, marker);
-      //
-      //});
+      google.maps.event.addListener(marker, 'click', function () {
+       infoWindow.open($scope.map, marker);
+
+      });
     });
 
 

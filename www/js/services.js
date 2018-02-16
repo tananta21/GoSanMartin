@@ -20,7 +20,8 @@ angular.module('starter.services', [])
           url: api + "atractivos",
           dataType: 'JSON',
           error: function () {
-            alert("hay un error");
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
           },
           success: function (response) {
             data.push(response);
@@ -45,7 +46,8 @@ angular.module('starter.services', [])
           },
           dataType: 'JSON',
           error: function () {
-            alert("hay un error");
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
           },
           success: function (response) {
             data.push(response);
@@ -53,7 +55,6 @@ angular.module('starter.services', [])
           }
         });
         return data;
-        //return atractivos[id];
       },
 
       getImgByAtractivo: function (id) {
@@ -70,7 +71,8 @@ angular.module('starter.services', [])
           },
           dataType: 'JSON',
           error: function () {
-            alert("hay un error");
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
           },
           success: function (response) {
             data.push(response);

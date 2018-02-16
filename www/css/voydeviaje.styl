@@ -7,21 +7,41 @@ body
   &__boxSlider
     display block
     height 50%
+    &__slider
+      height 100%
+      &__boxImg
+        height 100%
+        text-align center
+      &__text
+        width 100%
+        position: absolute;
+        top: 20%;
+        z-index: 3000;
+        text-align: center
+        color white
+        padding 0px 10px
+        font-size 20px
+      &__img
+        filter: brightness(0.6);
+        width 100%
+        height 100%
+
   &__boxModulos
     height 50%
     display block
     &__row
       height 50%
-      padding-top 50px !important
+      padding-top 40px !important
     &__item
       &__ancla
         text-decoration none
       &__icon
-        color $azulOscuro
+        color $green
         font-size 45px
       &__name
-        color $green
-        font-size 16px
+        color $azulOscuro
+        font-size 15px
+        font-weight bold
 
 
 

@@ -2,46 +2,56 @@
   <ion-content>
     <div class="home__content">
       <div class="home__boxSlider">
-        <h3>slider de atractivos</h3>
+        <h5 class="home__boxSlider__slider__text">
+          San Martín, un paraíso por descubrir ,<br>
+          ¿Qué esperas?
+        </h5>
+        <ion-slide-box  auto-play='true' show-pager="false" does-continue='true' slide-intervel='5000' class="home__boxSlider__slider">
+          <ion-slide ng-repeat="img in images">
+            <div class="home__boxSlider__slider__boxImg">
+              <img ng-src="{{img}}" alt="" class="home__boxSlider__slider__img">
+            </div>
+          </ion-slide>
+        </ion-slide-box>
       </div>
       <div class="home__boxModulos">
         <div class="row text-center home__boxModulos__row">
           <div class="col text-center home__boxModulos__item">
-            <a href="" class="home__boxModulos__item__ancla">
+            <a href="#/app/atractivos" class="home__boxModulos__item__ancla">
               <i class="ion ion-map home__boxModulos__item__icon"></i>
-              <p class="home__boxModulos__item__name">Atractivos</p>
+              <p class="home__boxModulos__item__name">Atractivos Turísticos</p>
             </a>
           </div>
           <div class="col text-center home__boxModulos__item">
-            <a href="" class="home__boxModulos__item__ancla">
+            <a href="#/app/agencias" class="home__boxModulos__item__ancla">
               <i class="ion ion-android-bus home__boxModulos__item__icon"></i>
-              <p class="home__boxModulos__item__name">Agencias</p>
+              <p class="home__boxModulos__item__name">Agencias de viajes</p>
             </a>
           </div>
           <div class="col text-center home__boxModulos__item">
             <a href="" class="home__boxModulos__item__ancla">
               <i class="ion ion-social-buffer home__boxModulos__item__icon"></i>
-              <p class="home__boxModulos__item__name">Hoteles</p>
+              <p class="home__boxModulos__item__name">Paquetes Turísticos</p>
             </a>
           </div>
         </div>
         <div class="row text-center home__boxModulos__row">
           <div class="col text-center home__boxModulos__item">
             <a href="" class="home__boxModulos__item__ancla">
-              <i class="ion ion-android-car home__boxModulos__item__icon"></i>
-              <p class="home__boxModulos__item__name">Transporte</p>
+              <i class="ion ion-image home__boxModulos__item__icon"></i>
+              <p class="home__boxModulos__item__name">Galería de <br> fotos</p>
             </a>
           </div>
           <div class="col text-center home__boxModulos__item">
-            <a href="" class="home__boxModulos__item__ancla">
+            <a href="#/app/emergencias" class="home__boxModulos__item__ancla">
               <i class="ion ion-android-phone-portrait home__boxModulos__item__icon"></i>
-              <p class="home__boxModulos__item__name">Emergencias</p>
+              <p class="home__boxModulos__item__name">Números de Emergencia</p>
             </a>
           </div>
           <div class="col text-center home__boxModulos__item">
             <a href="" class="home__boxModulos__item__ancla">
-              <i class="ion ion-help home__boxModulos__item__icon"></i>
-              <p class="home__boxModulos__item__name">Acerca de</p>
+              <i class="ion ion-ios-star home__boxModulos__item__icon"></i>
+              <p class="home__boxModulos__item__name">Valoración</p>
             </a>
           </div>
         </div>

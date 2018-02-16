@@ -159,7 +159,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       //=============================================================================================
 
       .state('app.mapa', {
-        url: '/mapa/:lat/:long',
+        url: '/mapa/:lat/:long/:name',
         views: {
           'menuContent': {
             templateUrl: 'templates/app/mapa.html',
