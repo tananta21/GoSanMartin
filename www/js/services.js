@@ -85,6 +85,33 @@ angular.module('starter.services', [])
 
   })
 
+  .factory('Galeria', function ($ionicLoading) {
+    return {
+      getGaleria: function () {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "galeria",
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
+    }
+
+  })
+
   .factory('Agencias', function () {
     return {
       getAgencias: function () {

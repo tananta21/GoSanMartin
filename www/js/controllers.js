@@ -235,15 +235,25 @@ angular.module('starter.controllers', [])
     //});
   })
 
-  .controller('GaleriaCtrl', function ($scope, $ionicModal) {
+  .controller('GaleriaCtrl', function ($scope, $ionicModal, Galeria) {
+
+    $scope.galeria = Galeria.getGaleria();
+    $scope.dominio_img = dominio_img;
+
+    $scope.open_link = function(event) {
+      var href = event.target.href;
+      var browserRef = window.open(href, '_system', 'location=no,clearsessioncache=no,clearcache=no');
+      event.preventDefault(); }
 
     $ionicModal.fromTemplateUrl('templates/app/util/modal_galeria.html', {
       scope: $scope,
     }).then(function (modal) {
       $scope.modal = modal;
     });
-    $scope.openModal = function (url_imagen) {
+    $scope.openModal = function (url_imagen, descripcion) {
       $scope.url_imagen = url_imagen;
+      $scope.descripcion = descripcion;
+
       $scope.modal.show();
     };
     $scope.closeModal = function () {

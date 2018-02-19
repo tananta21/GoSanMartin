@@ -237,7 +237,7 @@ body {
 .galeria__item {
   display: inline-block;
   height: 33%;
-  width: 49%;
+  width: 50%;
   padding: 0.1rem;
   margin: 0rem;
 }
@@ -258,6 +258,9 @@ body {
 .galeria__modal__boxReturn__ancla {
   font-size: 18px;
   color: #fff;
+  background: #444;
+  border: none;
+  text-decoration: none;
 }
 .galeria__modal__img {
   margin-top: 5%;

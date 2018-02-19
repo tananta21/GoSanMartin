@@ -1,19 +1,10 @@
 <ion-view view-title="Galeria Fotos">
   <ion-content>
     <div class="galeria__content">
-      <div class="galeria__item">
-        <a ng-click="openModal('img/logo2.jpg')">
-          <img class="galeria__img" src="img/logo2.jpg" alt="">
-        </a>
-      </div>
-      <div class="galeria__item">
-        <a ng-click="openModal('img/prueba/cultural.jpg')">
-          <img class="galeria__img" src="img/prueba/cultural.jpg" alt="">
-        </a>
-      </div>
-      <div class="galeria__item">
-        <a ng-click="openModal('img/prueba/cultural.jpg')">
-          <img class="galeria__img" src="img/prueba/cultural.jpg" alt="">
+      <div class="galeria__item" ng-repeat="image in galeria[0]">
+        <a ng-click='openModal("http://{{dominio_img}}/{{image.url_imagen}}","{{image.descripcion}}")'>
+
+          <img class="galeria__img" src="http://{{dominio_img}}/{{image.url_imagen}}" alt="">
         </a>
       </div>
     </div>

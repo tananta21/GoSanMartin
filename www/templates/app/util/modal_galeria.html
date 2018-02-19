@@ -2,10 +2,11 @@
   <ion-content>
     <div class="galeria__modal">
       <div class="galeria__modal__boxReturn">
-        <a ng-click="closeModal()" class="galeria__modal__boxReturn__ancla">
+        <button ng-click="closeModal()" class=" btn galeria__modal__boxReturn__ancla">
           <i class="ion ion-close-round"></i>  Cerrar
-        </a>
-        <a onclick="window.open('http://3.bp.blogspot.com/-XchURXRz-5c/U5ApPOrPM9I/AAAAAAAADoo/YZEj4qeSlqo/s1600/Final-Fantasy-XV-Noctis-Red-Eyes.png', '_system');" class="galeria__modal__boxReturn__ancla">
+        </button>
+        <!--<button onclick="window.open('http://3.bp.blogspot.com/-XchURXRz-5c/U5ApPOrPM9I/AAAAAAAADoo/YZEj4qeSlqo/s1600/Final-Fantasy-XV-Noctis-Red-Eyes.png', '_system');" class="galeria__modal__boxReturn__ancla">-->
+        <a ng-click="open_link($event)" target="_system" href="{{url_imagen}}" class="galeria__modal__boxReturn__ancla">
           <i class="ion ion-android-download"></i> Descargar
         </a>
       </div>
@@ -13,7 +14,7 @@
            src="{{url_imagen}}" alt="">
 
       <h3 class="galeria__modal__name">
-        descripcion de la foto
+        {{descripcion}}
       </h3>
     </div>
   </ion-content>
