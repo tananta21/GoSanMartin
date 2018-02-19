@@ -73,6 +73,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
               }
             }
           })
+          .state('app.descripcion', {
+            url: '/atractivo/descripcion/:id',
+            views: {
+              'menuContent': {
+                templateUrl: 'templates/app/atractivos/descripcion.html',
+                controller: 'AtractivoDetalleCtrl'
+              }
+            }
+          })
       .state('app.modal_share', {
         url: '/share',
         views: {
@@ -109,7 +118,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
-
 
       .state('app.transportes', {
         url: '/transportes',
@@ -191,6 +199,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           'menuContent': {
             templateUrl: 'templates/app/videos.html',
             controller: 'VideoCtrl'
+          }
+        }
+      })
+      .state('app.valoracion', {
+        url: '/valoracion',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/app/valoracion/valoracion.html',
+            controller: 'ValoracionCtrl'
           }
         }
       })

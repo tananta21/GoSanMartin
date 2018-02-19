@@ -141,7 +141,7 @@ body {
 }
 .atractivoDetail__boxBtns {
   position: absolute;
-  top: 45%;
+  top: 43%;
   z-index: 1000;
 }
 .atractivoDetail__boxBtns__btn {
@@ -276,4 +276,11 @@ body {
 .modal-backdrop,
 .modal-backdrop-bg {
   top: 0% !important;
+}
+.active {
+  color: #3ab7b8 !important;
+  font-weight: bold !important;
+}
+.active > a {
+  background: #f4f4f4 !important;
 }

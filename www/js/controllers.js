@@ -17,23 +17,23 @@ angular.module('starter.controllers', [])
       $scope.$apply();
       $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
         $scope.isOnline = true;
-        $ionicLoading.show({
-          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
-        });
-        var ref = firebase.database().ref("data/atractivos");
-        ref.on("value", function (snapshot) {
-          var atractivos = snapshot.val();
-          var array = [];
-          for (var prop in atractivos) {
-            array.push(atractivos[prop]);
-          }
-          $ionicLoading.hide();
-          $scope.atractivos = array;
-          console.log($scope.atractivos)
-        }, function (error) {
-          $ionicLoading.hide();
-          console.log("Error: " + error.code);
-        });
+        // $ionicLoading.show({
+        //   template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+        // });
+        // var ref = firebase.database().ref("data/atractivos");
+        // ref.on("value", function (snapshot) {
+        //   var atractivos = snapshot.val();
+        //   var array = [];
+        //   for (var prop in atractivos) {
+        //     array.push(atractivos[prop]);
+        //   }
+        //   $ionicLoading.hide();
+        //   $scope.atractivos = array;
+        //   console.log($scope.atractivos)
+        // }, function (error) {
+        //   $ionicLoading.hide();
+        //   console.log("Error: " + error.code);
+        // });
         //redirect after check connection internet ONLINE
         $state.go('app.atractivos');
         $scope.$apply();
@@ -72,6 +72,7 @@ angular.module('starter.controllers', [])
   })
 
   .controller('AtractivosCtrl', function ($scope, Atractivos) {
+
     $scope.dominio_img = dominio_img;
     $scope.atractivos = Atractivos.getAtractivos();
 
@@ -161,7 +162,6 @@ angular.module('starter.controllers', [])
     };
   })
 
-
   .controller('AgenciasCtrl', function ($scope, Agencias) {
     $scope.agencias = Agencias.getAgencias();
   })
@@ -240,10 +240,11 @@ angular.module('starter.controllers', [])
     $scope.galeria = Galeria.getGaleria();
     $scope.dominio_img = dominio_img;
 
-    $scope.open_link = function(event) {
+    $scope.open_link = function (event) {
       var href = event.target.href;
       var browserRef = window.open(href, '_system', 'location=no,clearsessioncache=no,clearcache=no');
-      event.preventDefault(); }
+      event.preventDefault();
+    }
 
     $ionicModal.fromTemplateUrl('templates/app/util/modal_galeria.html', {
       scope: $scope,
@@ -271,6 +272,10 @@ angular.module('starter.controllers', [])
     $scope.$on('modal.removed', function () {
       // Execute action
     });
+
+  })
+
+  .controller('ValoracionCtrl', function ($scope) {
 
   })
 
