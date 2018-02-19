@@ -50,6 +50,7 @@ body
   &__boxHeader
     display block
     height 50%
+    margin-bottom 60px
   &__titleLugar
     text-align center
     font-size 20px
@@ -68,7 +69,7 @@ body
     height 100%
   &__boxBtns
     position absolute
-    top 43%
+    top 44%
     z-index 1000
     &__btn
       border-radius 50%
@@ -78,7 +79,54 @@ body
     &__span
       font-size 12px
       color $cenizoClaro
-
+  &__boxPaquetes
+    display block
+    margin-bottom 15px
+    &__header
+      display flex
+      justify-content space-between
+      padding 0px 10px
+      &__text
+        font-size 12px
+        font-weight bold
+      &__ancla
+        color $green
+        font-weight bold
+        font-size 12px
+    &__content
+      overflow: auto
+      white-space: nowrap
+      height 120px
+    &__item
+      display inline-block
+      width 50%
+      height 100%
+      margin-right 5px
+      position relative
+      &__img
+        width 100%
+        height 100%
+        filter: brightness(0.8)
+      &__boxPrecio
+        width 40%
+        position absolute
+        min-height 30px
+        top 0
+        right 0
+        background rgba(0,0,0,0.5)
+        text-align right
+      &__boxName
+        min-height 30px
+        width 100%
+        position absolute
+        bottom 0
+        background rgba(0,0,0,0.5)
+      &__name
+        width 100%
+        white-space initial
+        padding 0px 5px
+        font-size 11px
+        color white
   &__boxDescription
     margin-top: 15px;
     padding: 0px 10px;
@@ -96,8 +144,8 @@ body
       font-weight bold
       text-decoration none
 
+
   &__boxCompartir
-    margin-top 60px
     padding 0px 15px
     &__btn
       border-radius 5px
