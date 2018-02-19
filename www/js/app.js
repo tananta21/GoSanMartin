@@ -167,6 +167,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
+      .state('app.galeria', {
+        url: '/galeria',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/app/galeria/galeria.html',
+            controller: 'GaleriaCtrl'
+          }
+        }
+      })
       .state('app.imagenes', {
         url: '/imagenes/:id',
         views: {

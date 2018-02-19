@@ -1,12 +1,12 @@
 //SERVIDOR ==================================
-// var dominio = "http://voydeviaje.ml";
-// var dominio_img = "voydeviaje.ml";
+// var dominio = "http://voydeviaje.tk";
+// var dominio_img = "voydeviaje.tk";
 
 //LOCALMENTE ================================
 var dominio = "http://voydeviaje.info";
 var dominio_img = "voydeviaje.info";
 
-var api = dominio+"/api/";
+var api = dominio + "/api/";
 
 angular.module('starter.controllers', [])
 
@@ -57,7 +57,7 @@ angular.module('starter.controllers', [])
   })
 
   .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate) {
-    $scope.nextSlide = function() {
+    $scope.nextSlide = function () {
       $ionicSlideBoxDelegate.next();
     },
 
@@ -96,44 +96,48 @@ angular.module('starter.controllers', [])
     };
 
     var pelota = 'http://tusimagenesde.com/wp-content/uploads/2017/02/pelota-1.png'
-    var message ='Descubre lo maravilloso de San martín, conozca '+ $scope.atractivo.nombre+'descarga la aplicación en el siguiente enlace'
+    var message = 'Descubre lo maravilloso de San martín, conozca ' + $scope.atractivo.nombre + 'descarga la aplicación en el siguiente enlace'
 
-    $scope.shareAnywhere = function() {
+    $scope.shareAnywhere = function () {
       $cordovaSocialSharing.share(
         message,
         'Subject string', null,
         'https://firebasestorage.googleapis.com/v0/b/tour-san-martin.appspot.com/o/atractivos%2Fatractivo0%2Fimg%2F1.jpg?alt=media&token=c6d8b422-7283-4aaf-b1c9-fa286b2885f6');
     }
-    $scope.shareFacebook = function() {
+    $scope.shareFacebook = function () {
       $cordovaSocialSharing.shareViaFacebook(
         'Message via Facebook', null /* img */,
         null /* url */,
-        function() {console.log('share ok')}, function(errormsg){alert(errormsg)})
+        function () {
+          console.log('share ok')
+        }, function (errormsg) {
+          alert(errormsg)
+        })
     }
 
     $ionicModal.fromTemplateUrl('templates/app/util/modal_share.html', {
       scope: $scope,
       animation: 'slide-in-up',
       focusFirstInput: true
-    }).then(function(modal) {
+    }).then(function (modal) {
       $scope.modal = modal;
     });
-    $scope.openModal = function() {
+    $scope.openModal = function () {
       $scope.modal.show();
     };
-    $scope.closeModal = function() {
+    $scope.closeModal = function () {
       $scope.modal.hide();
     };
     // Cleanup the modal when we're done with it!
-    $scope.$on('$destroy', function() {
+    $scope.$on('$destroy', function () {
       $scope.modal.remove();
     });
     // Execute action on hide modal
-    $scope.$on('modal.hidden', function() {
+    $scope.$on('modal.hidden', function () {
       // Execute action
     });
     // Execute action on remove modal
-    $scope.$on('modal.removed', function() {
+    $scope.$on('modal.removed', function () {
       // Execute action
     });
   })
@@ -211,7 +215,7 @@ angular.module('starter.controllers', [])
       });
 
       var infoWindow = new google.maps.InfoWindow({
-        content: nombre +"!!"
+        content: nombre + "!!"
       });
 
       infoWindow.open($scope.map, marker);
@@ -219,7 +223,7 @@ angular.module('starter.controllers', [])
       $ionicLoading.hide();
 
       google.maps.event.addListener(marker, 'click', function () {
-       infoWindow.open($scope.map, marker);
+        infoWindow.open($scope.map, marker);
 
       });
     });
@@ -231,6 +235,35 @@ angular.module('starter.controllers', [])
     //});
   })
 
+  .controller('GaleriaCtrl', function ($scope, $ionicModal) {
+
+    $ionicModal.fromTemplateUrl('templates/app/util/modal_galeria.html', {
+      scope: $scope,
+    }).then(function (modal) {
+      $scope.modal = modal;
+    });
+    $scope.openModal = function (url_imagen) {
+      $scope.url_imagen = url_imagen;
+      $scope.modal.show();
+    };
+    $scope.closeModal = function () {
+      $scope.modal.hide();
+    };
+    // Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function () {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function () {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function () {
+      // Execute action
+    });
+
+  })
+
   .controller('ImagenCtrl', function ($scope, $stateParams, $ionicSlideBoxDelegate, Atractivos) {
     var atractivoId = $stateParams.id;
     $scope.dominio_img = dominio_img;
@@ -238,7 +271,7 @@ angular.module('starter.controllers', [])
     $scope.data = {};
     $scope.data.currentPage = 0;
 
-    var setupSlider = function() {
+    var setupSlider = function () {
       //some options to pass to our slider
       $scope.data.sliderOptions = {
         initialSlide: 0,
@@ -250,9 +283,9 @@ angular.module('starter.controllers', [])
       $scope.data.sliderDelegate = null;
 
       //watch our sliderDelegate reference, and use it when it becomes available
-      $scope.$watch('data.sliderDelegate', function(newVal, oldVal) {
+      $scope.$watch('data.sliderDelegate', function (newVal, oldVal) {
         if (newVal != null) {
-          $scope.data.sliderDelegate.on('slideChangeEnd', function() {
+          $scope.data.sliderDelegate.on('slideChangeEnd', function () {
             $scope.data.currentPage = $scope.data.sliderDelegate.activeIndex;
             //use $scope.$apply() to refresh any content external to the slider
             $scope.$apply();
@@ -263,8 +296,8 @@ angular.module('starter.controllers', [])
 
     setupSlider();
     $scope.atractivo = Atractivos.getImgByAtractivo(atractivoId);
-  }
-)
+  })
+
   .controller('VideoCtrl', function ($scope, $stateParams, $ionicLoading, Atractivos) {
     var AtractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(AtractivoId);

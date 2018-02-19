@@ -2,11 +2,11 @@
 <widget id="com.ionicframework.appturismo829024" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Voy De Viaje</name>
     <description>
-        An Ionic Framework and Cordova project.
-    </description>
+    An Ionic Framework and Cordova project.
+  </description>
     <author email="you@example.com" href="http://example.com/">
-      Your Name Here
-    </author>
+    Your Name Here
+  </author>
     <framework src="com.google.android.gms:play-services-location:9.4.0" />
     <content src="index.html" />
     <access origin="*" />
@@ -28,6 +28,12 @@
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreen" value="screen" />
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
@@ -46,7 +52,10 @@
     </platform>
     <icon src="resources\android\icon\drawable-xhdpi-icon.png" />
     <engine name="android" spec="^6.2.3" />
+    <plugin name="cordova-plugin-file" spec="^4.0.0" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
     <plugin name="cordova-plugin-network-information" spec="~1.3.2" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.3.1" />
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.0" />
 </widget>

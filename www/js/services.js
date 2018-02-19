@@ -1,5 +1,5 @@
 //SERVIDOR ==================================
-// var dominio = "voydeviaje.ml";
+// var dominio = "voydeviaje.tk";
 
 //LOCALMENTE ================================
 var dominio = "voydeviaje.info";

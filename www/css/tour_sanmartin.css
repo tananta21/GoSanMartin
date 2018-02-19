@@ -227,3 +227,50 @@ body {
   margin-top: 15px;
   font-size: 14px;
 }
+.galeria__content {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  text-align: left;
+}
+.galeria__item {
+  display: inline-block;
+  height: 33%;
+  width: 49%;
+  padding: 0.1rem;
+  margin: 0rem;
+}
+.galeria__img {
+  height: 100%;
+  width: 100%;
+}
+.galeria__modal {
+  background: #444;
+  min-height: 100%;
+  overflow-y: auto;
+}
+.galeria__modal__boxReturn {
+  padding: 25px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.galeria__modal__boxReturn__ancla {
+  font-size: 18px;
+  color: #fff;
+}
+.galeria__modal__img {
+  margin-top: 5%;
+  width: 100%;
+  height: 360px;
+}
+.galeria__modal__name {
+  font-size: 15px;
+  color: #fff;
+  padding: 0px 10px;
+  text-align: center;
+}
+.modal-backdrop,
+.modal-backdrop-bg {
+  top: 0% !important;
+}
