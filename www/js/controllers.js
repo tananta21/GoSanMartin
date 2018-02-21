@@ -56,10 +56,13 @@ angular.module('starter.controllers', [])
     }, false)
   })
 
-  .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate) {
+  .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate, Atractivos) {
+    $scope.topAtractivos = Atractivos.getTopTenAtractivo();
+    $scope.dominio_img = dominio_img;
+
     $scope.nextSlide = function () {
       $ionicSlideBoxDelegate.next();
-    },
+    }
 
       $scope.images = [
         "img/prueba/cultural.jpg",
@@ -78,9 +81,10 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos) {
+  .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos, Paquete) {
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
+    $scope.paquetes = Paquete.getPaqueteByAtractivo(atractivoId);
     $scope.dominio_img = dominio_img;
 
     $scope.informacion = function () {
@@ -308,8 +312,8 @@ angular.module('starter.controllers', [])
         }
       });
     };
-
     setupSlider();
+
     $scope.atractivo = Atractivos.getImgByAtractivo(atractivoId);
   })
 

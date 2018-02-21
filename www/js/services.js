@@ -32,12 +32,11 @@ angular.module('starter.services', [])
 
       },
 
-      getAtractivo: function (id) {
+      getAtractivo: function (atractivo_id) {
         $ionicLoading.show({
-          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!'
         });
         var data = [];
-        var atractivo_id = id;
         $.ajax({
           type: 'GET',
           url: api + "atractivo/by_id",
@@ -80,6 +79,58 @@ angular.module('starter.services', [])
           }
         });
         return data;
+      },
+
+      getTopTenAtractivo: function () {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "atractivos/top_ten",
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
+    }
+
+  })
+
+  .factory('Paquete', function ($ionicLoading) {
+    return {
+      getPaqueteByAtractivo: function (atractivo_id) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "paquetes_turisticos/by_atractivo",
+          data:{
+            id :atractivo_id
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
       },
     }
 

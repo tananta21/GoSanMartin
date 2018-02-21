@@ -109,11 +109,11 @@ body {
 }
 .home__boxModulos__item__icon {
   color: #3ab7b8;
-  font-size: 45px;
+  font-size: 42px;
 }
 .home__boxModulos__item__name {
   color: #2e3c50;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
 }
 .atractivoDetail__boxHeader {
@@ -215,6 +215,7 @@ body {
 }
 .atractivoDetail__boxDescription {
   margin-top: 15px;
+  margin-bottom: 15px;
   padding: 0px 10px;
   text-align: center;
 }
