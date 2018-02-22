@@ -236,9 +236,65 @@ body
       padding 0px 10px
       text-align center
 
+
+
+.paquete
+  &__content
+    height 100%
+  &__row
+    height 100%
+    width 100%
+    padding 0rem !important
+  &__boxItem
+    height 25% !important
+    margin 6px
+    &__boxImg
+      width 100%
+      height 100%
+      padding 0rem !important
+      &__img
+        width 100%
+        height 100%
+    &__boxText
+      width 100%
+      &__content
+        position relative
+        height 100%
+        width 100%
+        padding 3px
+      &__name
+        font-size 12px
+        text-transform uppercase
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      &__nameAgencia
+        font-size 12px
+        color $cenizoLight
+      &__likes
+        font-size 12px
+        position absolute
+        bottom 0rem
+        left 5px
+        &__star
+          font-size: 15px;
+          color: $yellowStar;
+          font-weight: bold;
+      &__precio
+        font-size 16px
+        position absolute
+        bottom 0rem
+        right 5px
+        color $azulOscuro
+
+
+
+
+
 .modal-backdrop, .modal-backdrop-bg
   top 0% !important
-
 
 .active
   color $green !important

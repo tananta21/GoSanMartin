@@ -1,8 +1,46 @@
 <ion-view view-title="Paquetes Turísticos">
   <ion-content>
-    <div class="card">
+    <div class="paquete__content" ng-if="paquetes[0].length > 0 ">
+      <div class="bar bar-header item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" placeholder="Buscar paquete turístico" ng-model="buscar">
+        </label>
+      </div>
+      <div class="card paquete__boxItem" ng-repeat="item in resultados =( paquetes[0] | filter: buscar)">
+        <div class="row paquete__row">
+          <div class="col col-50 paquete__boxItem__boxImg">
+            <img class="paquete__boxItem__boxImg__img"
+                 src="http://{{dominio_img}}/{{item.portada}}" alt="">
+          </div>
+          <div class="col col-50 paquete__boxItem__boxText">
+            <div class="paquete__boxItem__boxText__content">
+              <h3 class="paquete__boxItem__boxText__name">{{item.nombre}}</h3>
+
+              <h3 class="paquete__boxItem__boxText__nameAgencia">
+                <span>Empresa a cargo:</span><br>
+                {{item.nombre_agencia}}
+              </h3>
+              <h3 class="paquete__boxItem__boxText__likes">
+                <i class="ion-ios-star paquete__boxItem__boxText__likes__star"></i> 12343
+              </h3>
+              <h3 class="paquete__boxItem__boxText__precio">
+                S/.{{item.precio}}
+              </h3>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" ng-if="!resultados.length">
+        <div class="item item-text-wrap">
+          <strong>No se encontraron resultados...</strong>
+        </div>
+      </div>
+    </div>
+    <div ng-if="paquetes[0].length ==  0 ">
       <div class="item item-text-wrap">
-        <h3>Datos no disponibles!, vuelva pronto</h3>
+        <strong>No se encontraron paquetes turísticos...</strong>
       </div>
     </div>
   </ion-content>

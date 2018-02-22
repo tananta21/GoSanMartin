@@ -12,7 +12,7 @@ angular.module('starter.services', [])
     return {
       getAtractivos: function () {
         $ionicLoading.show({
-          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
         });
         var data = [];
         $.ajax({
@@ -34,7 +34,7 @@ angular.module('starter.services', [])
 
       getAtractivo: function (atractivo_id) {
         $ionicLoading.show({
-          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!'
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!'
         });
         var data = [];
         $.ajax({
@@ -58,7 +58,7 @@ angular.module('starter.services', [])
 
       getImgByAtractivo: function (id) {
         $ionicLoading.show({
-          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
         });
         var data = [];
         var atractivo_id = id;
@@ -83,7 +83,7 @@ angular.module('starter.services', [])
 
       getTopTenAtractivo: function () {
         $ionicLoading.show({
-          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
         });
         var data = [];
         $.ajax({
@@ -108,9 +108,30 @@ angular.module('starter.services', [])
 
   .factory('Paquete', function ($ionicLoading) {
     return {
+      getAllPaquetes: function () {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "paquetes_turisticos",
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
       getPaqueteByAtractivo: function (atractivo_id) {
         $ionicLoading.show({
-          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
         });
         var data = [];
         $.ajax({
@@ -140,7 +161,7 @@ angular.module('starter.services', [])
     return {
       getGaleria: function () {
         $ionicLoading.show({
-          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
         });
         var data = [];
         $.ajax({

@@ -114,7 +114,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         url: '/paquetes',
         views: {
           'menuContent': {
-            templateUrl: 'templates/app/agencias/paquetes.html'
+            templateUrl: 'templates/app/agencias/paquetes.html',
+            controller: 'PaqueteCtrl'
           }
         }
       })

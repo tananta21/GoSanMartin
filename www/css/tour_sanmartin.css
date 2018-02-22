@@ -332,6 +332,67 @@ body {
   padding: 0px 10px;
   text-align: center;
 }
+.paquete__content {
+  height: 100%;
+}
+.paquete__row {
+  height: 100%;
+  width: 100%;
+  padding: 0rem !important;
+}
+.paquete__boxItem {
+  height: 25% !important;
+  margin: 6px;
+}
+.paquete__boxItem__boxImg {
+  width: 100%;
+  height: 100%;
+  padding: 0rem !important;
+}
+.paquete__boxItem__boxImg__img {
+  width: 100%;
+  height: 100%;
+}
+.paquete__boxItem__boxText {
+  width: 100%;
+}
+.paquete__boxItem__boxText__content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 3px;
+}
+.paquete__boxItem__boxText__name {
+  font-size: 12px;
+  text-transform: uppercase;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.paquete__boxItem__boxText__nameAgencia {
+  font-size: 12px;
+  color: #9a9a9a;
+}
+.paquete__boxItem__boxText__likes {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0rem;
+  left: 5px;
+}
+.paquete__boxItem__boxText__likes__star {
+  font-size: 15px;
+  color: #ffc900;
+  font-weight: bold;
+}
+.paquete__boxItem__boxText__precio {
+  font-size: 16px;
+  position: absolute;
+  bottom: 0rem;
+  right: 5px;
+  color: #2e3c50;
+}
 .modal-backdrop,
 .modal-backdrop-bg {
   top: 0% !important;

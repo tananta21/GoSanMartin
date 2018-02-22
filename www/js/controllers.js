@@ -175,6 +175,11 @@ angular.module('starter.controllers', [])
     $scope.agencia = Agencias.getAgencia(AgenciaId);
   })
 
+  .controller('PaqueteCtrl', function ($scope, Paquete) {
+    $scope.paquetes = Paquete.getAllPaquetes();
+    $scope.dominio_img = dominio_img;
+  })
+
   .controller('TransportesCtrl', function ($scope, Transportes) {
     $scope.transportes = Transportes.getTransportes();
   })
