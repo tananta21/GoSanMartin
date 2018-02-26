@@ -19,15 +19,16 @@
 
               <h3 class="paquete__boxItem__boxText__nameAgencia">
                 <span>Empresa a cargo:</span><br>
-                {{item.nombre_agencia}}
+                <a href="" class="paquete__boxItem__boxText__nameAgencia__linkAgencia">
+                  {{item.nombre_agencia}}
+                </a>
               </h3>
               <h3 class="paquete__boxItem__boxText__likes">
                 <i class="ion-ios-star paquete__boxItem__boxText__likes__star"></i> 12343
               </h3>
-              <h3 class="paquete__boxItem__boxText__precio">
-                S/.{{item.precio}}
-              </h3>
-
+                <a class="paquete__boxItem__boxText__btnDetail">
+                  Detalles <i class="ion ion-chevron-right"></i>
+                </a>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 <ion-view view-title="Descripción atractivo">
   <ion-content>
-    <div class="atractivoDetail__boxHeader">
+    <div class="atractivoDetail__boxHeaderDescripcion">
       <div class="atractivoDetail__boxPortada">
         <h4 class="atractivoDetail__titleLugar">
           {{atractivo[0].nombre}}
@@ -9,10 +9,12 @@
       </div>
     </div>
     <div>
-      <div class="card contentDetalle">
-        <p class="contentDetalle__textDescription">
-          {{atractivo[0].descripcion}}
-        </p>
+      <div class="card contentDetalle" style="margin-top: 0rem">
+        <div class="item item-text-wrap">
+          <p class="contentDetalle__textDescription">
+            {{atractivo[0].descripcion}}
+          </p>
+        </div>
       </div>
     </div>
   </ion-content>

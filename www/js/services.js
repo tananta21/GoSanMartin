@@ -129,7 +129,7 @@ angular.module('starter.services', [])
         return data;
 
       },
-      getPaqueteByAtractivo: function (atractivo_id) {
+      getTopPaqueteByAtractivo: function (atractivo_id) {
         $ionicLoading.show({
           template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
         });
@@ -139,6 +139,30 @@ angular.module('starter.services', [])
           url: api + "paquetes_turisticos/by_atractivo",
           data:{
             id :atractivo_id
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
+      getTopPaqueteByAgencia: function (agencia_id) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "paquetes_turisticos/by_agencia",
+          data:{
+            id :agencia_id
           },
           dataType: 'JSON',
           error: function () {
@@ -184,13 +208,76 @@ angular.module('starter.services', [])
 
   })
 
-  .factory('Agencias', function () {
+  .factory('Agencias', function ($ionicLoading) {
     return {
       getAgencias: function () {
-        return agencias;
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "agencias",
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+
+        // return agencias;
       },
       getAgencia: function (id) {
-        return agencias[id];
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!'
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "agencia/by_id",
+          data:{
+            id :id
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+      },
+      getRedesByAgencia: function (id) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!'
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "redes/by_agencia",
+          data:{
+            id :id
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
       },
     }
   })

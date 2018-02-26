@@ -1,15 +1,34 @@
 <ion-view view-title="Agencias de Turismo">
   <ion-content>
-    <div class="list card" ng-repeat="agencia in agencias">
-      <a  ui-sref="app.agencia({id: $index})" style="text-decoration: none">
-      <div class="item item-image">
-        <img src="{{agencia.img}}" style="height: 170px">
+    <div class="agencia__content">
+      <div class="bar bar-header item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" placeholder="Buscar paquete turístico" ng-model="buscar">
+        </label>
       </div>
+      <div class="list card agencia__item" ng-repeat="item in resultados =( agencias[0] | filter: buscar)">
+        <a ui-sref="app.agencia({ id: item.id })" style="text-decoration: none">
+          <div class="item item-image agencia__item__boxImg">
+            <img class="agencia__item__boxImg__img"
+              src="http://{{dominio_img}}/{{item.url_imagen}}" >
+          </div>
+          <div class="agencia__item__boxtext">
+            <h2 class="agencia__item__boxtext__name">
+              {{item.nombre}}
+            </h2>
+            <div class="agencia__item__boxtext__boxLike">
+              <i class="ion-ios-star agencia__item__boxtext__likes"></i>
+              <span class="agencia__item__boxtext__number">12332</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div ng-if="agencias[0].length ==  0 ">
       <div class="item item-text-wrap">
-         <h2 style="font-weight: bold">{{agencia.nombre}}</h2>
-         <h4>{{agencia.lema}}</h4>
+        <strong>No se encontraron resultados...</strong>
       </div>
-      </a>
     </div>
   </ion-content>
 </ion-view>

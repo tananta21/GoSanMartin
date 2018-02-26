@@ -84,7 +84,7 @@ angular.module('starter.controllers', [])
   .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos, Paquete) {
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
-    $scope.paquetes = Paquete.getPaqueteByAtractivo(atractivoId);
+    $scope.paquetes = Paquete.getTopPaqueteByAtractivo(atractivoId);
     $scope.dominio_img = dominio_img;
 
     $scope.informacion = function () {
@@ -168,11 +168,22 @@ angular.module('starter.controllers', [])
 
   .controller('AgenciasCtrl', function ($scope, Agencias) {
     $scope.agencias = Agencias.getAgencias();
+    $scope.dominio_img = dominio_img;
   })
 
-  .controller('AgenciaCtrl', function ($scope, $stateParams, Agencias) {
+  .controller('AgenciaCtrl', function ($scope, $stateParams, Agencias, Paquete) {
     var AgenciaId = $stateParams.id;
     $scope.agencia = Agencias.getAgencia(AgenciaId);
+    $scope.redes = Agencias.getRedesByAgencia(AgenciaId);
+    $scope.paquetes = Paquete.getTopPaqueteByAgencia(AgenciaId);
+    $scope.dominio_img = dominio_img;
+
+    $scope.open_link = function (event) {
+      var href = event.target.href;
+      var browserRef = window.open(href, '_system', 'location=no,clearsessioncache=no,clearcache=no');
+      event.preventDefault();
+    }
+
   })
 
   .controller('PaqueteCtrl', function ($scope, Paquete) {
