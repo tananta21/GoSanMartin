@@ -20,11 +20,14 @@
     <div class="detallePaquete__boxPrecios" ng-if="precios[0].length > 0 ">
       <h5 class="detallePaquete__boxPrecios__title">
         Lista de precios del paquete
+        <button ng-click="cerrarSesion()" class="button button-dark detallePaquete__boxPrecios__btn">
+         cerrar sesion
+      </button>
       </h5>
       <div class="row detallePaquete__boxPrecios__content">
         <div class="col col-50 detallePaquete__boxPrecios__item" ng-repeat="item in precios[0]">
           <p class="detallePaquete__boxPrecios__descrip">{{item.number_person}} persona(s)</p>
-          <button class="button button-dark detallePaquete__boxPrecios__btn">
+          <button ng-click="reserve(item.number_person, item.precio)" class="button button-dark detallePaquete__boxPrecios__btn">
             S/.{{item.precio}}
           </button>
         </div>

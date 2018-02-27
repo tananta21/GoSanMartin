@@ -3,7 +3,7 @@
 // var dominio_img = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var ip = "192.168.1.42";
+var ip = "192.168.43.133";
 var dominio = "http://"+ip;
 var dominio_img = ip;
 
@@ -11,32 +11,15 @@ var api = dominio + "/api/";
 
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicPopup) {
+  .controller('AppCtrl', function ($scope, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicPopup, sessionService) {
     document.addEventListener("deviceready", function () {
       $scope.network = $cordovaNetwork.getNetwork();
       $scope.isOnline = $cordovaNetwork.isOnline();
       $scope.$apply();
       $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
         $scope.isOnline = true;
-        // $ionicLoading.show({
-        //   template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando datos!',
-        // });
-        // var ref = firebase.database().ref("data/atractivos");
-        // ref.on("value", function (snapshot) {
-        //   var atractivos = snapshot.val();
-        //   var array = [];
-        //   for (var prop in atractivos) {
-        //     array.push(atractivos[prop]);
-        //   }
-        //   $ionicLoading.hide();
-        //   $scope.atractivos = array;
-        //   console.log($scope.atractivos)
-        // }, function (error) {
-        //   $ionicLoading.hide();
-        //   console.log("Error: " + error.code);
-        // });
         //redirect after check connection internet ONLINE
-        $state.go('app.atractivos');
+        $state.go('app.home');
         $scope.$apply();
       })
 
@@ -55,6 +38,10 @@ angular.module('starter.controllers', [])
         $scope.$apply();
       })
     }, false)
+    var key = "user_token";
+    var apellido = "apellido";
+    $scope.token = sessionService.get(key);
+    $scope.apellido = sessionService.get(apellido);
   })
 
   .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate, Atractivos) {
@@ -191,13 +178,33 @@ angular.module('starter.controllers', [])
     $scope.dominio_img = dominio_img;
   })
 
-  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, Paquete, Atractivos) {
+  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, $timeout, Paquete,  sessionStatus, LoginService, $state, $ionicModal, $ionicPopup, $location, sessionService, $window) {
     var paqueteId = $stateParams.id;
     $scope.paquete = Paquete.getPaqueteById(paqueteId);
     $scope.galeria = Paquete.getImgPaqueteById(paqueteId);
     $scope.precios = Paquete.getPrecioPaqueteById(paqueteId);
     $scope.itinerario = Paquete.getItinerarioPaqueteById(paqueteId);
     $scope.dominio_img = dominio_img;
+
+    $scope.reserve = function (number_person, precio) {
+      if (sessionStatus.auth()) {
+        $ionicModal.fromTemplateUrl('templates/app/util/modal_reserva.html', {
+          scope: $scope
+        }).then(function(modal) {
+          $scope.modal = modal;
+          $scope.modal.show();
+        });
+      }
+      else{
+        $state.go('app.login')
+      }
+    }
+
+    $scope.cerrarSesion = function() {
+      alert("estas seguro que deseas salir?");
+      var key = "user_token";
+      sessionService.destroy(key);
+    }
   })
 
   .controller('ItinerarioCtrl', function ($scope, $stateParams, Paquete) {
@@ -358,20 +365,25 @@ angular.module('starter.controllers', [])
     });
   })
 
-  .controller('LoginCtrl', function ($scope, $stateParams, $ionicLoading, $ionicPopup) {
-
+  .controller('LoginCtrl', function ($scope, $stateParams, $ionicLoading, $ionicPopup, LoginService,$ionicHistory, $window, $state) {
     $scope.loginData = {};
-    $scope.doLogin = function () {
-      if (($("#username").val()) == '' || ($("#password").val()) == '') {
+    $scope.doLogin = function() {
+      if(($("#username").val())=='' || ($("#password").val())==''){
         var alertPopup = $ionicPopup.alert({
           template: 'Los campos no deben estar vacios!'
         });
       }
-      else {
-        var data = $scope.loginData;
-        $ionicLoading.show({
-          template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Cargando!',
-          duration: 1000
+      else{
+        LoginService.loginUser($scope.loginData.username, $scope.loginData.password).success(function(data) {
+          // $window.location.reload();
+          // $window.history.back()
+          // $state.go('app.galeria');
+          $ionicHistory.backView().go();
+        }).error(function(data) {
+          var alertPopup = $ionicPopup.alert({
+            title: 'Error en inicio de Sesion!',
+            template: 'Por favor, verificar si sus datos son correctos!'
+          });
         });
 
       }

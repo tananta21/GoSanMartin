@@ -24,7 +24,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         StatusBar.styleDefault();
       }
     });
-    //FirebaseDB.initialize();
   })
 
   .config(function ($stateProvider, $urlRouterProvider) {

@@ -2,7 +2,7 @@
 // var dominio = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var ip = "192.168.1.42";
+var ip = "192.168.43.133";
 var dominio = ip;
 
 var api = "http://" + dominio + "/api/";
@@ -431,6 +431,64 @@ angular.module('starter.services', [])
       },
     }
   })
+
+
+  .service('LoginService', function($q, sessionService) {
+    return {
+      loginUser: function(name, pw) {
+        var deferred = $q.defer();
+        var promise = deferred.promise;
+        if (name == 'user' && pw == '88') {
+          var token = "12345";
+          var apellido = "tananta del aguila";
+          sessionService.set("apellido", apellido);
+          sessionService.set("user_token", token);
+          deferred.resolve('Welcome ' + name + '!');
+
+        } else {
+          deferred.reject('Wrong credentials.');
+        }
+        promise.success = function(fn) {
+          promise.then(fn);
+          return promise;
+        }
+        promise.error = function(fn) {
+          promise.then(null, fn);
+          return promise;
+        }
+        return promise;
+      }
+    }
+  })
+
+  .factory('sessionService', ['$http', function($http) {
+    return {
+      set: function(key, value) {
+        return localStorage.setItem(key, JSON.stringify(value));
+      },
+      get: function(key) {
+        return JSON.parse(localStorage.getItem(key));
+      },
+      destroy: function(key) {
+        return localStorage.removeItem(key);
+      },
+    };
+  }])
+
+  .factory('sessionStatus', ['$http', 'sessionService', '$location', function($http, sessionService, $location,$ionicModal) {
+    return {
+      auth: function() {
+        var token= sessionService.get("user_token");
+        if ((token== "") || (token== null)) {
+          return
+          $location.path('/inicio');
+        } else {
+          return true;
+        }
+      },
+    };
+  }])
+
 
 
 var transportes = [

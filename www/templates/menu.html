@@ -18,8 +18,20 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item class="item_menu" menu-close style="padding: 0px; border: none; border-color: white" >
+        <ion-item class="item_menu" menu-close style="padding: 0px; border: none; border-color: white; display: none;" >
             <img src="img/logo2.jpg" alt="" style="width: 100%; height: 185px">
+        </ion-item>
+        <ion-item class="item_menu text-center" menu-close>
+            <img src="img/avatar5.png" class="login__img" alt="">
+          <h3 ng-if="token != null" class="login__nombre">
+            Kevin anthony tananta del aguila
+          </h3>
+          <h3>
+            <button ng-if="token == null" class="button button-stable login__btnLogin">
+              Iniciar Sesión <i class="ion ion-log-in"></i>
+            </button>
+          </h3>
+
         </ion-item>
         <ion-item class="item_menu"  menu-close  ui-sref="app.home" ui-sref-active="active">
           <i class=" icon-menu ion ion-home"></i>
@@ -55,6 +67,11 @@
         <ion-item class="item_menu" menu-close ui-sref="app.acerca" ui-sref-active="active" >
           <i class=" icon-menu ion ion-help"></i>
           Acerca de
+        </ion-item>
+
+        <ion-item ng-if="token != null" class="item_menu" menu-close ui-sref="app.acerca" ui-sref-active="active" >
+          <i class=" icon-menu ion ion-log-out"></i>
+          Cerrar Sesión
         </ion-item>
 
       </ion-list>

@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b97bdd9-1b9a-44ec-a403-7dcef68280be" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/www/templates/app/agencias/detalle_itinerario.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/www/templates/app/agencias/detalle_paquete.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/www/templates/app/util/login.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/www/templates/app/util/loginmodal.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/www/templates/app/util/modal_reserva.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/www/css/tour_sanmartin.css" afterPath="$PROJECT_DIR$/www/css/tour_sanmartin.css" />
-      <change beforePath="$PROJECT_DIR$/www/css/turismo.css" afterPath="$PROJECT_DIR$/www/css/turismo.css" />
-      <change beforePath="$PROJECT_DIR$/www/css/voydeviaje.styl" afterPath="$PROJECT_DIR$/www/css/voydeviaje.styl" />
+      <change beforePath="$PROJECT_DIR$/www/css/utils.styl" afterPath="$PROJECT_DIR$/www/css/utils.styl" />
       <change beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
       <change beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
       <change beforePath="$PROJECT_DIR$/www/js/services.js" afterPath="$PROJECT_DIR$/www/js/services.js" />
-      <change beforePath="$PROJECT_DIR$/www/templates/app/agencias/agencia.html" afterPath="$PROJECT_DIR$/www/templates/app/agencias/agencia.html" />
-      <change beforePath="$PROJECT_DIR$/www/templates/app/agencias/paquetes.html" afterPath="$PROJECT_DIR$/www/templates/app/agencias/paquetes.html" />
-      <change beforePath="$PROJECT_DIR$/www/templates/app/menu/agencias.html" afterPath="$PROJECT_DIR$/www/templates/app/menu/agencias.html" />
-      <change beforePath="$PROJECT_DIR$/www/templates/app/menu/atractivos.html" afterPath="$PROJECT_DIR$/www/templates/app/menu/atractivos.html" />
+      <change beforePath="$PROJECT_DIR$/www/templates/app/agencias/detalle_paquete.html" afterPath="$PROJECT_DIR$/www/templates/app/agencias/detalle_paquete.html" />
+      <change beforePath="$PROJECT_DIR$/www/templates/menu.html" afterPath="$PROJECT_DIR$/www/templates/menu.html" />
     </list>
     <ignored path="appTurismo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,30 +30,92 @@
     <favorites_list name="appTurismo" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="atractivo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/atractivo.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="72" column="68" lean-forward="true" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
+            <state relative-caret-position="476">
+              <caret line="235" column="31" lean-forward="false" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="voydeviaje.styl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/css/voydeviaje.styl">
+      <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="381" column="22" lean-forward="false" selection-start-line="381" selection-start-column="22" selection-end-line="381" selection-end-column="22" />
+            <state relative-caret-position="252">
+              <caret line="444" column="40" lean-forward="false" selection-start-line="444" selection-start-column="30" selection-end-line="444" selection-end-column="40" />
               <folding>
-                <element signature="e#2104#2333#0" expanded="false" />
-                <element signature="e#2355#3383#0" expanded="false" />
-                <element signature="e#4105#4237#0" expanded="false" />
-                <element signature="e#5431#6835#0" expanded="false" />
-                <marker date="1519717250438" expanded="true" signature="4248:4671" ph="{...}" />
-                <marker date="1519717250438" expanded="false" signature="6891:7253" ph="{...}" />
+                <element signature="e#330#2904#0" expanded="false" />
+                <element signature="e#378#932#0" expanded="false" />
+                <element signature="e#978#1594#0" expanded="false" />
+                <element signature="e#1635#2290#0" expanded="false" />
+                <element signature="e#2330#2892#0" expanded="false" />
+                <element signature="e#2954#8884#0" expanded="false" />
+                <element signature="e#3003#3566#0" expanded="false" />
+                <element signature="e#3604#4210#0" expanded="false" />
+                <element signature="e#4251#4861#0" expanded="false" />
+                <element signature="e#4909#5526#0" expanded="false" />
+                <element signature="e#5567#6176#0" expanded="false" />
+                <element signature="e#6881#7494#0" expanded="false" />
+                <element signature="e#7552#8187#0" expanded="false" />
+                <element signature="e#8241#8872#0" expanded="false" />
+                <element signature="e#8934#9542#0" expanded="false" />
+                <element signature="e#9593#11487#0" expanded="false" />
+                <element signature="e#11527#11702#0" expanded="false" />
+                <element signature="e#13280#14954#0" expanded="false" />
+                <element signature="e#14971#17692#0" expanded="false" />
+                <element signature="e#17711#57170#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="367" column="114" lean-forward="false" selection-start-line="367" selection-start-column="114" selection-end-line="367" selection-end-column="114" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#714#869#0" expanded="false" />
+                <element signature="e#985#1417#0" expanded="false" />
+                <element signature="e#1683#2125#0" expanded="false" />
+                <element signature="e#2199#2294#0" expanded="false" />
+                <element signature="e#2424#4688#0" expanded="false" />
+                <element signature="e#4780#5424#0" expanded="false" />
+                <element signature="e#5485#5574#0" expanded="false" />
+                <element signature="e#5657#6217#0" expanded="false" />
+                <element signature="e#6276#6367#0" expanded="false" />
+                <element signature="e#7485#7660#0" expanded="false" />
+                <element signature="e#7867#7974#0" expanded="false" />
+                <element signature="e#8079#9467#0" expanded="false" />
+                <element signature="e#9539#10611#0" expanded="false" />
+                <element signature="e#10664#10670#0" expanded="false" />
+                <element signature="e#10769#11806#0" expanded="false" />
+                <element signature="e#11895#12171#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/app/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detalle_paquete.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/app/agencias/detalle_paquete.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="29" column="67" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="67" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,6 +146,7 @@
       <find>ion-spinner</find>
       <find>spinner</find>
       <find>contentDetalle</find>
+      <find>home</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,9 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/www/templates/app/inicio.html" />
-        <option value="$PROJECT_DIR$/www/js/functions.js" />
-        <option value="$PROJECT_DIR$/www/templates/app/lugar.html" />
         <option value="$PROJECT_DIR$/www/js/funciones.js" />
         <option value="$PROJECT_DIR$/www/templates/search.html" />
         <option value="$PROJECT_DIR$/www/templates/app/formulario.html" />
@@ -121,7 +179,6 @@
         <option value="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/templates/app/util/modal_galeria.html" />
-        <option value="$PROJECT_DIR$/www/templates/menu.html" />
         <option value="$PROJECT_DIR$/www/templates/app/valoracion/valoracion.html" />
         <option value="$PROJECT_DIR$/www/templates/app/galeria/galeria.html" />
         <option value="$PROJECT_DIR$/www/templates/app/menu/home.html" />
@@ -132,19 +189,23 @@
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/css/content.styl" />
-        <option value="$PROJECT_DIR$/www/css/utils.styl" />
         <option value="$PROJECT_DIR$/www/css/turismo.css" />
         <option value="$PROJECT_DIR$/www/templates/app/menu/agencias.html" />
         <option value="$PROJECT_DIR$/www/css/tour_sanmartin.css" />
         <option value="$PROJECT_DIR$/www/templates/app/agencias/paquetes.html" />
         <option value="$PROJECT_DIR$/www/templates/app/agencias/agencia.html" />
-        <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/templates/app/menu/atractivos.html" />
-        <option value="$PROJECT_DIR$/www/js/services.js" />
-        <option value="$PROJECT_DIR$/www/templates/app/agencias/detalle_paquete.html" />
         <option value="$PROJECT_DIR$/www/templates/app/agencias/detalle_itinerario.html" />
-        <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/css/voydeviaje.styl" />
+        <option value="$PROJECT_DIR$/www/js/app.js" />
+        <option value="$PROJECT_DIR$/www/templates/app/util/loginmodal.html" />
+        <option value="$PROJECT_DIR$/www/templates/app/util/modal_login.html" />
+        <option value="$PROJECT_DIR$/www/templates/app/util/modal_reserva.html" />
+        <option value="$PROJECT_DIR$/www/js/services.js" />
+        <option value="$PROJECT_DIR$/www/css/utils.styl" />
+        <option value="$PROJECT_DIR$/www/templates/menu.html" />
+        <option value="$PROJECT_DIR$/www/templates/app/agencias/detalle_paquete.html" />
+        <option value="$PROJECT_DIR$/www/js/controllers.js" />
       </list>
     </option>
   </component>
@@ -186,7 +247,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,12 +278,13 @@
               <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="agencias" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -235,22 +296,22 @@
     <property name="editor.config.accepted" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="atracti&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;atractivo&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/atractivos.html&#10;detalle&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/detalle.html&#10;voyde&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;atractivos&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/atractivos.html&#10;detal&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;paquetes&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/paquetes.html&#10;voy&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;pa&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/paquetes.html&#10;paq&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/paquetes.html&#10;agencia&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/agencia.html&#10;home&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/home.html&#10;paquete&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/paquetes.html&#10;control&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;app&#9;FILE&#9;file://E:/menu/appTurismo/www/js/app.js&#10;agencias&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/agencias.html&#10;util&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;descr&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/descripcion.html&#10;deta&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/detalle.html&#10;services&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;imagen&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/imagenes.html&#10;serv&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;colore&#9;FILE&#9;file://E:/menu/appTurismo/www/css/colores.styl&#10;ser&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;contro&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;servi&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;controlle&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;emergencias&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/emergencias.html&#10;atra&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;atrac&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/atractivos.html&#10;service&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;cont&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;uti&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;descrip&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/descripcion.html&#10;voydevia&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;image&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/imagenes.html&#10;galeri&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/galeria/galeria.html&#10;servic&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;hom&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/home.html&#10;menu&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/menu.html&#10;inde&#9;FILE&#9;file://E:/menu/appTurismo/www/index.html&#10;co&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;ima&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/imagenes.html&#10;index&#9;FILE&#9;file://E:/menu/appTurismo/www/index.html&#10;contr&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;men&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/menu.html&#10;ho&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/home.html&#10;con&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;vo&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl" />
+    <property name="SearchEverywhereHistoryKey" value="de&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;menu&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/menu.html&#10;detalle&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;utils&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;galer&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/galeria/galeria.html&#10;control&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;controle&#9;null&#9;null&#10;deta&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;atracti&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;atractivo&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/atractivos.html&#10;voyde&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;atractivos&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/atractivos.html&#10;detal&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;paquetes&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/paquetes.html&#10;voy&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;pa&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/paquetes.html&#10;paq&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/paquetes.html&#10;agencia&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/agencia.html&#10;home&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/home.html&#10;paquete&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/paquetes.html&#10;app&#9;FILE&#9;file://E:/menu/appTurismo/www/js/app.js&#10;agencias&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/agencias.html&#10;util&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;descr&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/descripcion.html&#10;services&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;imagen&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/imagenes.html&#10;serv&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;colore&#9;FILE&#9;file://E:/menu/appTurismo/www/css/colores.styl&#10;ser&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;contro&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;servi&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;controlle&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;emergencias&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/emergencias.html&#10;atra&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;atrac&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/atractivos.html&#10;service&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;cont&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;uti&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;descrip&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/descripcion.html&#10;voydevia&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;image&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/imagenes.html&#10;galeri&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/galeria/galeria.html&#10;servic&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;hom&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/home.html&#10;inde&#9;FILE&#9;file://E:/menu/appTurismo/www/index.html&#10;co&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;ima&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/imagenes.html&#10;index&#9;FILE&#9;file://E:/menu/appTurismo/www/index.html&#10;contr&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;men&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/menu.html" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\menu\appTurismo\www\templates\app\agencias" />
-      <recent name="E:\menu\appTurismo\www\img" />
-      <recent name="E:\menu\appTurismo\www\img\prueba" />
-      <recent name="E:\menu\appTurismo\resources" />
-      <recent name="E:\menu\appTurismo\www\templates\app\atractivos" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\menu\appTurismo\resources" />
       <recent name="E:\menu\appTurismo\www\img\agencias" />
       <recent name="E:\menu\appTurismo\www\img\ahuashiyacu" />
       <recent name="E:\menu\appTurismo\www\templates\app\atractivos" />
       <recent name="E:\menu\appTurismo\www\templates\app\menu" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\menu\appTurismo\www\templates\app\util" />
+      <recent name="E:\menu\appTurismo\www\templates\app\agencias" />
+      <recent name="E:\menu\appTurismo\www\img" />
+      <recent name="E:\menu\appTurismo\www\img\prueba" />
+      <recent name="E:\menu\appTurismo\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -336,12 +397,13 @@
       <workItem from="1519613980678" duration="15577000" />
       <workItem from="1519660436472" duration="7019000" />
       <workItem from="1519683770896" duration="8800000" />
-      <workItem from="1519697733704" duration="11833000" />
+      <workItem from="1519697733704" duration="12226000" />
+      <workItem from="1519752937945" duration="16644000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139051000" />
+    <option name="totallyTimeSpent" value="156088000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -354,16 +416,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23660715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23660715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28947368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29605263" sideWeight="0.49702382" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29605263" sideWeight="0.49702382" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -418,34 +481,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/cordova-plugin-file/www/ubuntu/fileSystems-roots.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/not_internet.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/lib/ionic/css/ionic.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -523,24 +558,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="37" column="64" lean-forward="false" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/app/valoracion/valoracion.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/app/galeria/galeria.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="103" lean-forward="false" selection-start-line="4" selection-start-column="103" selection-end-line="4" selection-end-column="103" />
         </state>
       </provider>
     </entry>
@@ -556,11 +577,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/img/avatar5.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/img/not_found_img.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -569,13 +585,6 @@
     <entry file="file://$PROJECT_DIR$/www/img/not_internet.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/app/util/modal_galeria.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="78" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="78" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/app/menu/emergencias.html">
@@ -639,14 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/utils.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="34" column="28" lean-forward="false" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/app/menu/agencias.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -658,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="17" column="12" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="17" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="69" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,15 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="28" column="110" lean-forward="false" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/app/agencias/detalle_paquete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="52" lean-forward="false" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="18" column="14" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="18" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -722,76 +711,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" column="78" lean-forward="false" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="202" column="71" lean-forward="false" selection-start-line="202" selection-start-column="71" selection-end-line="202" selection-end-column="71" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#429#2105#0" expanded="false" />
-            <element signature="e#2197#2639#0" expanded="false" />
-            <element signature="e#2713#2808#0" expanded="false" />
-            <element signature="e#2938#5202#0" expanded="false" />
-            <element signature="e#5294#5938#0" expanded="false" />
-            <element signature="e#5999#6088#0" expanded="false" />
-            <element signature="e#6171#6731#0" expanded="false" />
-            <element signature="e#6790#6881#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="233" column="46" lean-forward="true" selection-start-line="233" selection-start-column="46" selection-end-line="233" selection-end-column="46" />
-          <folding>
-            <element signature="e#328#2902#0" expanded="false" />
-            <element signature="e#376#930#0" expanded="false" />
-            <element signature="e#976#1592#0" expanded="false" />
-            <element signature="e#1633#2288#0" expanded="false" />
-            <element signature="e#2328#2890#0" expanded="false" />
-            <element signature="e#3001#3564#0" expanded="false" />
-            <element signature="e#3602#4208#0" expanded="false" />
-            <element signature="e#4249#4859#0" expanded="false" />
-            <element signature="e#4907#5524#0" expanded="false" />
-            <element signature="e#5565#6174#0" expanded="false" />
-            <element signature="e#6879#7492#0" expanded="false" />
-            <element signature="e#7550#8185#0" expanded="false" />
-            <element signature="e#8239#8870#0" expanded="false" />
-            <element signature="e#8932#9540#0" expanded="false" />
-            <element signature="e#9591#11485#0" expanded="false" />
-            <element signature="e#11525#11700#0" expanded="false" />
-            <element signature="e#11722#13396#0" expanded="false" />
-            <element signature="e#13413#16134#0" expanded="false" />
-            <element signature="e#16153#55612#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="130" column="36" lean-forward="false" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/atractivo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="72" column="68" lean-forward="true" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/voydeviaje.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="381" column="22" lean-forward="false" selection-start-line="381" selection-start-column="22" selection-end-line="381" selection-end-column="22" />
+        <state relative-caret-position="273">
+          <caret line="384" column="11" lean-forward="true" selection-start-line="384" selection-start-column="11" selection-end-line="384" selection-end-column="11" />
           <folding>
             <element signature="e#2104#2333#0" expanded="false" />
             <element signature="e#2355#3383#0" expanded="false" />
@@ -799,6 +725,154 @@
             <element signature="e#5431#6835#0" expanded="false" />
             <marker date="1519717250438" expanded="true" signature="4248:4671" ph="{...}" />
             <marker date="1519717250438" expanded="false" signature="6891:7253" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/atractivos/atractivo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="72" column="68" lean-forward="false" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/galeria/galeria.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="103" lean-forward="false" selection-start-line="4" selection-start-column="103" selection-end-line="4" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/util/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/util/modal_galeria.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/util/modal_reserva.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/img/avatar5.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="444" column="40" lean-forward="false" selection-start-line="444" selection-start-column="30" selection-end-line="444" selection-end-column="40" />
+          <folding>
+            <element signature="e#330#2904#0" expanded="false" />
+            <element signature="e#378#932#0" expanded="false" />
+            <element signature="e#978#1594#0" expanded="false" />
+            <element signature="e#1635#2290#0" expanded="false" />
+            <element signature="e#2330#2892#0" expanded="false" />
+            <element signature="e#2954#8884#0" expanded="false" />
+            <element signature="e#3003#3566#0" expanded="false" />
+            <element signature="e#3604#4210#0" expanded="false" />
+            <element signature="e#4251#4861#0" expanded="false" />
+            <element signature="e#4909#5526#0" expanded="false" />
+            <element signature="e#5567#6176#0" expanded="false" />
+            <element signature="e#6881#7494#0" expanded="false" />
+            <element signature="e#7552#8187#0" expanded="false" />
+            <element signature="e#8241#8872#0" expanded="false" />
+            <element signature="e#8934#9542#0" expanded="false" />
+            <element signature="e#9593#11487#0" expanded="false" />
+            <element signature="e#11527#11702#0" expanded="false" />
+            <element signature="e#13280#14954#0" expanded="false" />
+            <element signature="e#14971#17692#0" expanded="false" />
+            <element signature="e#17711#57170#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/utils.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="35" column="85" lean-forward="false" selection-start-line="35" selection-start-column="85" selection-end-line="35" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/agencias/detalle_paquete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="29" column="67" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/util/loginmodal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="235" column="31" lean-forward="false" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="367" column="114" lean-forward="false" selection-start-line="367" selection-start-column="114" selection-end-line="367" selection-end-column="114" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#714#869#0" expanded="false" />
+            <element signature="e#985#1417#0" expanded="false" />
+            <element signature="e#1683#2125#0" expanded="false" />
+            <element signature="e#2199#2294#0" expanded="false" />
+            <element signature="e#2424#4688#0" expanded="false" />
+            <element signature="e#4780#5424#0" expanded="false" />
+            <element signature="e#5485#5574#0" expanded="false" />
+            <element signature="e#5657#6217#0" expanded="false" />
+            <element signature="e#6276#6367#0" expanded="false" />
+            <element signature="e#7485#7660#0" expanded="false" />
+            <element signature="e#7867#7974#0" expanded="false" />
+            <element signature="e#8079#9467#0" expanded="false" />
+            <element signature="e#9539#10611#0" expanded="false" />
+            <element signature="e#10664#10670#0" expanded="false" />
+            <element signature="e#10769#11806#0" expanded="false" />
+            <element signature="e#11895#12171#0" expanded="false" />
           </folding>
         </state>
       </provider>
