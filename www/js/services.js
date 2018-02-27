@@ -33,7 +33,6 @@ angular.module('starter.services', [])
         return data;
 
       },
-
       getAtractivo: function (atractivo_id) {
         $ionicLoading.show({
           template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!'
@@ -57,7 +56,6 @@ angular.module('starter.services', [])
         });
         return data;
       },
-
       getImgByAtractivo: function (id) {
         $ionicLoading.show({
           template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
@@ -82,7 +80,6 @@ angular.module('starter.services', [])
         });
         return data;
       },
-
       getTopTenAtractivo: function () {
         $ionicLoading.show({
           template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
@@ -118,6 +115,150 @@ angular.module('starter.services', [])
         $.ajax({
           type: 'GET',
           url: api + "paquetes_turisticos",
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
+      getPaqueteById: function (id) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "paquete/by_id",
+          data:{
+            id :id
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
+      getImgPaqueteById: function (id) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "paquete/img/by_id",
+          data:{
+            id :id
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
+      getItinerarioPaqueteById: function (id) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "paquete/itinerario/by_id",
+          data:{
+            id :id
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
+      getItinerarioById: function (id) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "itinerario/by_id",
+          data:{
+            id :id
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
+      getLugarItinerarioById: function (id) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "itinerario/lugar/by_id",
+          data:{
+            id :id
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
+      getPrecioPaqueteById: function (id) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "paquete/precio/by_id",
+          data:{
+            id :id
+          },
           dataType: 'JSON',
           error: function () {
             alert("Upps!! Hubo un error, intentelo más tarde");

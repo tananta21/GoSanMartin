@@ -24,7 +24,7 @@ body
         padding 0px 10px
         font-size 20px
       &__img
-        filter: brightness(0.6);
+        filter: brightness(0.8);
         width 100%
         height 100%
 
@@ -60,9 +60,13 @@ body
     display block
     height 40%
     margin-bottom 60px
+  &__boxHeaderDetallePaquete
+    display block
+    height 45%
+    margin-bottom 20px
   &__titleLugar
     text-align center
-    font-size 18px
+    font-size 21px
     margin-top 15px
     position absolute
     top 35%
@@ -192,7 +196,7 @@ body
       text-decoration none
     &__icono
       margin-right 7px
-      font-size 21px
+      font-size 23px
       color $green
     &__text
       color $cenizoClaro
@@ -282,7 +286,7 @@ body
     width 100%
     padding 0rem !important
   &__boxItem
-    height 150px !important
+    height 160px !important
     margin 6px
     &__boxImg
       width 100%
@@ -302,7 +306,7 @@ body
         font-size 14px
         text-transform uppercase
         display: -webkit-box;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -329,15 +333,72 @@ body
         right 5px
         color $azulOscuro
       &__btnDetail
+        text-decoration none
         height 30px
-        font-size 13px
-        padding 4px 10px
+        font-size 14px
+        padding 5px 10px
         background $dark
         color white
         position absolute
         bottom 0rem
         right 5px
+        border-radius 2px
 
+
+
+
+
+
+.detallePaquete
+  display: block
+  &__boxPrecios
+    display block
+    width 100%
+    &__title
+      font-size 16px
+      color $dark
+      text-align center
+      font-weight bold
+    &__content
+      display inline-block
+    &__item
+      display inline-block
+      text-align center
+      width 100%
+      margin-bottom 5px
+    &__descrip
+      color $azulOscuro
+      font-weight 500
+    &__btn
+      width 100%
+
+  &__iti
+    display block
+    &__item
+      border 2px dashed $azulOscuro
+      min-height 30px
+      text-align center
+      border-radius 5px
+      margin-bottom 13px
+    &__ancla
+      text-decoration none
+    &__text
+      color $green !important
+      font-size 17px !important
+      font-weight 500
+      padding 10px !important
+
+.detalleItinerario
+  &__lugarName
+    color $azulOscuro !important
+    font-size 16px !important
+    margin-bottom 6px !important
+    font-weight 500 !important
+  &__lugarAncla
+    color $green !important
+    font-size 16px !important
+    margin-bottom 6px !important
+    font-weight 500 !important
 
 
 .agencia
@@ -397,6 +458,7 @@ body
         font-weight bold
         font-size 16px
         text-decoration underline !important
+
 
 .modal-backdrop, .modal-backdrop-bg
   top 0% !important

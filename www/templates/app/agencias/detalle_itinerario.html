@@ -1,0 +1,71 @@
+<ion-view view-title="Descripción itinerario">
+  <ion-content>
+    <div class="card">
+      <div class="item item-text-wrap">
+        <h2 class="text-center">{{itinerario[0].nro_dia}} | {{itinerario[0].titulo}}</h2>
+      </div>
+    </div>
+    <div>
+      <div class="item item-divider titu-da-ge">
+        <i class="ion-ios-information mr_0_5r"></i> Lugares a visitar
+      </div>
+      <div class="item item-text-wrap">
+        <div ng-if="lugar[0].length > 0">
+          <div ng-repeat="item in lugar[0]">
+            <a ng-if="item.atractivo_id != 0" ui-sref="app.atractivo({id: item.atractivo_id})" style="text-decoration: none">
+              <p class="detalleItinerario__lugarAncla">
+                <i class="ion ion-ios-checkmark-outline"></i> {{item.nombre}} <i
+                class="ion ion-arrow-graph-up-right"></i>
+              </p>
+            </a>
+            <p class="detalleItinerario__lugarName" ng-if="item.atractivo_id == 0">
+              <i class="ion ion-ios-checkmark-outline"></i> {{item.nombre}}
+            </p>
+          </div>
+        </div>
+        <div ng-if="lugar[0].length == 0">
+          <p>Sin especificar...</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="item item-divider titu-da-ge">
+        <i class="ion-ios-information mr_0_5r"></i> Descripción
+      </div>
+      <div class="item item-text-wrap">
+        <p>{{itinerario[0].descripcion}}</p>
+        <p ng-if="itinerario[0].descripcion == null ">Sin especificar.</p>
+      </div>
+    </div>
+    <div>
+      <div class="item item-divider titu-da-ge">
+        <i class="ion-ios-information mr_0_5r"></i> Incluye
+      </div>
+      <div class="item item-text-wrap">
+        <p>{{itinerario[0].incluye}}</p>
+        <p ng-if="itinerario[0].incluye == null ">Sin especificar.</p>
+      </div>
+    </div>
+    <div>
+      <div class="item item-divider titu-da-ge">
+        <i class="ion-ios-information mr_0_5r"></i> Recomendación
+      </div>
+      <div class="item item-text-wrap">
+        <p>{{itinerario[0].recomendacion}}</p>
+        <p ng-if="itinerario[0].recomendacion == null ">Sin especificar.</p>
+      </div>
+    </div>
+    <div>
+      <div class="item item-divider titu-da-ge">
+        <i class="ion-ios-information mr_0_5r"></i> Nota
+      </div>
+      <div class="item item-text-wrap">
+        <p>{{itinerario[0].nota}}</p>
+        <p ng-if="itinerario[0].nota == null ">Sin especificar.</p>
+      </div>
+    </div>
+
+
+
+  </ion-content>
+</ion-view>

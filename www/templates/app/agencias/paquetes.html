@@ -20,13 +20,13 @@
               <h3 class="paquete__boxItem__boxText__nameAgencia">
                 <span>Empresa a cargo:</span><br>
                 <a ui-sref="app.agencia({ id: item.agencia_id })" class="paquete__boxItem__boxText__nameAgencia__linkAgencia">
-                  {{item.nombre_agencia}}
+                  {{item.nombre_agencia}} <i class="ion ion-arrow-graph-up-right"></i>
                 </a>
               </h3>
               <h3 class="paquete__boxItem__boxText__likes">
                 <i class="ion-ios-star paquete__boxItem__boxText__likes__star"></i> 12343
               </h3>
-                <a class="paquete__boxItem__boxText__btnDetail">
+                <a class="paquete__boxItem__boxText__btnDetail" ui-sref="app.paquete_detalle({ id: item.id })">
                   Detalles <i class="ion ion-chevron-right"></i>
                 </a>
             </div>

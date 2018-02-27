@@ -24,6 +24,11 @@
           </div>
         </a>
       </div>
+      <div class="card" ng-if="!resultados.length">
+        <div class="item item-text-wrap">
+          <strong>No se encontraron resultados...</strong>
+        </div>
+      </div>
     </div>
     <div ng-if="agencias[0].length ==  0 ">
       <div class="item item-text-wrap">

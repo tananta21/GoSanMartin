@@ -191,6 +191,21 @@ angular.module('starter.controllers', [])
     $scope.dominio_img = dominio_img;
   })
 
+  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, Paquete, Atractivos) {
+    var paqueteId = $stateParams.id;
+    $scope.paquete = Paquete.getPaqueteById(paqueteId);
+    $scope.galeria = Paquete.getImgPaqueteById(paqueteId);
+    $scope.precios = Paquete.getPrecioPaqueteById(paqueteId);
+    $scope.itinerario = Paquete.getItinerarioPaqueteById(paqueteId);
+    $scope.dominio_img = dominio_img;
+  })
+
+  .controller('ItinerarioCtrl', function ($scope, $stateParams, Paquete) {
+    var itinerarioId = $stateParams.id;
+    $scope.itinerario = Paquete.getItinerarioById(itinerarioId);
+    $scope.lugar = Paquete.getLugarItinerarioById(itinerarioId);
+  })
+
   .controller('TransportesCtrl', function ($scope, Transportes) {
     $scope.transportes = Transportes.getTransportes();
   })

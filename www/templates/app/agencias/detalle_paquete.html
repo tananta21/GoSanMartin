@@ -1,0 +1,45 @@
+<ion-view view-title="Detalle Paquete Turístico">
+  <ion-content>
+    <div class="atractivoDetail__boxHeaderDetallePaquete">
+      <div class="atractivoDetail__boxPortada">
+        <h4 class="atractivoDetail__titleAgencia">
+          {{paquete[0].nombre}}
+        </h4>
+        <ion-slide-box ng-if="galeria[0] && galeria[0].length" auto-play='true' show-pager="false" does-continue='true' slide-intervel='3000' class="home__boxSlider__slider">
+          <!--<ion-slide ng-repeat="item in images">-->
+          <ion-slide  ng-repeat="item in galeria[0]">
+            <div class="home__boxSlider__slider__boxImg">
+              <img src="http://{{dominio_img}}/{{item.url_imagen}}" alt="" class="home__boxSlider__slider__img">
+              <!--<img ng-src="{{item}}" alt="" class="home__boxSlider__slider__img">-->
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
+    </div>
+
+    <div class="detallePaquete__boxPrecios" ng-if="precios[0].length > 0 ">
+      <h5 class="detallePaquete__boxPrecios__title">
+        Lista de precios del paquete
+      </h5>
+      <div class="row detallePaquete__boxPrecios__content">
+        <div class="col col-50 detallePaquete__boxPrecios__item" ng-repeat="item in precios[0]">
+          <p class="detallePaquete__boxPrecios__descrip">{{item.number_person}} persona(s)</p>
+          <button class="button button-dark detallePaquete__boxPrecios__btn">
+            S/.{{item.precio}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="item item-divider titu-da-ge">
+      <i class="ion-ios-information mr_0_5r"></i> Itinerario del paquete
+    </div>
+    <div class="item item-text-wrap">
+      <div class="detallePaquete__iti__item" ng-repeat="item in itinerario[0]">
+        <a class="detallePaquete__iti__ancla" ui-sref="app.detalle_itinerario({ id: item.id })">
+          <p class="detallePaquete__iti__text">{{item.nro_dia}} | {{item.titulo}} <i class="ion ion-arrow-graph-up-right"></i></p>
+        </a>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

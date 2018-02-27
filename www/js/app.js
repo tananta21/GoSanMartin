@@ -119,7 +119,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
-
+          .state('app.paquete_detalle', {
+            url: '/paquete/detalle/:id',
+            views: {
+              'menuContent': {
+                templateUrl: 'templates/app/agencias/detalle_paquete.html',
+                controller: 'PaqueteDetalleCtrl'
+              }
+            }
+          })
+      .state('app.detalle_itinerario', {
+        url: '/paquete/itinerario/:id',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/app/agencias/detalle_itinerario.html',
+            controller: 'ItinerarioCtrl'
+          }
+        }
+      })
       .state('app.transportes', {
         url: '/transportes',
         views: {
