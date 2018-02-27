@@ -2,10 +2,13 @@
   <ion-content>
     <div class="box-atractivo">
       <div class="bar bar-header item-input-inset">
-        <label class="item-input-wrapper">
-          <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="search" placeholder="Buscar atractivo" ng-model="busqueda">
+        <div class="row padding__none">
+        <label class="item-input-wrapper labelSearch col col-90">
+          <i class="icon ion-ios-search placeholder-icon labelSearch__icon"></i>
+          <input type="text" placeholder="Buscar atractivo" ng-model="busqueda" >
         </label>
+        <button class="col col-10 btnRefresh" data-ng-click="busqueda = '' "><i class="ion ion-ios-close-empty"></i></button>
+        </div>
       </div>
       <div ng-if="atractivos[0].length > 0 ">
         <div class="box-content" ng-repeat="atractivo in resultados =( atractivos[0] | filter: busqueda)">

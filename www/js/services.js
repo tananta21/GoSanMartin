@@ -2,7 +2,9 @@
 // var dominio = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var dominio = "voydeviaje.info";
+var ip = "192.168.1.42";
+var dominio = ip;
+
 var api = "http://" + dominio + "/api/";
 
 angular.module('starter.services', [])
@@ -229,9 +231,6 @@ angular.module('starter.services', [])
           }
         });
         return data;
-
-
-        // return agencias;
       },
       getAgencia: function (id) {
         $ionicLoading.show({

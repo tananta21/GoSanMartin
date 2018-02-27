@@ -3,8 +3,9 @@
 // var dominio_img = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var dominio = "http://voydeviaje.info";
-var dominio_img = "voydeviaje.info";
+var ip = "192.168.1.42";
+var dominio = "http://"+ip;
+var dominio_img = ip;
 
 var api = dominio + "/api/";
 
@@ -74,11 +75,9 @@ angular.module('starter.controllers', [])
       ];
   })
 
-  .controller('AtractivosCtrl', function ($scope, Atractivos) {
-
+  .controller('AtractivosCtrl', function ($scope, $window, Atractivos) {
     $scope.dominio_img = dominio_img;
     $scope.atractivos = Atractivos.getAtractivos();
-
   })
 
   .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos, Paquete) {
@@ -180,7 +179,8 @@ angular.module('starter.controllers', [])
 
     $scope.open_link = function (event) {
       var href = event.target.href;
-      var browserRef = window.open(href, '_system', 'location=no,clearsessioncache=no,clearcache=no');
+      var browserRef = window.open("fb://pages/"+href, '_system', 'location=no');
+      // var browserRef = window.open(href, '_system', 'location=no,clearsessioncache=no,clearcache=no');
       event.preventDefault();
     }
 

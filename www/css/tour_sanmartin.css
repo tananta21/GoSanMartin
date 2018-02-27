@@ -35,6 +35,39 @@
 .box3 {
   height: 100%;
 }
+.labelSearch {
+  display: inline-flex;
+  height: 35px;
+  margin-right: 5px;
+}
+.labelSearch__icon {
+  font-size: 18px;
+  padding-right: 0px;
+}
+.padding__none {
+  padding: 0rem !important;
+}
+.btnRefresh {
+  font-size: 18px !important;
+  background: #f8f8f8;
+  border: 1px solid #eee;
+}
+.platform-android .bar .title {
+  font-size: 21px !important;
+  padding-top: 1px !important;
+}
+.loading-container.active {
+  margin-top: 44px;
+  background: #fff;
+/*background-color: rgb(246, 246, 246) !important*/
+}
+.loading-container .loading {
+  color: #444;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0);
+}
 .boxBtnsAtractivo {
   display: inline-block;
   margin: 0.5rem;
@@ -59,10 +92,62 @@
   margin-left: 7px;
   margin-right: 10px;
   padding-bottom: 10px;
+  font-size: 16px !important;
 }
 .modal-backdrop,
 .modal-backdrop-bg {
   top: 60%;
+}
+.bg-green {
+  background: #3ab7b8 !important;
+  color: #fff;
+  border-color: #3ab7b8 !important;
+}
+.bg-azul {
+  background: #2e3c50 !important;
+  color: #fff;
+  border-color: #2e3c50 !important;
+}
+.mr_0_5r {
+  margin-right: 0.5rem;
+}
+.box1,
+.box2,
+.box3 {
+  height: 100%;
+}
+.labelSearch {
+  display: inline-flex;
+  height: 35px;
+  margin-right: 5px;
+}
+.labelSearch__icon {
+  font-size: 18px;
+  padding-right: 0px;
+}
+.padding__none {
+  padding: 0rem !important;
+}
+.btnRefresh {
+  font-size: 18px !important;
+  background: #f8f8f8;
+  border: 1px solid #eee;
+}
+.platform-android .bar .title {
+  font-size: 21px !important;
+  padding-top: 1px !important;
+}
+.loading-container.active {
+  margin-top: 44px;
+  background: #fff;
+/*background-color: rgb(246, 246, 246) !important*/
+}
+.loading-container .loading {
+  color: #444;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0);
 }
 body {
   font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
@@ -112,11 +197,11 @@ body {
 }
 .home__boxModulos__item__icon {
   color: #3ab7b8;
-  font-size: 42px;
+  font-size: 43px;
 }
 .home__boxModulos__item__name {
   color: #2e3c50;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 .atractivoDetail__boxHeaderDescripcion {
@@ -126,6 +211,11 @@ body {
 .atractivoDetail__boxHeader {
   display: block;
   height: 50%;
+  margin-bottom: 60px;
+}
+.atractivoDetail__boxHeaderAgencia {
+  display: block;
+  height: 40%;
   margin-bottom: 60px;
 }
 .atractivoDetail__titleLugar {
@@ -172,7 +262,8 @@ body {
   box-shadow: 0px 6px rgba(0,0,0,0.1);
 }
 .atractivoDetail__boxBtns__span {
-  font-size: 12px;
+  margin-top: 5px;
+  font-size: 14px;
   color: #575757;
 }
 .atractivoDetail__boxBtnsAgencia {
@@ -208,7 +299,8 @@ body {
   font-size: 12px;
 }
 .atractivoDetail__boxPaquetes__content {
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   white-space: nowrap;
   height: 120px;
 }
@@ -266,13 +358,14 @@ body {
   color: #3ab7b8;
   font-weight: bold;
   text-decoration: none;
+  font-size: 16px;
 }
 .atractivoDetail__boxCompartir {
   padding: 0px 15px;
 }
 .atractivoDetail__boxCompartir__btn {
   border-radius: 5px;
-  border: 1px dashed #575757;
+  border: 2px dashed #575757;
   color: #fff;
 }
 .atractivoDetail__boxCompartir__ancla {
@@ -297,8 +390,8 @@ body {
   background: rgba(0,0,0,0.949);
 }
 .galery__img {
-  width: 100%;
-  height: 300px !important;
+  width: 100% !important;
+  height: 310px !important;
   margin-top: 5rem;
 }
 .galery__imgEmpty {
@@ -375,7 +468,7 @@ body {
   padding: 0rem !important;
 }
 .paquete__boxItem {
-  height: 25% !important;
+  height: 150px !important;
   margin: 6px;
 }
 .paquete__boxItem__boxImg {
@@ -397,7 +490,7 @@ body {
   padding: 3px;
 }
 .paquete__boxItem__boxText__name {
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -406,7 +499,7 @@ body {
   text-overflow: ellipsis;
 }
 .paquete__boxItem__boxText__nameAgencia {
-  font-size: 12px;
+  font-size: 14px;
   color: #9a9a9a;
 }
 .paquete__boxItem__boxText__nameAgencia__linkAgencia {
@@ -415,7 +508,7 @@ body {
   text-decoration: none;
 }
 .paquete__boxItem__boxText__likes {
-  font-size: 12px;
+  font-size: 13px;
   position: absolute;
   bottom: 0rem;
   left: 5px;
@@ -434,7 +527,7 @@ body {
 }
 .paquete__boxItem__boxText__btnDetail {
   height: 30px;
-  font-size: 12px;
+  font-size: 13px;
   padding: 4px 10px;
   background: #444;
   color: #fff;
@@ -447,7 +540,7 @@ body {
   height: 100%;
 }
 .agencia__item {
-  height: 50%;
+  height: 285px;
   margin-top: 10px;
   margin-bottom: 0rem !important;
   padding: 0rem;
@@ -507,7 +600,7 @@ body {
 .agencia__detalle__linkRed__red {
   color: #3ab7b8;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: underline !important;
 }
 .modal-backdrop,

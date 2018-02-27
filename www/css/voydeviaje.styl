@@ -1,3 +1,5 @@
+@import "colores.styl"
+@import "utils.styl"
 body
   font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
 
@@ -40,14 +42,11 @@ body
         text-decoration none
       &__icon
         color $green
-        font-size 42px
+        font-size 43px
       &__name
         color $azulOscuro
-        font-size 14px
+        font-size 16px
         font-weight bold
-
-
-
 
 .atractivoDetail
   &__boxHeaderDescripcion
@@ -56,6 +55,10 @@ body
   &__boxHeader
     display block
     height 50%
+    margin-bottom 60px
+  &__boxHeaderAgencia
+    display block
+    height 40%
     margin-bottom 60px
   &__titleLugar
     text-align center
@@ -95,7 +98,8 @@ body
       background $azulOscuro !important
       box-shadow 0px 6px rgba(0,0,0,0.1)
     &__span
-      font-size 12px
+      margin-top 5px
+      font-size 14px
       color $cenizoClaro
   &__boxBtnsAgencia
     margin-top -50px
@@ -124,7 +128,8 @@ body
         font-weight bold
         font-size 12px
     &__content
-      overflow: auto
+      overflow-x: auto
+      overflow-y hidden
       white-space: nowrap
       height 120px
     &__item
@@ -174,13 +179,14 @@ body
       color $green
       font-weight bold
       text-decoration none
+      font-size 16px
 
 
   &__boxCompartir
     padding 0px 15px
     &__btn
       border-radius 5px
-      border 1px dashed $cenizoClaro
+      border 2px dashed $cenizoClaro
       color white
     &__ancla
       text-decoration none
@@ -204,8 +210,8 @@ body
   &__boxSlide
     background #000000f2
   &__img
-    width 100%
-    height 300px !important
+    width 100% !important
+    height 310px !important
     margin-top 5rem
   &__imgEmpty
     width 100%
@@ -276,7 +282,7 @@ body
     width 100%
     padding 0rem !important
   &__boxItem
-    height 25% !important
+    height 150px !important
     margin 6px
     &__boxImg
       width 100%
@@ -293,7 +299,7 @@ body
         width 100%
         padding 3px
       &__name
-        font-size 12px
+        font-size 14px
         text-transform uppercase
         display: -webkit-box;
         -webkit-line-clamp: 4;
@@ -301,14 +307,14 @@ body
         overflow: hidden;
         text-overflow: ellipsis;
       &__nameAgencia
-        font-size 12px
+        font-size 14px
         color $cenizoLight
         &__linkAgencia
           color $green
           font-weight 500
           text-decoration none
       &__likes
-        font-size 12px
+        font-size 13px
         position absolute
         bottom 0rem
         left 5px
@@ -324,7 +330,7 @@ body
         color $azulOscuro
       &__btnDetail
         height 30px
-        font-size 12px
+        font-size 13px
         padding 4px 10px
         background $dark
         color white
@@ -334,15 +340,12 @@ body
 
 
 
-
-
-
 .agencia
   &__content
     width 100%
     height 100%
   &__item
-    height 50%
+    height 285px
     margin-top 10px
     margin-bottom 0rem !important
     padding 0rem
@@ -392,7 +395,7 @@ body
       &__red
         color $green
         font-weight bold
-        font-size 14px
+        font-size 16px
         text-decoration underline !important
 
 .modal-backdrop, .modal-backdrop-bg
