@@ -56,6 +56,9 @@
   font-size: 21px !important;
   padding-top: 1px !important;
 }
+.popup-body {
+  color: #000 !important;
+}
 .loading-container.active {
   margin-top: 44px;
   background: #fff;
@@ -88,6 +91,23 @@
   width: 70% !important;
   margin-top: 8px !important;
   border-radius: 4px !important;
+}
+.login__inputIcon {
+  font-size: 25px !important;
+}
+.login__input {
+  font-size: 17px !important;
+  padding-left: 10px !important;
+}
+.login__btnIniciarSesion {
+  font-size: 19px !important;
+  background: #2e3c50 !important;
+  color: #fff;
+}
+.login__btnRegitrarse {
+  font-size: 19px !important;
+  background: #3ab7b8 !important;
+  color: #fff;
 }
 .boxBtnsAtractivo {
   display: inline-block;
@@ -158,6 +178,9 @@
   font-size: 21px !important;
   padding-top: 1px !important;
 }
+.popup-body {
+  color: #000 !important;
+}
 .loading-container.active {
   margin-top: 44px;
   background: #fff;
@@ -190,6 +213,23 @@
   width: 70% !important;
   margin-top: 8px !important;
   border-radius: 4px !important;
+}
+.login__inputIcon {
+  font-size: 25px !important;
+}
+.login__input {
+  font-size: 17px !important;
+  padding-left: 10px !important;
+}
+.login__btnIniciarSesion {
+  font-size: 19px !important;
+  background: #2e3c50 !important;
+  color: #fff;
+}
+.login__btnRegitrarse {
+  font-size: 19px !important;
+  background: #3ab7b8 !important;
+  color: #fff;
 }
 body {
   font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
