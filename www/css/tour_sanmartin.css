@@ -555,7 +555,7 @@ body {
   padding: 0rem !important;
 }
 .paquete__boxItem {
-  height: 160px !important;
+  height: 175px !important;
   margin: 6px;
 }
 .paquete__boxItem__boxImg {
@@ -577,7 +577,7 @@ body {
   padding: 3px;
 }
 .paquete__boxItem__boxText__name {
-  font-size: 14px;
+  font-size: 15px;
   text-transform: uppercase;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -586,7 +586,7 @@ body {
   text-overflow: ellipsis;
 }
 .paquete__boxItem__boxText__nameAgencia {
-  font-size: 14px;
+  font-size: 15px;
   color: #9a9a9a;
 }
 .paquete__boxItem__boxText__nameAgencia__linkAgencia {
@@ -613,16 +613,18 @@ body {
   color: #2e3c50;
 }
 .paquete__boxItem__boxText__btnDetail {
-  text-decoration: none;
-  height: 30px;
-  font-size: 14px;
-  padding: 5px 10px;
-  background: #444;
-  color: #fff;
   position: absolute;
-  bottom: 0rem;
+  left: 0px;
   right: 5px;
-  border-radius: 2px;
+  bottom: 2px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 2px !important;
+  min-height: 28px !important;
+  padding: 10px !important;
+  line-height: 0px !important;
+  width: 100% !important;
 }
 .detallePaquete {
   display: block;
