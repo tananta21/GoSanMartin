@@ -24,10 +24,10 @@
         <ion-item class="item_menu text-center" menu-close>
             <img src="img/avatar5.png" class="login__img" alt="">
           <h3 ng-if="token != null" class="login__nombre">
-            Kevin anthony tananta del aguila
+            {{surname}}
           </h3>
           <h3>
-            <button ng-if="token == null" class="button button-stable login__btnLogin">
+            <button ng-if="token == null" ng-click="iniciarSesion()" class="button button-stable login__btnLogin">
               Iniciar Sesión <i class="ion ion-log-in"></i>
             </button>
           </h3>
@@ -69,7 +69,7 @@
           Acerca de
         </ion-item>
 
-        <ion-item ng-if="token != null" class="item_menu" menu-close ui-sref="app.acerca" ui-sref-active="active" >
+        <ion-item ng-if="token != null" ng-click="cerrarSesion()" class="item_menu" menu-close >
           <i class=" icon-menu ion ion-log-out"></i>
           Cerrar Sesión
         </ion-item>

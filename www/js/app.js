@@ -30,6 +30,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     $stateProvider
       .state('app', {
         url: '/app',
+        cache:false,
         abstract: true,
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
@@ -234,6 +235,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           'menuContent': {
             templateUrl: 'templates/app/login.html',
             controller: 'LoginCtrl'
+
+          }
+        }
+      })
+      .state('app.logout', {
+        url: '/login',
+        views: {
+          'menuContent': {
+            controller: 'LogoutCtrl'
+          }
+        }
+      })
+
+      .state('app.reload', {
+        url: '/reload',
+        views: {
+          'menuContent': {
+            controller: 'ReloadCtrl'
 
           }
         }

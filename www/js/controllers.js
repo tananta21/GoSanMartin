@@ -3,15 +3,15 @@
 // var dominio_img = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var ip = "192.168.43.133";
-var dominio = "http://"+ip;
+var ip = "192.168.1.42";
+var dominio = "http://" + ip;
 var dominio_img = ip;
 
 var api = dominio + "/api/";
 
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicPopup, sessionService) {
+  .controller('AppCtrl', function ($scope, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicHistory, $window, $timeout, $ionicPopup, sessionService) {
     document.addEventListener("deviceready", function () {
       $scope.network = $cordovaNetwork.getNetwork();
       $scope.isOnline = $cordovaNetwork.isOnline();
@@ -38,10 +38,45 @@ angular.module('starter.controllers', [])
         $scope.$apply();
       })
     }, false)
-    var key = "user_token";
-    var apellido = "apellido";
-    $scope.token = sessionService.get(key);
-    $scope.apellido = sessionService.get(apellido);
+
+    $scope.$on('$stateChangeSuccess',
+      function () {
+        var key = "user_token";
+        var surname = "surname";
+        $scope.token = sessionService.get(key);
+        $scope.surname = sessionService.get(surname);
+      }
+    );
+    $scope.iniciarSesion = function () {
+      $state.go('app.login');
+    }
+    $scope.cerrarSesion = function () {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Cerrar Sesión',
+        template: '¿Está seguro que desea cerrar Sesión?'
+      });
+      confirmPopup.then(function (res) {
+        if (res) {
+          $ionicLoading.show({
+            template: '<ion-spinner icon="ios"></ion-spinner><br/>Cerrando Sesión',
+          });
+          $timeout(function () {
+            $window.location.reload();
+          }, 2000);
+          var key = "user_token";
+          var surname = "surname";
+          sessionService.destroy(key);
+          sessionService.destroy(surname);
+          $ionicHistory.nextViewOptions({
+            disableAnimate: true,
+            disableBack: true
+          });
+          // $state.go('app.logout');
+        } else {
+          console.log('You are not sure');
+        }
+      });
+    }
   })
 
   .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate, Atractivos) {
@@ -52,14 +87,14 @@ angular.module('starter.controllers', [])
       $ionicSlideBoxDelegate.next();
     }
 
-      $scope.images = [
-        "img/prueba/cultural.jpg",
-        "img/prueba/arqueologico.jpg",
-        "img/prueba/arqueologico2.jpg",
-        "img/prueba/gastronomia.jpg",
-        "img/prueba/vivencial.jpg",
-        "img/prueba/ecoturismo.jpg"
-      ];
+    $scope.images = [
+      "img/prueba/cultural.jpg",
+      "img/prueba/arqueologico.jpg",
+      "img/prueba/arqueologico2.jpg",
+      "img/prueba/gastronomia.jpg",
+      "img/prueba/vivencial.jpg",
+      "img/prueba/ecoturismo.jpg"
+    ];
   })
 
   .controller('AtractivosCtrl', function ($scope, $window, Atractivos) {
@@ -166,7 +201,7 @@ angular.module('starter.controllers', [])
 
     $scope.open_link = function (event) {
       var href = event.target.href;
-      var browserRef = window.open("fb://pages/"+href, '_system', 'location=no');
+      var browserRef = window.open("fb://pages/" + href, '_system', 'location=no');
       // var browserRef = window.open(href, '_system', 'location=no,clearsessioncache=no,clearcache=no');
       event.preventDefault();
     }
@@ -178,7 +213,7 @@ angular.module('starter.controllers', [])
     $scope.dominio_img = dominio_img;
   })
 
-  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, $timeout, Paquete,  sessionStatus, LoginService, $state, $ionicModal, $ionicPopup, $location, sessionService, $window) {
+  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, Paquete, sessionStatus, $state, $ionicModal) {
     var paqueteId = $stateParams.id;
     $scope.paquete = Paquete.getPaqueteById(paqueteId);
     $scope.galeria = Paquete.getImgPaqueteById(paqueteId);
@@ -190,21 +225,16 @@ angular.module('starter.controllers', [])
       if (sessionStatus.auth()) {
         $ionicModal.fromTemplateUrl('templates/app/util/modal_reserva.html', {
           scope: $scope
-        }).then(function(modal) {
+        }).then(function (modal) {
           $scope.modal = modal;
           $scope.modal.show();
         });
       }
-      else{
-        $state.go('app.login')
+      else {
+        $state.go('app.login');
       }
     }
 
-    $scope.cerrarSesion = function() {
-      alert("estas seguro que deseas salir?");
-      var key = "user_token";
-      sessionService.destroy(key);
-    }
   })
 
   .controller('ItinerarioCtrl', function ($scope, $stateParams, Paquete) {
@@ -365,45 +395,91 @@ angular.module('starter.controllers', [])
     });
   })
 
-  .controller('LoginCtrl', function ($scope, $stateParams, $ionicLoading, $ionicPopup, LoginService,$ionicHistory, $window, $state) {
+  .controller('LoginCtrl', function ($scope, $stateParams, $ionicPopup, $ionicLoading, sessionService, $ionicHistory, sessionStatus, $state) {
     $scope.loginData = {};
-    $scope.doLogin = function() {
-      if(($("#username").val())=='' || ($("#password").val())==''){
+    $scope.doLogin = function () {
+      if (($("#username").val()) == '' || ($("#password").val()) == '') {
         var alertPopup = $ionicPopup.alert({
           template: 'Los campos no deben estar vacios!'
         });
       }
-      else{
-        LoginService.loginUser($scope.loginData.username, $scope.loginData.password).success(function(data) {
-          // $window.location.reload();
-          // $window.history.back()
-          // $state.go('app.galeria');
-          $ionicHistory.backView().go();
-        }).error(function(data) {
-          var alertPopup = $ionicPopup.alert({
-            title: 'Error en inicio de Sesion!',
-            template: 'Por favor, verificar si sus datos son correctos!'
-          });
+      else {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Validando sus datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "usuario/loguear",
+          data: {
+            email: $scope.loginData.username,
+            password: $scope.loginData.password
+          },
+          dataType: 'JSON',
+          error: function () {
+            var alertPopup = $ionicPopup.alert({
+              title: 'Error en inicio de Sesion!',
+              template: 'Por favor, verificar si sus datos son correctos!'
+            });
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            var id_user = response[0]['id'];
+            var name = response[0]['name'];
+            var surname = response[0]['surname'];
+            var email = response[0]['email'];
+            var token = "eyJhbG";
+            sessionService.set("user_token", token);
+            sessionService.set("id_user", id_user);
+            sessionService.set("name", name);
+            sessionService.set("surname", surname);
+            sessionService.set("email", email);
+            data.push(response);
+            $ionicLoading.hide();
+            $state.go('app.reload');
+          }
         });
 
+        $ionicHistory.nextViewOptions({
+          disableAnimate: true,
+          disableBack: true
+        });
       }
     }
+
   })
 
+  .controller('ReloadCtrl', function ($scope, $ionicPopup, $ionicHistory, sessionStatus, $state, $window) {
+    if (sessionStatus.auth()) {
+      $ionicHistory.nextViewOptions({
+        disableAnimate: true,
+        disableBack: true
+      });
+      $state.go('app.home');
+    }
+    else {
+      $window.location.reload();
+    }
 
+  })
 
-//.controller('CategoriasCtrl',function($http, $scope, $stateParams){
-//
-//    var tipoId = $stateParams.TipoId;
-//
-//    $http.get("http://"+dominio+"/categoria/"+tipoId)
-//       .success(function(data){
-//        $scope.tipo = data[0][0];
-//        $scope.categorias = data[1];
-//    })
-//      .error(function(error){
-//        debugger;
-//      })
-//  })
+  .controller('LogoutCtrl', function ($scope, $ionicPopup, $ionicLoading, $ionicHistory, sessionService, $state, $timeout) {
+
+    $ionicLoading.show({
+      template: '<ion-spinner icon="ios"></ion-spinner><br/>Cerrando Sesión',
+    });
+    $timeout(function () {
+      var key = "user_token";
+      var surname = "surname";
+      sessionService.destroy(key);
+      sessionService.destroy(surname);
+      $ionicHistory.nextViewOptions({
+        disableAnimate: true,
+        disableBack: true
+      });
+      $state.go('app.home');
+    }, 2000);
+
+  })
 
 ;
