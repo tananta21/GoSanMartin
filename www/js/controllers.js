@@ -213,7 +213,7 @@ angular.module('starter.controllers', [])
     $scope.dominio_img = dominio_img;
   })
 
-  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, Paquete, sessionStatus, $state, $ionicModal) {
+  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, Paquete, sessionStatus, $state, $ionicModal, $ionicPopup) {
     var paqueteId = $stateParams.id;
     $scope.paquete = Paquete.getPaqueteById(paqueteId);
     $scope.galeria = Paquete.getImgPaqueteById(paqueteId);
@@ -231,6 +231,10 @@ angular.module('starter.controllers', [])
         });
       }
       else {
+        var alertPopup = $ionicPopup.alert({
+          title: 'Inicio de Sesión',
+          template: 'Para poder continuar, primero deberás iniciar sesión'
+        });
         $state.go('app.login');
       }
     }
