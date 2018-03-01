@@ -14,20 +14,30 @@
             </div>
           </ion-slide>
         </ion-slide-box>
+        <div ng-if="galeria[0] && galeria[0].length == 0" class="home__boxSlider__slider">
+          <div class="home__boxSlider__slider__boxImg">
+            <img src="http://{{dominio_img}}/{{paquete[0].url_imagen}}" alt="" class="home__boxSlider__slider__img">
+            <!--<img ng-src="{{item}}" alt="" class="home__boxSlider__slider__img">-->
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="detallePaquete__boxPrecios" ng-if="precios[0].length > 0 ">
+    <div class="detallePaquete__boxPrecios">
       <h5 class="detallePaquete__boxPrecios__title">
-        Lista de precios del paquete
+        Precios cotizados para el paquete
       </h5>
-      <div class="row detallePaquete__boxPrecios__content">
+
+      <div ng-if="precios[0].length > 0 " class="row detallePaquete__boxPrecios__content">
         <div class="col col-50 detallePaquete__boxPrecios__item" ng-repeat="item in precios[0]">
           <p class="detallePaquete__boxPrecios__descrip">{{item.number_person}} persona(s)</p>
           <button ng-click="reserve(item.number_person, item.precio)" class="button button-dark detallePaquete__boxPrecios__btn">
-            S/.{{item.precio}}
+            Res: S/.{{item.precio}}
           </button>
         </div>
+      </div>
+      <div class="padding" ng-if="precios[0].length == 0">
+        <p>No se especifican los precios del paquete...</p>
       </div>
     </div>
     <div class="item item-divider titu-da-ge">

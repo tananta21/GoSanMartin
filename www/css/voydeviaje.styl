@@ -24,7 +24,7 @@ body
         padding 0px 10px
         font-size 20px
       &__img
-        filter: brightness(0.8);
+        filter: brightness(1);
         width 100%
         height 100%
 
@@ -94,17 +94,20 @@ body
     height 100%
   &__boxBtns
     position absolute
-    top 88%
+    top 85%
     z-index 1000
     &__btn
+      min-width 60px !important
+      min-height 55px !important
       border-radius 50%
-      font-size 23px
+      font-size 27px
       background $azulOscuro !important
-      box-shadow 0px 6px rgba(0,0,0,0.1)
+      box-shadow 0px 4px rgba(1,1,1,.1)
     &__span
       margin-top 5px
-      font-size 14px
-      color $cenizoClaro
+      font-size 15px
+      color $green
+      font-weight 500
   &__boxBtnsAgencia
     margin-top -50px
     z-index 1000
@@ -119,23 +122,23 @@ body
 
   &__boxPaquetes
     display block
-    margin-bottom 15px
+    padding-top 20px
     &__header
       display flex
       justify-content space-between
       padding 0px 10px
       &__text
-        font-size 12px
+        font-size 15px
         font-weight bold
       &__ancla
         color $green
         font-weight bold
-        font-size 12px
+        font-size 16px
     &__content
       overflow-x: auto
       overflow-y hidden
       white-space: nowrap
-      height 120px
+      height 145px
     &__item
       display inline-block
       width 50%
@@ -164,12 +167,10 @@ body
         width 100%
         white-space initial
         padding 0px 5px
-        font-size 11px
+        font-size 16px
         color white
   &__boxDescription
-    margin-top: 15px;
-    margin-bottom 15px;
-    padding: 0px 10px;
+    padding 15px 15px 0px 15px
     text-align center
     &__text
       display: -webkit-box;
@@ -187,7 +188,7 @@ body
 
 
   &__boxCompartir
-    padding 0px 15px
+    padding 20px 15px 0px 15px
     &__btn
       border-radius 5px
       border 2px dashed $cenizoClaro
@@ -196,10 +197,15 @@ body
       text-decoration none
     &__icono
       margin-right 7px
-      font-size 23px
+      font-size 24px
       color $green
     &__text
+      font-weight 500
+      font-size 17px
       color $cenizoClaro
+  &__boxAnotation
+    padding 20px 15px 20px 15px
+
 
 .emergency
   &__btn
@@ -316,7 +322,7 @@ body
         &__linkAgencia
           color $green
           font-weight 500
-          text-decoration none
+          line-height 21px
       &__likes
         font-size 13px
         position absolute
@@ -369,6 +375,7 @@ body
       font-weight 500
     &__btn
       width 100%
+      font-weight 500
 
   &__iti
     display block

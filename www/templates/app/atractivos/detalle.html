@@ -1,4 +1,4 @@
-<ion-view view-title="Detalle atractivo">
+<ion-view view-title="Información del atractivo">
   <ion-content>
     <div class="atractivoDetail__boxHeaderDescripcion">
       <div class="atractivoDetail__boxPortada">
@@ -34,24 +34,24 @@
           <span ng-if="atractivo[0].estado == '' ">Sin especificar.</span>
         </div>
         <div class="item item-divider titu-da-ge">
-          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Actividades dentro el Atractivo
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Actividades a realizar
         </div>
         <div class="item item-text-wrap">
-          <div class="row">
-            <div class="header-tr bg-azul col-50">Actividad</div>
-            <div class="header-tr bg-azul col-50">Logo</div>
+          <div ng-if="actividades[0].length > 0">
+            <p class="detalleItinerario__lugarName" ng-repeat="item in actividades[0]">
+              <i class="ion ion-ios-checkmark-outline"></i> {{item.nombre}}
+            </p>
           </div>
-          <div class="row" ng-repeat="actividad in atractivo.actividades">
-            <div class="body-tr col-50">{{actividad.actividad}}</div>
-            <div class="body-tr-icon col-50"><i class="ion {{actividad.icono}}"></i></div>
+          <div ng-if="actividades[0].length == 0">
+            <p>Sin especificar...</p>
           </div>
         </div>
-
         <div class="item item-divider titu-da-ge">
-          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Ruta de Acceso
+          <i class="ion-ios-information" style="margin-right: 0.5rem"></i> Ruta de acceso
         </div>
         <div class="item item-text-wrap">
-          <ion-scroll direction="xy" style="overflow: scroll; white-space: nowrap">
+
+          <ion-scroll ng-if="rutas[0].length > 0" direction="xy" style="overflow: scroll; white-space: nowrap">
             <div class="row">
               <div class="header-tr bg-azul col-40">Tramo</div>
               <div class="header-tr bg-azul col-40">Acceso</div>
@@ -59,7 +59,7 @@
               <div class="header-tr bg-azul col-40">Vía de Acceso</div>
               <div class="header-tr bg-azul col-40">Distancia / Tiempo</div>
             </div>
-            <div class="row" ng-repeat="ruta in atractivo.rutas">
+            <div class="row" ng-repeat="ruta in rutas[0]">
               <div class="body-tr col-40">
                 {{ruta.tramo}}
               </div>
@@ -67,16 +67,20 @@
                 {{ruta.acceso}}
               </div>
               <div class="body-tr col-40">
-                {{ruta.medio}}
+                {{ruta.movilidad}}
               </div>
               <div class="body-tr col-40">
-                {{ruta.via}}
+                {{ruta.descripcion_via}}
               </div>
               <div class="body-tr col-40">
-                {{ruta.tiempo}}
+                {{ruta.distancia}} / {{ruta.tiempo}}
               </div>
             </div>
           </ion-scroll>
+
+          <div ng-if="rutas[0].length == 0">
+            <p>Sin especificar...</p>
+          </div>
         </div>
 
       </div>

@@ -8,16 +8,17 @@
         <img class="atractivoDetail__imgPortada" src="http://{{dominio_img}}/{{atractivo[0].url_imagen}}">
         <div class="row atractivoDetail__boxBtns">
           <div class="col text-center">
-            <a class="button button-calm atractivoDetail__boxBtns__btn"
-               href="#/app/atractivo/detalle/{{atractivo[0].id}}">
+            <button class="button button-calm atractivoDetail__boxBtns__btn"
+                    ui-sref="app.detalle({id: atractivo[0].id})">
               <i class="ion ion-information"></i>
-            </a>
-            <p class="atractivoDetail__boxBtns__span">Detalles</p>
+            </button>
+            <p class="atractivoDetail__boxBtns__span">Información</p>
           </div>
           <div class="col text-center">
-            <a class="button button-calm atractivoDetail__boxBtns__btn" href="#/app/imagenes/{{atractivo[0].id}}">
+            <button class="button button-calm atractivoDetail__boxBtns__btn"
+                    ui-sref="app.imagenes({id: atractivo[0].id})">
               <i class="ion ion-image"></i>
-            </a>
+            </button>
             <p class="atractivoDetail__boxBtns__span">Galería</p>
           </div>
           <div class="col text-center">
@@ -26,49 +27,30 @@
             </button>
             <p class="atractivoDetail__boxBtns__span">Videos</p>
           </div>
-          <div class="col text-center">
-            <button class="button button-calm atractivoDetail__boxBtns__btn">
-              <i class="ion ion-android-share-alt"></i>
-            </button>
-            <p class="atractivoDetail__boxBtns__span">Compartir</p>
-          </div>
+          <!--<div class="col text-center">-->
+            <!--<button class="button button-calm atractivoDetail__boxBtns__btn">-->
+              <!--<i class="ion ion-android-share-alt"></i>-->
+            <!--</button>-->
+            <!--<p class="atractivoDetail__boxBtns__span">Compartir</p>-->
+          <!--</div>-->
         </div>
       </div>
     </div>
 
-    <div class="atractivoDetail__boxPaquetes" ng-if="paquetes[0].length > 0 ">
-      <div class="atractivoDetail__boxPaquetes__header">
-        <h3 class="atractivoDetail__boxPaquetes__header__text">
-          Top Paquetes Turísticos
-        </h3>
-        <a class="atractivoDetail__boxPaquetes__header__ancla" href="">Ver Todo</a>
-      </div>
-      <div class="atractivoDetail__boxPaquetes__content">
-
-        <div class="atractivoDetail__boxPaquetes__item" ng-repeat="item in paquetes[0]">
-          <a href="">
-            <img class="atractivoDetail__boxPaquetes__item__img"
-                 src="http://{{dominio_img}}/{{item.portada}}" alt="">
-            <div class="atractivoDetail__boxPaquetes__item__boxPrecio">
-              <h4 class="atractivoDetail__boxPaquetes__item__name">
-                S/.{{item.precio}}
-              </h4>
-            </div>
-            <div class="atractivoDetail__boxPaquetes__item__boxName">
-              <h4 class="atractivoDetail__boxPaquetes__item__name">
-                {{item.nombre_paquete}}
-              </h4>
-            </div>
-          </a>
-        </div>
-      </div>
+    <div ng-if="atractivo[0].descripcion != '' " class="atractivoDetail__boxDescription">
+      <p class="atractivoDetail__boxDescription__text">
+        {{atractivo[0].descripcion}}
+      </p>
+      <a class="atractivoDetail__boxDescription__ancla" ui-sref="app.descripcion({id: atractivo[0].id})">
+        Leer Más <i class="ion ion-arrow-graph-up-right"></i>
+      </a>
     </div>
 
     <div class="text-center atractivoDetail__boxCompartir">
       <div class="atractivoDetail__boxCompartir__btn">
         <a class="atractivoDetail__boxCompartir__ancla"
            href="#/app/mapa/{{atractivo[0].latitud}}/{{atractivo[0].longitud}}/{{atractivo[0].nombre}}">
-          <div class="row">
+          <div class="row padding__none">
             <div class="col text-right">
               <i class="ion ion-ios-location atractivoDetail__boxCompartir__icono"></i>
             </div>
@@ -80,13 +62,37 @@
       </div>
     </div>
 
-    <div ng-if="atractivo[0].descripcion != '' " class="atractivoDetail__boxDescription">
-      <p class="atractivoDetail__boxDescription__text">
-        {{atractivo[0].descripcion}}
-      </p>
-      <a class="atractivoDetail__boxDescription__ancla" ui-sref="app.descripcion({id: atractivo[0].id})">
-        Leer Más</a>
+    <div class="atractivoDetail__boxPaquetes" ng-if="paquetes[0].length > 0 ">
+      <div class="atractivoDetail__boxPaquetes__header">
+        <h3 class="atractivoDetail__boxPaquetes__header__text">
+         Paquetes Recomendados
+        </h3>
+        <a class="atractivoDetail__boxPaquetes__header__ancla" href="">Ver Todo <i class="ion ion-arrow-graph-up-right"></i></a>
+      </div>
+      <div class="atractivoDetail__boxPaquetes__content">
+
+        <div class="atractivoDetail__boxPaquetes__item" ng-repeat="item in paquetes[0]">
+          <a ui-sref="app.paquete_detalle({ id: item.id })">
+            <img class="atractivoDetail__boxPaquetes__item__img"
+                 src="http://{{dominio_img}}/{{item.portada}}" alt="">
+            <div class="atractivoDetail__boxPaquetes__item__boxName">
+              <h4 class="atractivoDetail__boxPaquetes__item__name">
+                {{item.nombre_paquete}}
+              </h4>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
+
+    <div class="atractivoDetail__boxAnotation text-center">
+      <h4 class="text-center">¿ Estás listo(a) para conocer ?</h4>
+      <button class="button button-calm bold" style="width: 90%">
+        Esto es muy importante <i class="ios ion-android-open"></i>
+      </button>
+    </div>
+
+
 
     <div class="" style="display: none">
       <div class="item item-body">

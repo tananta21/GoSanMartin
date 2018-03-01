@@ -259,7 +259,7 @@ body {
   font-size: 20px;
 }
 .home__boxSlider__slider__img {
-  filter: brightness(0.8);
+  filter: brightness(1);
   width: 100%;
   height: 100%;
 }
@@ -339,19 +339,22 @@ body {
 }
 .atractivoDetail__boxBtns {
   position: absolute;
-  top: 88%;
+  top: 85%;
   z-index: 1000;
 }
 .atractivoDetail__boxBtns__btn {
+  min-width: 60px !important;
+  min-height: 55px !important;
   border-radius: 50%;
-  font-size: 23px;
+  font-size: 27px;
   background: #2e3c50 !important;
-  box-shadow: 0px 6px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px rgba(1,1,1,0.1);
 }
 .atractivoDetail__boxBtns__span {
   margin-top: 5px;
-  font-size: 14px;
-  color: #575757;
+  font-size: 15px;
+  color: #3ab7b8;
+  font-weight: 500;
 }
 .atractivoDetail__boxBtnsAgencia {
   margin-top: -50px;
@@ -369,7 +372,7 @@ body {
 }
 .atractivoDetail__boxPaquetes {
   display: block;
-  margin-bottom: 15px;
+  padding-top: 20px;
 }
 .atractivoDetail__boxPaquetes__header {
   display: flex;
@@ -377,19 +380,19 @@ body {
   padding: 0px 10px;
 }
 .atractivoDetail__boxPaquetes__header__text {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
 }
 .atractivoDetail__boxPaquetes__header__ancla {
   color: #3ab7b8;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 16px;
 }
 .atractivoDetail__boxPaquetes__content {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  height: 120px;
+  height: 145px;
 }
 .atractivoDetail__boxPaquetes__item {
   display: inline-block;
@@ -423,13 +426,11 @@ body {
   width: 100%;
   white-space: initial;
   padding: 0px 5px;
-  font-size: 11px;
+  font-size: 16px;
   color: #fff;
 }
 .atractivoDetail__boxDescription {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding: 0px 10px;
+  padding: 15px 15px 0px 15px;
   text-align: center;
 }
 .atractivoDetail__boxDescription__text {
@@ -448,7 +449,7 @@ body {
   font-size: 16px;
 }
 .atractivoDetail__boxCompartir {
-  padding: 0px 15px;
+  padding: 20px 15px 0px 15px;
 }
 .atractivoDetail__boxCompartir__btn {
   border-radius: 5px;
@@ -460,11 +461,16 @@ body {
 }
 .atractivoDetail__boxCompartir__icono {
   margin-right: 7px;
-  font-size: 23px;
+  font-size: 24px;
   color: #3ab7b8;
 }
 .atractivoDetail__boxCompartir__text {
+  font-weight: 500;
+  font-size: 17px;
   color: #575757;
+}
+.atractivoDetail__boxAnotation {
+  padding: 20px 15px 20px 15px;
 }
 .emergency__btn {
   background: #2e3c50;
@@ -592,7 +598,7 @@ body {
 .paquete__boxItem__boxText__nameAgencia__linkAgencia {
   color: #3ab7b8;
   font-weight: 500;
-  text-decoration: none;
+  line-height: 21px;
 }
 .paquete__boxItem__boxText__likes {
   font-size: 13px;
@@ -654,6 +660,7 @@ body {
 }
 .detallePaquete__boxPrecios__btn {
   width: 100%;
+  font-weight: 500;
 }
 .detallePaquete__iti {
   display: block;

@@ -3,7 +3,7 @@
 // var dominio_img = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var ip = "192.168.43.133";
+var ip = "192.168.1.42";
 var dominio = "http://" + ip;
 var dominio_img = ip;
 
@@ -86,15 +86,6 @@ angular.module('starter.controllers', [])
     $scope.nextSlide = function () {
       $ionicSlideBoxDelegate.next();
     }
-
-    $scope.images = [
-      "img/prueba/cultural.jpg",
-      "img/prueba/arqueologico.jpg",
-      "img/prueba/arqueologico2.jpg",
-      "img/prueba/gastronomia.jpg",
-      "img/prueba/vivencial.jpg",
-      "img/prueba/ecoturismo.jpg"
-    ];
   })
 
   .controller('AtractivosCtrl', function ($scope, $window, Atractivos) {
@@ -171,20 +162,9 @@ angular.module('starter.controllers', [])
   .controller('AtractivoDetalleCtrl', function ($http, $scope, $stateParams, Atractivos) {
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
+    $scope.actividades = Atractivos.getActividadesByAtractivo(atractivoId);
+    $scope.rutas = Atractivos.getRutasByAtractivo(atractivoId);
     $scope.dominio_img = dominio_img;
-
-    $scope.informacion = function () {
-      $('.informacion').addClass("activo");
-      $('.descripcion').removeClass("activo");
-      $('.content-descripcion').css("display", "none");
-      $('.content-informacion').css("display", "block");
-    };
-    $scope.descripcion = function () {
-      $('.descripcion').addClass("activo");
-      $('.informacion').removeClass("activo");
-      $('.content-descripcion').css("display", "block");
-      $('.content-informacion').css("display", "none");
-    };
   })
 
   .controller('AgenciasCtrl', function ($scope, Agencias) {
@@ -482,7 +462,7 @@ angular.module('starter.controllers', [])
         disableBack: true
       });
       $state.go('app.home');
-    }, 2000);
+    }, 1500);
 
   })
 
