@@ -81,6 +81,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
               }
             }
           })
+          .state('app.recomendacion', {
+            url: '/atractivo/recomendacion/:id',
+            views: {
+              'menuContent': {
+                templateUrl: 'templates/app/atractivos/recomendacion.html',
+                controller: 'RecomendacionCtrl'
+              }
+            }
+          })
       .state('app.modal_share', {
         url: '/share',
         views: {
@@ -234,6 +243,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           'menuContent': {
             templateUrl: 'templates/app/login.html',
             controller: 'LoginCtrl'
+
+          }
+        }
+      })
+      .state('app.register', {
+        url: '/register',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/app/register.html',
+            controller: 'RegisterCtrl'
 
           }
         }

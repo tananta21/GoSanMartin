@@ -1,5 +1,6 @@
 <ion-view view-title="Atractivos Turísticos">
   <ion-content>
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <div class="box-atractivo">
       <div class="bar bar-header item-input-inset">
         <div class="row padding__none">
@@ -8,8 +9,10 @@
           <input type="text" placeholder="Buscar atractivo" ng-model="busqueda" >
         </label>
         <button class="col col-10 btnRefresh" data-ng-click="busqueda = '' "><i class="ion ion-ios-close-empty"></i></button>
+          <button class="col col-10 btnFilter" ng-click="btnFilter()"><i class="ion ion-ios-settings-strong"></i></button>
         </div>
       </div>
+      {{name_filter}}
       <div ng-if="atractivos[0].length > 0 ">
         <div class="box-content" ng-repeat="atractivo in resultados =( atractivos[0] | filter: busqueda)">
           <a class="ancla-atractivo" ui-sref="app.atractivo({id: atractivo.atractivo_id})">

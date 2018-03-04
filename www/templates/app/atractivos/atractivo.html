@@ -65,7 +65,7 @@
     <div class="atractivoDetail__boxPaquetes" ng-if="paquetes[0].length > 0 ">
       <div class="atractivoDetail__boxPaquetes__header">
         <h3 class="atractivoDetail__boxPaquetes__header__text">
-         Paquetes Recomendados
+         Paquetes de viajes recomendados
         </h3>
         <a class="atractivoDetail__boxPaquetes__header__ancla" href="">Ver Todo <i class="ion ion-arrow-graph-up-right"></i></a>
       </div>
@@ -87,8 +87,8 @@
 
     <div class="atractivoDetail__boxAnotation text-center">
       <h4 class="text-center">¿ Estás listo(a) para conocer ?</h4>
-      <button class="button button-calm bold" style="width: 90%">
-        Esto es muy importante <i class="ios ion-android-open"></i>
+      <button class="button button-calm bold" style="width: 90%" ui-sref="app.recomendacion({id: atractivo[0].id})">
+        Recomendaciones <i class="ios ion-android-open"></i>
       </button>
     </div>
 

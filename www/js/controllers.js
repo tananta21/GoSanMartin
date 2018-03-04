@@ -3,7 +3,7 @@
 // var dominio_img = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var ip = "192.168.1.42";
+var ip = "192.168.1.47";
 var dominio = "http://" + ip;
 var dominio_img = ip;
 
@@ -88,9 +88,31 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('AtractivosCtrl', function ($scope, $window, Atractivos) {
+  .controller('AtractivosCtrl', function ($scope, $window, Atractivos, $ionicPopup, $ionicLoading) {
     $scope.dominio_img = dominio_img;
     $scope.atractivos = Atractivos.getAtractivos();
+    $scope.btnFilter = function () {
+      var confirmPopup = $ionicPopup.confirm({
+        title: 'Buscar por:',
+        templateUrl: 'templates/app/util/select_filter.html',
+      });
+      confirmPopup.then(function (res) {
+        if (res) {
+          var choice = $('input[name=choice]:checked').val();
+          $scope.atractivos = Atractivos.getActividadesByAtractivo(1);
+          $scope.name_filter = choice;
+        } else {
+          console.log('You are not sure');
+        }
+      });
+
+    }
+
+    $scope.doRefresh = function () {
+      $scope.atractivos = Atractivos.getAtractivos();
+      $scope.$broadcast('scroll.refreshComplete');
+      $scope.name_filter = null;
+    }
   })
 
   .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos, Paquete) {
@@ -166,6 +188,14 @@ angular.module('starter.controllers', [])
     $scope.rutas = Atractivos.getRutasByAtractivo(atractivoId);
     $scope.dominio_img = dominio_img;
   })
+
+  .controller('RecomendacionCtrl', function ($http, $scope, $stateParams, Atractivos) {
+    var atractivoId = $stateParams.id;
+    $scope.atractivo = Atractivos.getAtractivo(atractivoId);
+    $scope.consejos = Atractivos.getConsejosByAtractivo(atractivoId);
+    $scope.gastos = Atractivos.getGastosByAtractivo(atractivoId);
+  })
+
 
   .controller('AgenciasCtrl', function ($scope, Agencias) {
     $scope.agencias = Agencias.getAgencias();
@@ -429,6 +459,14 @@ angular.module('starter.controllers', [])
           disableBack: true
         });
       }
+    }
+
+  })
+
+  .controller('RegisterCtrl', function ($scope, $stateParams, $ionicPopup, $ionicLoading, sessionService, $ionicHistory, sessionStatus, $state) {
+    $scope.RegisterData = {};
+    $scope.doRegister = function () {
+      console.log("kev");
     }
 
   })
