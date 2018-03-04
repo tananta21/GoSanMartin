@@ -24,7 +24,7 @@
         <ion-item class="item_menu text-center" menu-close>
             <img src="img/avatar5.png" class="login__img" alt="">
           <h3 ng-if="token != null" class="login__nombre">
-            {{surname}}
+            {{nombre}} {{apellido}}
           </h3>
           <h3>
             <button ng-if="token == null" ng-click="iniciarSesion()" class="button button-stable login__btnLogin">

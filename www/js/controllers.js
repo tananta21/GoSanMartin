@@ -43,8 +43,10 @@ angular.module('starter.controllers', [])
       function () {
         var key = "user_token";
         var surname = "surname";
+        var name = "name";
         $scope.token = sessionService.get(key);
-        $scope.surname = sessionService.get(surname);
+        $scope.nombre = sessionService.get(name);
+        $scope.apellido = sessionService.get(surname);
       }
     );
     $scope.iniciarSesion = function () {
@@ -466,7 +468,44 @@ angular.module('starter.controllers', [])
   .controller('RegisterCtrl', function ($scope, $stateParams, $ionicPopup, $ionicLoading, sessionService, $ionicHistory, sessionStatus, $state) {
     $scope.RegisterData = {};
     $scope.doRegister = function () {
-      console.log("kev");
+      $ionicLoading.show({
+        template: '<ion-spinner icon="ios"></ion-spinner><br/>Validando sus datos!',
+      });
+      var data = [];
+      $.ajax({
+        type: 'GET',
+        url: api + "usuario/create",
+        data: {
+          name: $scope.RegisterData.name,
+          surname: $scope.RegisterData.surname,
+          email: $scope.RegisterData.email,
+          password: $scope.RegisterData.password
+        },
+        dataType: 'JSON',
+        error: function () {
+          var alertPopup = $ionicPopup.alert({
+            title: 'Error en inicio de Sesion!',
+            template: 'Por favor, verificar si sus datos son correctos!'
+          });
+          $ionicLoading.hide();
+        },
+        success: function (response) {
+          var id_user = response['id'];
+          var name = response['name'];
+          var surname = response['surname'];
+          var email = response['email'];
+          var token = "eyJhbG";
+          sessionService.set("user_token", token);
+          sessionService.set("id_user", id_user);
+          sessionService.set("name", name);
+          sessionService.set("surname", surname);
+          sessionService.set("email", email);
+          data.push(response);
+          $ionicLoading.hide();
+          $state.go('app.reload');
+        }
+      });
+
     }
 
   })

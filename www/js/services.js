@@ -564,6 +564,47 @@ angular.module('starter.services', [])
         return data;
 
       },
+
+      postCreateUser: function (name, surname, email, password) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Validando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "usuario/create",
+          data:{
+            name :name,
+            surname :surname,
+            email :email,
+            password :password
+          },
+          dataType: 'JSON',
+          error: function () {
+            var alertPopup = $ionicPopup.alert({
+              title: 'Error en inicio de Sesion!',
+              template: 'Por favor, verificar si sus datos son correctos!'
+            });
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            var id_user = response[0]['id'];
+            var name = response[0]['name'];
+            var surname = response[0]['surname'];
+            var email = response[0]['email'];
+            var token = "eyJhbG";
+            sessionService.set("user_token", token);
+            sessionService.set("id_user", id_user);
+            sessionService.set("name", name);
+            sessionService.set("surname", surname);
+            sessionService.set("email", email);
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
     }
   })
 

@@ -1,42 +1,28 @@
 <ion-view view-title="Registrarse">
   <ion-content class="body-login">
-    <div class="box-avatar">
-      <figure>
-        <img src="img/avatar5.png" alt="" style="width: 115px">
-      </figure>
-    </div>
-
-    <div>
+    <div class="card">
+      <h4 class="text-center">Complete el formulario</h4>
       <form ng-submit="doRegister()">
           <label class="item item-input item-floating-label">
-            <span class="input-label">Apellidos: </span>
-            <input type="text" placeholder="Apellidos" ng-model="RegisterData.surname">
+            <span class="input-label login__input bold">Apellidos: </span>
+            <input class="login__input" type="text" placeholder="Apellidos" ng-model="RegisterData.surname" required>
           </label>
           <label class="item item-input item-floating-label">
-            <span class="input-label">Nombres:</span>
-            <input type="text" placeholder="Nombres" ng-model="RegisterData.name">
+            <span class="input-label login__input bold">Nombres:</span>
+            <input class="login__input" type="text" placeholder="Nombres" ng-model="RegisterData.name" required >
           </label>
           <label class="item item-input item-floating-label">
-            <span class="input-label">Correo electrónico:</span>
-            <input type="email" placeholder="Correo electrónico" ng-model="RegisterData.email">
+            <span class="input-label login__input bold">Correo electrónico:</span>
+            <input class="login__input" type="email" placeholder="Correo electrónico" ng-model="RegisterData.email" required>
           </label>
           <label class="item item-input item-floating-label">
-            <span class="input-label">Correo electrónico:</span>
-            <input type="email" placeholder="Correo electrónico" ng-model="RegisterData.email">
+            <span class="input-label login__input bold">Contraseña:</span>
+            <input class="login__input" type="password" placeholder="Contraseña" ng-model="RegisterData.password" required>
           </label>
-
-
-
-        <div class="list list-inset">
-          <label class="item item-input">
-            <i class="icon ion-ios-locked placeholder-icon login__inputIcon"></i>
-            <input class="login__input" type="password" id="password" placeholder="Contraseña" ng-model="RegisterData.password">
-          </label>
-        </div>
         <div class="list">
           <label class="formulario item">
-            <button class="button button-block button-positive login__btnIniciarSesion" type="submit">
-              <i class="ion ion-log-in"></i> Iniciar Sesion
+            <button class="button button-block button-positive login__btnIniciarSesion" type="submit" required>
+              <i class="ion ion-log-in"></i> Registrarse
             </button>
           </label>
         </div>
@@ -44,9 +30,9 @@
     </div>
     <div class="list">
       <label class="formulario item">
-        <h3 class="text-center">¿ Aún no tienes una cuenta ?</h3>
-        <button class="button button-block button-positive login__btnRegitrarse" type="submit">
-          <i class="ion ion-android-create"></i> Regístrate
+        <h3 class="text-center">Si ya tienes una cuenta</h3>
+        <button class="button button-block button-positive login__btnRegitrarse" ui-sref="app.login">
+          <i class="ion ion-android-create"></i> Iniciar Sesión
         </button>
       </label>
     </div>
