@@ -225,7 +225,7 @@ angular.module('starter.controllers', [])
     $scope.dominio_img = dominio_img;
   })
 
-  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, Paquete, sessionStatus, $state, $ionicModal, $ionicPopup) {
+  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, Paquete, sessionStatus, $state, $ionicModal, $ionicPopup, sessionService, $ionicLoading, $timeout, $window, $ionicHistory) {
     var paqueteId = $stateParams.id;
     $scope.paquete = Paquete.getPaqueteById(paqueteId);
     $scope.galeria = Paquete.getImgPaqueteById(paqueteId);
@@ -233,7 +233,15 @@ angular.module('starter.controllers', [])
     $scope.itinerario = Paquete.getItinerarioPaqueteById(paqueteId);
     $scope.dominio_img = dominio_img;
 
-    $scope.reserve = function (number_person, precio) {
+    $scope.reserve = function (id, name, number_person, precio) {
+      $scope.RegisterData = {};
+      $scope.RegisterData.paquete_id = id;
+      $scope.RegisterData.name_paquete = name;
+      $scope.RegisterData.number_person = number_person;
+      $scope.RegisterData.precio = precio;
+      $scope.RegisterData.name = sessionService.get('name');
+      $scope.RegisterData.surname = sessionService.get('surname');
+      $scope.RegisterData.email = sessionService.get('email');
       if (sessionStatus.auth()) {
         $ionicModal.fromTemplateUrl('templates/app/util/modal_reserva.html', {
           scope: $scope
@@ -241,6 +249,66 @@ angular.module('starter.controllers', [])
           $scope.modal = modal;
           $scope.modal.show();
         });
+        $scope.closeModal = function () {
+          $scope.modal.hide();
+        };
+        // Cleanup the modal when we're done with it!
+        $scope.$on('$destroy', function () {
+          $scope.modal.remove();
+        });
+        // Execute action on hide modal
+        $scope.$on('modal.hidden', function () {
+          // Execute action
+        });
+        // Execute action on remove modal
+        $scope.$on('modal.removed', function () {
+          // Execute action
+        });
+
+        $scope.doRegisterReserve = function () {
+          var confirmPopup = $ionicPopup.confirm({
+            title: 'Confirmar Solicitud de reserva',
+            template: 'La agencia a cargo del paquete turístico se pondrá en contacto con usted para establecer la forma de pago y la confirmación de la reserva.'
+          });
+          confirmPopup.then(function (res) {
+            if (res) {
+              $ionicLoading.show({
+                template: '<ion-spinner icon="ios"></ion-spinner><br/>Guardando y enviando solicitud de reserva!',
+              });
+              var data = [];
+              $.ajax({
+                type: 'GET',
+                url: api + "reservar/paquete",
+                data: {
+                  user_id:  sessionService.get('id_user'),
+                  paquete_id: $scope.RegisterData.paquete_id,
+                  number_person: $scope.RegisterData.number_person,
+                  precio: $scope.RegisterData.precio,
+                  fecha: $scope.RegisterData.fecha,
+                  documento: $scope.RegisterData.documento,
+                  name: $scope.RegisterData.name,
+                  surname: $scope.RegisterData.surname,
+                  email: $scope.RegisterData.email,
+                  celular: $scope.RegisterData.celular
+                },
+                dataType: 'JSON',
+                error: function () {
+                  var alertPopup = $ionicPopup.alert({
+                    title: 'Upps!!',
+                    template: 'Hubo un error, por favor inténtelo más tarde'
+                  });
+                  $ionicLoading.hide();
+                },
+                success: function (response) {
+                  $window.location.reload();
+                }
+              });
+
+            } else {
+              console.log('You are not sure');
+            }
+          });
+        }
       }
       else {
         var alertPopup = $ionicPopup.alert({
