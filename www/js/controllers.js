@@ -3,7 +3,7 @@
 // var dominio_img = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var ip = "192.168.1.47";
+var ip = "192.168.43.133";
 var dominio = "http://" + ip;
 var dominio_img = ip;
 
@@ -90,9 +90,34 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('AtractivosCtrl', function ($scope, $window, Atractivos, $ionicPopup, $ionicLoading) {
+  .controller('AtractivosCtrl', function ($scope, $window, Atractivos, $ionicPopup, $ionicLoading, $ionicModal) {
     $scope.dominio_img = dominio_img;
     $scope.atractivos = Atractivos.getAtractivos();
+
+    $ionicModal.fromTemplateUrl('templates/app/util/modal_filter_provincias.html', {
+      scope: $scope
+    }).then(function (modal) {
+      $scope.modal = modal;
+    });
+    $scope.closeModal = function () {
+      $scope.modal.hide();
+    };
+    $scope.closeModal = function () {
+      $scope.modal.hide();
+    };
+    // Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function () {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function () {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function () {
+      // Execute action
+    });
+
     $scope.btnFilter = function () {
       var confirmPopup = $ionicPopup.confirm({
         title: 'Buscar por:',
@@ -101,20 +126,46 @@ angular.module('starter.controllers', [])
       confirmPopup.then(function (res) {
         if (res) {
           var choice = $('input[name=choice]:checked').val();
-          $scope.atractivos = Atractivos.getActividadesByAtractivo(1);
-          $scope.name_filter = choice;
+          if(choice == 'provincia'){
+            $scope.modal.show();
+          }
+          else{
+            var alertPopup = $ionicPopup.alert({
+              title: 'Atención!',
+              template: 'Por favor, debe seleccionar una opción!'
+            });
+          }
+
         } else {
           console.log('You are not sure');
         }
       });
+    }
 
+    $scope.doFilterProvince = function () {
+      var provincia = $('input[name=province]:checked').val();
+      $scope.name_filter = "Provincia";
+      $scope.name_option_filter = $('input[name=province]:checked').parent('label').text();
+      console.log($scope.name_option_filter);
+      $scope.modal.hide();
+      $scope.atractivos = Atractivos.getAtractivosByUbigeo(provincia);
+      console.log($scope.name_filter);
+      console.log(provincia);
     }
 
     $scope.doRefresh = function () {
+      if($('input[name=province]').is(':checked')) {
+        console.log("prueba");
+        $(this).removeAttr('checked');
+      }
+
+      // $('input[name=province]').removeAttr('checked');
       $scope.atractivos = Atractivos.getAtractivos();
       $scope.$broadcast('scroll.refreshComplete');
       $scope.name_filter = null;
     }
+
+
   })
 
   .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos, Paquete) {
@@ -197,7 +248,6 @@ angular.module('starter.controllers', [])
     $scope.consejos = Atractivos.getConsejosByAtractivo(atractivoId);
     $scope.gastos = Atractivos.getGastosByAtractivo(atractivoId);
   })
-
 
   .controller('AgenciasCtrl', function ($scope, Agencias) {
     $scope.agencias = Agencias.getAgencias();

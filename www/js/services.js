@@ -2,7 +2,7 @@
 // var dominio = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var ip = "192.168.1.47";
+var ip = "192.168.43.133";
 var dominio = ip;
 
 var api = "http://" + dominio + "/api/";
@@ -192,6 +192,30 @@ angular.module('starter.services', [])
         });
         return data;
 
+      },
+
+      getAtractivosByUbigeo: function (numubigeo) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!'
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "atractivos/by_ubigeo_id",
+          data:{
+            numubigeo :numubigeo
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
       },
     }
 

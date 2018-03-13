@@ -12,7 +12,16 @@
           <button class="col col-10 btnFilter" ng-click="btnFilter()"><i class="ion ion-ios-settings-strong"></i></button>
         </div>
       </div>
-      {{name_filter}}
+      <div class="card" style="margin: 5px" ng-if="name_filter">
+        <div class="item item-text-wrap" style="padding: 7px">
+          <p class="text-center">Filtrado por {{name_filter}} : <strong>{{name_option_filter}}</strong>
+            <button style="display: inline-block" class="col col-10 btnFilter" ng-click="doRefresh()">
+              <i class="ion ion-refresh"></i>
+            </button>
+          </p>
+        </div>
+      </div>
+
       <div ng-if="atractivos[0].length > 0 ">
         <div class="box-content" ng-repeat="atractivo in resultados =( atractivos[0] | filter: busqueda)">
           <a class="ancla-atractivo" ui-sref="app.atractivo({id: atractivo.atractivo_id})">
