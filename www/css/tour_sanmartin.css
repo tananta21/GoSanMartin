@@ -312,7 +312,6 @@ body {
 .atractivoDetail__boxHeaderAgencia {
   display: block;
   height: 40%;
-  margin-bottom: 60px;
 }
 .atractivoDetail__boxHeaderDetallePaquete {
   display: block;
@@ -338,7 +337,7 @@ body {
   bottom: 0rem;
   margin: 0rem;
   font-size: 17px;
-  text-align: left;
+  text-align: center;
   color: #fff;
   background: rgba(0,0,0,0.8);
 }
@@ -475,12 +474,12 @@ body {
 }
 .atractivoDetail__boxCompartir__icono {
   margin-right: 7px;
-  font-size: 25px;
+  font-size: 24px;
   color: #3ab7b8;
 }
 .atractivoDetail__boxCompartir__text {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 17px;
   color: #575757;
 }
 .atractivoDetail__boxAnotation {

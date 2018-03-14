@@ -5,31 +5,11 @@
         <h4 class="atractivoDetail__titleAgencia">
           {{agencia[0].nombre}}
         </h4>
-        <img class="atractivoDetail__imgPortada"
+        <img class="home__boxSlider__slider__img"
              src="http://{{dominio_img}}/{{agencia[0].url_imagen}}">
       </div>
     </div>
-    <div class="row atractivoDetail__boxBtnsAgencia">
-      <div class="col text-center">
-        <a class="button button-calm atractivoDetail__boxBtns__btn"
-           href="#/app/atractivo/detalle/{{agencia[0].id}}">
-          <i class="ion ion-information"></i>
-        </a>
-        <p class="atractivoDetail__boxBtns__span">Detalles</p>
-      </div>
-      <div class="col text-center">
-        <a class="button button-calm atractivoDetail__boxBtns__btn" href="#/app/imagenes/{{agencia[0].id}}">
-          <i class="ion ion-image"></i>
-        </a>
-        <p class="atractivoDetail__boxBtns__span">Galería</p>
-      </div>
-      <div class="col text-center">
-        <button class="button button-calm atractivoDetail__boxBtns__btn">
-          <i class="ion ion-social-youtube-outline"></i>
-        </button>
-        <p class="atractivoDetail__boxBtns__span">Videos</p>
-      </div>
-    </div>
+
     <div class="atractivoDetail__boxPaquetes" ng-if="paquetes[0].length > 0 ">
       <div class="atractivoDetail__boxPaquetes__header">
         <h3 class="atractivoDetail__boxPaquetes__header__text">
@@ -38,16 +18,10 @@
         <a class="atractivoDetail__boxPaquetes__header__ancla" href="">Ver Todo</a>
       </div>
       <div class="atractivoDetail__boxPaquetes__content">
-
         <div class="atractivoDetail__boxPaquetes__item" ng-repeat="item in paquetes[0]">
           <a href="">
             <img class="atractivoDetail__boxPaquetes__item__img"
                  src="http://{{dominio_img}}/{{item.portada}}" alt="">
-            <div class="atractivoDetail__boxPaquetes__item__boxPrecio">
-              <h4 class="atractivoDetail__boxPaquetes__item__name">
-                S/.{{item.precio}}
-              </h4>
-            </div>
             <div class="atractivoDetail__boxPaquetes__item__boxName">
               <h4 class="atractivoDetail__boxPaquetes__item__name">
                 {{item.nombre_paquete}}
@@ -57,16 +31,27 @@
         </div>
       </div>
     </div>
-
     <div>
       <div class="card contentDetalle">
         <div class="item item-divider titu-da-ge">
           <i class="ion-ios-information mr_0_5r"></i> Horario de Atencion
         </div>
         <div class="item item-text-wrap">
-          <span>agregar colummna horario de atencion</span>
-          <span>{{agencia[0].nombre}}</span>
+          <span>todo el día de 8 am  a 1 pm</span>
           <span ng-if="agencia[0].nombre == '' ">Sin especificar.</span>
+          <div class="card atractivoDetail__boxCompartir__btn" style="margin: 13px 8px 0px 8px"
+               ui-sref="app.mapa({ lat: atractivo[0].latitud, long:atractivo[0].longitud,name:atractivo[0].nombre })">
+            <div class="item item-text-wrap" style="padding: 7px">
+              <div class="row padding__none">
+                <div class="col text-right">
+                  <i class="ion ion-ios-location atractivoDetail__boxCompartir__icono"></i>
+                </div>
+                <div class="col col-75 text-left atractivoDetail__boxCompartir__text">
+                  Ver ubicación en el mapa
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div ng-if="redes[0].length > 0 " >
           <div class="item item-divider titu-da-ge" >
@@ -112,9 +97,6 @@
             </div>
           </div>
         </div>
-
-
-
       </div>
     </div>
 

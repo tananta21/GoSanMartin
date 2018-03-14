@@ -2,7 +2,7 @@
 // var dominio = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var ip = "192.168.43.133";
+var ip = "192.168.1.42";
 var dominio = ip;
 
 var api = "http://" + dominio + "/api/";

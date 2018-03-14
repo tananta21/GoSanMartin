@@ -3,7 +3,7 @@
 // var dominio_img = "voydeviaje.tk";
 
 //LOCALMENTE ================================
-var ip = "192.168.43.133";
+var ip = "192.168.1.42";
 var dominio = "http://" + ip;
 var dominio_img = ip;
 
