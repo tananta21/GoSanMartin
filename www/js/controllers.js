@@ -234,16 +234,38 @@ angular.module('starter.controllers', [])
     $scope.dominio_img = dominio_img;
   })
 
-  .controller('RecomendacionCtrl', function ($http, $scope, $stateParams, Atractivos) {
+  .controller('RecomendacionCtrl', function ($http, $scope, $stateParams, Atractivos, $cordovaOauth, $window, $location, $ionicLoading) {
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
     $scope.consejos = Atractivos.getConsejosByAtractivo(atractivoId);
     $scope.gastos = Atractivos.getGastosByAtractivo(atractivoId);
+
+    if($window.localStorage.hasOwnProperty("accessToken") === true) {
+      $http.get("https://graph.facebook.com/v2.2/me", { params: { access_token: $window.localStorage.accessToken, fields: "id,name,gender,picture,email", format: "json" }}).then(function(result) {
+        $scope.perfil = result.data;
+      }, function(error) {
+        alert("Hubo un problema.");
+        console.log(JSON.stringify(error));
+      });
+    } else {
+      alert("No se ha iniciado sesion");
+      $location.path("/login");
+    }
   })
 
-  .controller('AgenciasCtrl', function ($scope, Agencias) {
+  .controller('AgenciasCtrl', function ($scope, Agencias, $cordovaOauth, $window, $location) {
     $scope.agencias = Agencias.getAgencias();
     $scope.dominio_img = dominio_img;
+
+    $scope.facebookLogin = function() {
+
+      $cordovaOauth.facebook("1604162166327409", ["email"], {"auth_type": "rerequest"}).then(function(result) {
+        $window.localStorage.accessToken = result.access_token;
+        $location.path("/atractivos");
+      }, function(error) {
+        console.log(JSON.stringify(error));
+      });
+    }
   })
 
   .controller('AgenciaCtrl', function ($scope, $stateParams, Agencias, Paquete) {
@@ -367,7 +389,14 @@ angular.module('starter.controllers', [])
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
     $scope.paquetes = Paquete.getPaquetesByAtractivo(atractivoId);
-    console.log($scope.paquetes);
+    $scope.dominio_img = dominio_img;
+
+  })
+
+  .controller('PaquetesByAgenciaCtrl', function ($scope, $stateParams, Paquete, Agencias) {
+    var agenciaId = $stateParams.id;
+    $scope.agencia = Agencias.getAgencia(agenciaId)
+    $scope.paquetes = Paquete.getPaquetesByAgencia(agenciaId);
     $scope.dominio_img = dominio_img;
 
   })

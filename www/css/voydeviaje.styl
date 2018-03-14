@@ -263,8 +263,9 @@ body
     min-height 100%
     overflow-y auto
     &__boxReturn
+      text-align right
       padding 25px 20px
-      display flex
+      //display flex
       justify-content space-between
       &__ancla
         font-size 18px
@@ -439,6 +440,12 @@ body
         -webkit-box-orient: vertical;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
+      &__numberPhotos
+        position: absolute
+        color: $greenDark
+        right: 10px
+        font-size: 18px
+        bottom: 55px
       &__boxLike
         position absolute
         bottom 5px

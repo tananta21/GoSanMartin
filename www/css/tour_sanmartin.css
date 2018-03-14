@@ -543,8 +543,8 @@ body {
   overflow-y: auto;
 }
 .galeria__modal__boxReturn {
+  text-align: right;
   padding: 25px 20px;
-  display: flex;
   justify-content: space-between;
 }
 .galeria__modal__boxReturn__ancla {
@@ -743,6 +743,13 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+}
+.agencia__item__boxtext__numberPhotos {
+  position: absolute;
+  color: #349697;
+  right: 10px;
+  font-size: 18px;
+  bottom: 55px;
 }
 .agencia__item__boxtext__boxLike {
   position: absolute;

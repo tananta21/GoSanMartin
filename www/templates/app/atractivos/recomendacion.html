@@ -1,10 +1,10 @@
-<ion-view view-title="Descripción del atractivo">
+<ion-view view-title="Recomendaciones para el atractivo">
   <ion-content>
     <div class="card">
       <div class="item item-text-wrap">
-        <h4 class="text-center">Para poder visitar :</h4>
-        <h2 class="text-center">{{atractivo[0].nombre}}</h2>
-        <h4 class="text-center">toma en cuenta lo siguiente !</h4>
+        <h3 class="text-center">Para poder visitar :</h3>
+        <h2 class="text-center"><strong>{{atractivo[0].nombre}}</strong></h2>
+        <h3 class="text-center">toma en cuenta lo siguiente !</h3>
       </div>
     </div>
 
@@ -51,6 +51,11 @@
         </div>
       </div>
     </div>
+    <p>{{ perfil.id }}</p>
+    <p>{{ perfil.name }}</p>
+    <p>{{ perfil.gender }}</p>
+    <p>{{ perfil.email }}</p>
+    <img ng-src="{{ perfil.picture.data.url }}" />
   </ion-content>
 </ion-view>
 

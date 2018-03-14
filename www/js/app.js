@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ngCordovaOauth'])
 
   .run(function ($ionicPlatform, $cordovaNetwork, $ionicPopup, $state, $ionicLoading) {
     $ionicPlatform.ready(function () {
@@ -118,15 +118,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
-      .state('app.agencia', {
-        url: '/agencia/:id',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/app/agencias/agencia.html',
-            controller: 'AgenciaCtrl'
+        .state('app.agencia', {
+          url: '/agencia/:id',
+          views: {
+            'menuContent': {
+              templateUrl: 'templates/app/agencias/agencia.html',
+              controller: 'AgenciaCtrl'
+            }
           }
-        }
-      })
+        })
+        .state('app.paquetes_by_agencia', {
+          url: '/agencia/paquetes/:id',
+          views: {
+            'menuContent': {
+              templateUrl: 'templates/app/agencias/paquetes_by_agencia.html',
+              controller: 'PaquetesByAgenciaCtrl'
+            }
+          }
+        })
       .state('app.paquetes', {
         url: '/paquetes',
         views: {

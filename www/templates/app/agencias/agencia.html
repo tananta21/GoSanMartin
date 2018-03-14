@@ -7,6 +7,9 @@
         </h4>
         <img class="home__boxSlider__slider__img"
              src="http://{{dominio_img}}/{{agencia[0].url_imagen}}">
+        <!--<p class="agencia__item__boxtext__numberPhotos">-->
+          <!--120 <i class="ion ion-images"></i> fotos-->
+        <!--</p>-->
       </div>
     </div>
 
@@ -15,11 +18,11 @@
         <h3 class="atractivoDetail__boxPaquetes__header__text">
           Top Paquetes Turísticos
         </h3>
-        <a class="atractivoDetail__boxPaquetes__header__ancla" href="">Ver Todo</a>
+        <a class="atractivoDetail__boxPaquetes__header__ancla" ui-sref="app.paquetes_by_agencia({id: agencia[0].id})">Ver Todo</a>
       </div>
       <div class="atractivoDetail__boxPaquetes__content">
         <div class="atractivoDetail__boxPaquetes__item" ng-repeat="item in paquetes[0]">
-          <a href="">
+          <a ui-sref="app.paquete_detalle({ id: item.id })">
             <img class="atractivoDetail__boxPaquetes__item__img"
                  src="http://{{dominio_img}}/{{item.portada}}" alt="">
             <div class="atractivoDetail__boxPaquetes__item__boxName">
@@ -33,21 +36,23 @@
     </div>
     <div>
       <div class="card contentDetalle">
-        <div class="item item-divider titu-da-ge">
-          <i class="ion-ios-information mr_0_5r"></i> Horario de Atencion
-        </div>
-        <div class="item item-text-wrap">
-          <span>todo el día de 8 am  a 1 pm</span>
-          <span ng-if="agencia[0].nombre == '' ">Sin especificar.</span>
-          <div class="card atractivoDetail__boxCompartir__btn" style="margin: 13px 8px 0px 8px"
-               ui-sref="app.mapa({ lat: atractivo[0].latitud, long:atractivo[0].longitud,name:atractivo[0].nombre })">
-            <div class="item item-text-wrap" style="padding: 7px">
-              <div class="row padding__none">
-                <div class="col text-right">
-                  <i class="ion ion-ios-location atractivoDetail__boxCompartir__icono"></i>
-                </div>
-                <div class="col col-75 text-left atractivoDetail__boxCompartir__text">
-                  Ver ubicación en el mapa
+        <div>
+          <div class="item item-divider titu-da-ge">
+            <i class="ion-ios-information mr_0_5r"></i> Horario de Atencion
+          </div>
+          <div class="item item-text-wrap">
+            <span>{{agencia[0].horario}}</span>
+            <span ng-if="agencia[0].horario == '' ">Sin especificar.</span>
+            <div class="card atractivoDetail__boxCompartir__btn" style="margin: 13px 8px 0px 8px"
+                 ui-sref="app.mapa({ lat: agencia[0].latitud, long:agencia[0].longitud,name:agencia[0].nombre })">
+              <div class="item item-text-wrap" style="padding: 7px">
+                <div class="row padding__none">
+                  <div class="col text-right">
+                    <i class="ion ion-ios-location atractivoDetail__boxCompartir__icono"></i>
+                  </div>
+                  <div class="col col-75 text-left atractivoDetail__boxCompartir__text">
+                    Ver ubicación en el mapa
+                  </div>
                 </div>
               </div>
             </div>
@@ -95,6 +100,16 @@
 
               </div>
             </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="item item-divider titu-da-ge">
+            <i class="ion-ios-information mr_0_5r"></i> Descripción empresa
+          </div>
+          <div class="item item-text-wrap">
+            <span>{{agencia[0].descripcion}}</span>
+            <span ng-if="agencia[0].descripcion == '' ">Sin especificar.</span>
           </div>
         </div>
       </div>
