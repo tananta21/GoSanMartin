@@ -268,6 +268,30 @@ angular.module('starter.services', [])
         return data;
 
       },
+      getPaquetesByAtractivo: function (atractivo) {
+        $ionicLoading.show({
+          template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',
+        });
+        var data = [];
+        $.ajax({
+          type: 'GET',
+          url: api + "paquetes/by_atractivo_id",
+          data:{
+            id :atractivo
+          },
+          dataType: 'JSON',
+          error: function () {
+            alert("Upps!! Hubo un error, intentelo más tarde");
+            $ionicLoading.hide();
+          },
+          success: function (response) {
+            data.push(response);
+            $ionicLoading.hide();
+          }
+        });
+        return data;
+
+      },
       getImgPaqueteById: function (id) {
         $ionicLoading.show({
           template: '<ion-spinner icon="ios"></ion-spinner><br/>Cargando datos!',

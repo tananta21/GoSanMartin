@@ -46,7 +46,7 @@
       </a>
     </div>
 
-    <div class="card" style="margin: 8px"
+    <div class="card atractivoDetail__boxCompartir__btn" style="margin: 13px 8px 0px 8px"
          ui-sref="app.mapa({ lat: atractivo[0].latitud, long:atractivo[0].longitud,name:atractivo[0].nombre })">
       <div class="item item-text-wrap" style="padding: 7px">
         <div class="row padding__none">
@@ -60,28 +60,14 @@
       </div>
     </div>
 
-    <!--<div class="text-center atractivoDetail__boxCompartir">-->
-      <!--<div class="atractivoDetail__boxCompartir__btn">-->
-        <!--<a class="atractivoDetail__boxCompartir__ancla"-->
-           <!--href="#/app/mapa/{{atractivo[0].latitud}}/{{atractivo[0].longitud}}/{{atractivo[0].nombre}}">-->
-          <!--<div class="row padding__none">-->
-            <!--<div class="col text-right">-->
-              <!--<i class="ion ion-ios-location atractivoDetail__boxCompartir__icono"></i>-->
-            <!--</div>-->
-            <!--<div class="col col-75 text-left atractivoDetail__boxCompartir__text">-->
-              <!--Ver ubicación en el mapa-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</a>-->
-      <!--</div>-->
-    <!--</div>-->
-
     <div class="atractivoDetail__boxPaquetes" ng-if="paquetes[0].length > 0 ">
       <div class="atractivoDetail__boxPaquetes__header">
         <h3 class="atractivoDetail__boxPaquetes__header__text">
          Paquetes de viajes recomendados
         </h3>
-        <a class="atractivoDetail__boxPaquetes__header__ancla" href="">Ver Todo <i class="ion ion-arrow-graph-up-right"></i></a>
+        <a class="atractivoDetail__boxPaquetes__header__ancla" ui-sref="app.paquetes_by_atractivo({id: atractivo[0].id})">
+          Ver Todo <i class="ion ion-arrow-graph-up-right"></i>
+        </a>
       </div>
       <div class="atractivoDetail__boxPaquetes__content">
 

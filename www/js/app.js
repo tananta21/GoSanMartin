@@ -54,15 +54,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
-      .state('app.atractivo', {
-        url: '/atractivo/:id',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/app/atractivos/atractivo.html',
-            controller: 'AtractivoCtrl'
-          }
-        }
-      })
+          .state('app.atractivo', {
+            url: '/atractivo/:id',
+            views: {
+              'menuContent': {
+                templateUrl: 'templates/app/atractivos/atractivo.html',
+                controller: 'AtractivoCtrl'
+              }
+            }
+          })
           .state('app.detalle', {
             url: '/atractivo/detalle/:id',
             views: {
@@ -87,6 +87,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
               'menuContent': {
                 templateUrl: 'templates/app/atractivos/recomendacion.html',
                 controller: 'RecomendacionCtrl'
+              }
+            }
+          })
+          .state('app.paquetes_by_atractivo', {
+            url: '/atractivo/paquetes/:id',
+            views: {
+              'menuContent': {
+                templateUrl: 'templates/app/atractivos/paquetes_by_atractivo.html',
+                controller: 'PaquetesByAtractivoCtrl'
               }
             }
           })

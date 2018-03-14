@@ -146,20 +146,12 @@ angular.module('starter.controllers', [])
       var provincia = $('input[name=province]:checked').val();
       $scope.name_filter = "Provincia";
       $scope.name_option_filter = $('input[name=province]:checked').parent('label').text();
-      console.log($scope.name_option_filter);
       $scope.modal.hide();
       $scope.atractivos = Atractivos.getAtractivosByUbigeo(provincia);
-      console.log($scope.name_filter);
-      console.log(provincia);
     }
 
     $scope.doRefresh = function () {
-      if($('input[name=province]').is(':checked')) {
-        console.log("prueba");
-        $(this).removeAttr('checked');
-      }
-
-      // $('input[name=province]').removeAttr('checked');
+      document.getElementById('formProvinces').reset();
       $scope.atractivos = Atractivos.getAtractivos();
       $scope.$broadcast('scroll.refreshComplete');
       $scope.name_filter = null;
@@ -368,6 +360,15 @@ angular.module('starter.controllers', [])
         $state.go('app.login');
       }
     }
+
+  })
+
+  .controller('PaquetesByAtractivoCtrl', function ($scope, $stateParams, Paquete, Atractivos) {
+    var atractivoId = $stateParams.id;
+    $scope.atractivo = Atractivos.getAtractivo(atractivoId);
+    $scope.paquetes = Paquete.getPaquetesByAtractivo(atractivoId);
+    console.log($scope.paquetes);
+    $scope.dominio_img = dominio_img;
 
   })
 
