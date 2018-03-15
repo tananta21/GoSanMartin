@@ -275,15 +275,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
-      .state('app.logout', {
-        url: '/login',
-        views: {
-          'menuContent': {
-            controller: 'LogoutCtrl'
-          }
-        }
-      })
-
       .state('app.reload', {
         url: '/reload',
         views: {

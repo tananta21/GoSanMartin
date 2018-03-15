@@ -1,13 +1,19 @@
 <ion-view view-title="Iniciar Sesión">
   <ion-content class="body-login">
-    <div class="box-avatar">
-      <figure>
-        <img src="img/avatar5.png" alt="" style="width: 115px">
-      </figure>
+    <!--<div class="box-avatar">-->
+      <!--<figure>-->
+        <!--<img src="img/avatar5.png" alt="" style="width: 115px">-->
+      <!--</figure>-->
+    <!--</div>-->
+    <div class="list">
+      <label class="formulario item">
+        <button class="button button-block button-positive" ng-click="facebookLogin()">
+          <i class="ion ion-social-facebook"></i> Inicia sesión con Facebook
+        </button>
+      </label>
     </div>
-
     <div>
-      <form ng-submit="doLogin()">
+      <form ng-submit="doLogin()" id="formLogin">
         <div class="list list-inset">
           <label class="item item-input">
             <i class="icon ion-ios-email placeholder-icon login__inputIcon"></i>

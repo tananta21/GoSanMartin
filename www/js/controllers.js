@@ -11,7 +11,7 @@ var api = dominio + "/api/";
 
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicHistory, $window, $timeout, $ionicPopup, sessionService) {
+  .controller('AppCtrl', function ($scope, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicHistory, $window, $timeout, $ionicPopup, sessionService, $cordovaOauth, $location, $http) {
     document.addEventListener("deviceready", function () {
       $scope.network = $cordovaNetwork.getNetwork();
       $scope.isOnline = $cordovaNetwork.isOnline();
@@ -44,14 +44,38 @@ angular.module('starter.controllers', [])
         var key = "user_token";
         var surname = "surname";
         var name = "name";
-        $scope.token = sessionService.get(key);
-        $scope.nombre = sessionService.get(name);
-        $scope.apellido = sessionService.get(surname);
+        var facebook = "facebook";
+
+        // if($window.localStorage.hasOwnProperty("accessToken") === true) {
+        if(sessionService.get(facebook) != null) {
+          $http.get("https://graph.facebook.com/v2.2/me", {
+            params: {
+              access_token: $window.localStorage.accessToken,
+              fields: "id,name,gender,picture,email",
+              format: "json"
+            }
+          }).then(function (result) {
+            $scope.perfil = result.data;
+            $scope.nombre_facebook = result.data.email;
+            $scope.token = sessionService.get(key);
+            $scope.nombre = result.data.name;
+            $scope.apellido = "";
+          }, function (error) {
+            alert("Hubo un problema.");
+            console.log(JSON.stringify(error));
+          });
+        }
+        else{
+          $scope.token = sessionService.get(key);
+          $scope.nombre = sessionService.get(name);
+          $scope.apellido = sessionService.get(surname);
+        }
       }
     );
     $scope.iniciarSesion = function () {
       $state.go('app.login');
     }
+
     $scope.cerrarSesion = function () {
       var confirmPopup = $ionicPopup.confirm({
         title: 'Cerrar Sesión',
@@ -59,27 +83,28 @@ angular.module('starter.controllers', [])
       });
       confirmPopup.then(function (res) {
         if (res) {
+          var key = "user_token";
+          var surname = "surname";
+          var facebook = "facebook";
           $ionicLoading.show({
             template: '<ion-spinner icon="ios"></ion-spinner><br/>Cerrando Sesión',
           });
           $timeout(function () {
-            $window.location.reload();
+            if($window.localStorage.hasOwnProperty("accessToken") === true) {
+              sessionService.destroy(facebook);
+            }
+            sessionService.destroy(key);
+            sessionService.destroy(surname);
+            $state.go('app.login');
+            $ionicLoading.hide();
           }, 2000);
-          var key = "user_token";
-          var surname = "surname";
-          sessionService.destroy(key);
-          sessionService.destroy(surname);
-          $ionicHistory.nextViewOptions({
-            disableAnimate: true,
-            disableBack: true
-          });
-          // $state.go('app.logout');
         } else {
           console.log('You are not sure');
         }
       });
     }
   })
+
 
   .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate, Atractivos) {
     $scope.topAtractivos = Atractivos.getTopTenAtractivo();
@@ -234,38 +259,16 @@ angular.module('starter.controllers', [])
     $scope.dominio_img = dominio_img;
   })
 
-  .controller('RecomendacionCtrl', function ($http, $scope, $stateParams, Atractivos, $cordovaOauth, $window, $location, $ionicLoading) {
+  .controller('RecomendacionCtrl', function ($http, $scope, $stateParams, Atractivos) {
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
     $scope.consejos = Atractivos.getConsejosByAtractivo(atractivoId);
     $scope.gastos = Atractivos.getGastosByAtractivo(atractivoId);
-
-    if($window.localStorage.hasOwnProperty("accessToken") === true) {
-      $http.get("https://graph.facebook.com/v2.2/me", { params: { access_token: $window.localStorage.accessToken, fields: "id,name,gender,picture,email", format: "json" }}).then(function(result) {
-        $scope.perfil = result.data;
-      }, function(error) {
-        alert("Hubo un problema.");
-        console.log(JSON.stringify(error));
-      });
-    } else {
-      alert("No se ha iniciado sesion");
-      $location.path("/login");
-    }
   })
 
-  .controller('AgenciasCtrl', function ($scope, Agencias, $cordovaOauth, $window, $location) {
+  .controller('AgenciasCtrl', function ($scope, Agencias) {
     $scope.agencias = Agencias.getAgencias();
     $scope.dominio_img = dominio_img;
-
-    $scope.facebookLogin = function() {
-
-      $cordovaOauth.facebook("1604162166327409", ["email"], {"auth_type": "rerequest"}).then(function(result) {
-        $window.localStorage.accessToken = result.access_token;
-        $location.path("/atractivos");
-      }, function(error) {
-        console.log(JSON.stringify(error));
-      });
-    }
   })
 
   .controller('AgenciaCtrl', function ($scope, $stateParams, Agencias, Paquete) {
@@ -559,7 +562,7 @@ angular.module('starter.controllers', [])
     });
   })
 
-  .controller('LoginCtrl', function ($scope, $stateParams, $ionicPopup, $ionicLoading, sessionService, $ionicHistory, sessionStatus, $state) {
+  .controller('LoginCtrl', function ($scope, $stateParams, $ionicPopup, $ionicLoading, sessionService, $ionicHistory, sessionStatus, $state, $cordovaOauth, $window, $location) {
     $scope.loginData = {};
     $scope.doLogin = function () {
       if (($("#username").val()) == '' || ($("#password").val()) == '') {
@@ -600,17 +603,34 @@ angular.module('starter.controllers', [])
             sessionService.set("email", email);
             data.push(response);
             $ionicLoading.hide();
-            $state.go('app.reload');
+            // $state.go('app.reload');
+            $location.path('/reload');
           }
         });
-
         $ionicHistory.nextViewOptions({
           disableAnimate: true,
-          disableBack: true
+          disableBack: true,
+          historyRoot: false
         });
       }
     }
-
+    $scope.facebookLogin = function() {
+      $cordovaOauth.facebook("1604162166327409", ["email"], {"auth_type": "rerequest"}).then(function(result) {
+        var token = "eyJhbG";
+        var facebook_token = "token2";
+        $window.localStorage.accessToken = result.access_token;
+        sessionService.set("facebook", facebook_token);
+        sessionService.set("user_token", token);
+        $location.path('/reload');
+        $ionicHistory.nextViewOptions({
+          disableAnimate: true,
+          disableBack: true,
+          historyRoot: false
+        });
+      }, function(error) {
+        console.log(JSON.stringify(error));
+      });
+    }
   })
 
   .controller('RegisterCtrl', function ($scope, $stateParams, $ionicPopup, $ionicLoading, sessionService, $ionicHistory, sessionStatus, $state) {
@@ -658,37 +678,32 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('ReloadCtrl', function ($scope, $ionicPopup, $ionicHistory, sessionStatus, $state, $window) {
-    if (sessionStatus.auth()) {
-      $ionicHistory.nextViewOptions({
-        disableAnimate: true,
-        disableBack: true
-      });
-      $state.go('app.home');
-    }
-    else {
-      $window.location.reload();
-    }
-
-  })
-
-  .controller('LogoutCtrl', function ($scope, $ionicPopup, $ionicLoading, $ionicHistory, sessionService, $state, $timeout) {
-
+  .controller('ReloadCtrl', function ($scope, $ionicHistory, sessionStatus, $state, $ionicLoading, $window, $timeout) {
     $ionicLoading.show({
-      template: '<ion-spinner icon="ios"></ion-spinner><br/>Cerrando Sesión',
+      template: '<ion-spinner icon="ios"></ion-spinner><br/>Inicio de Sesión',
     });
     $timeout(function () {
-      var key = "user_token";
-      var surname = "surname";
-      sessionService.destroy(key);
-      sessionService.destroy(surname);
-      $ionicHistory.nextViewOptions({
-        disableAnimate: true,
-        disableBack: true
-      });
-      $state.go('app.home');
-    }, 1500);
+      if(sessionStatus.auth()) {
+        $ionicHistory.nextViewOptions({
+          disableAnimate: true,
+          disableBack: true,
+          historyRoot: false
+        });
+        $state.go('app.home');
+      }
+      $ionicLoading.hide();
+    }, 2000);
 
+    //
+    // if(sessionStatus.auth()) {
+    //   $ionicHistory.nextViewOptions({
+    //     disableAnimate: true,
+    //     disableBack: true
+    //   });
+    //   $state.go('app.home');
+    // }
+    // else {
+    //   $window.location.reload();
+    // }
   })
 
-;
