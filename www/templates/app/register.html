@@ -3,20 +3,20 @@
     <div class="card">
       <h4 class="text-center">Complete el formulario</h4>
       <form ng-submit="doRegister()">
-        <label class="item item-input item-floating-label">
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Nombres:</span>
-          <input class="login__input" type="text" placeholder="Nombres" ng-model="RegisterData.name" required>
+          <input class="login__input" type="text" placeholder="Nombres completos" ng-model="RegisterData.name" required>
         </label>
-        <label class="item item-input item-floating-label">
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Apellidos: </span>
-          <input class="login__input" type="text" placeholder="Apellidos" ng-model="RegisterData.surname" required>
+          <input class="login__input" type="text" placeholder="Apellidos completos" ng-model="RegisterData.surname" required>
         </label>
-        <label class="item item-input item-floating-label">
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Correo electrónico:</span>
           <input class="login__input" type="email" placeholder="Correo electrónico" ng-model="RegisterData.email"
                  required>
         </label>
-        <label class="item item-input item-floating-label">
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Contraseña:</span>
           <input class="login__input" type="password" placeholder="Contraseña" ng-model="RegisterData.password"
                  required>
@@ -30,14 +30,5 @@
         </div>
       </form>
     </div>
-    <!--<div class="list">-->
-      <!--<label class="formulario item">-->
-        <!--<h3 class="text-center">Si ya tienes una cuenta</h3>-->
-        <!--<button class="button button-block button-positive login__btnRegitrarse" ui-sref="app.login">-->
-          <!--<i class="ion ion-android-create"></i> Iniciar Sesión-->
-        <!--</button>-->
-      <!--</label>-->
-    <!--</div>-->
-
   </ion-content>
 </ion-view>

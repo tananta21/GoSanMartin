@@ -8,47 +8,47 @@
         Solicitar reserva
       </h3>
       <form ng-submit="doRegisterReserve()">
-        <input class="login__input" type="hidden" placeholder="Apellidos" ng-model="RegisterData.paquete_id" readonly>
-        <label class="item item-input item-floating-label">
+        <input class="login__input" type="hidden" ng-model="RegisterData.paquete_id" readonly>
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Nombre del Paquete: </span>
           <input class="login__input" type="text" placeholder="Apellidos" ng-model="RegisterData.name_paquete" readonly>
         </label>
 
         <div class="row padding__none" >
           <div class="col col-50">
-            <label class="item item-input item-floating-label" style="border: none;">
+            <label class="item item-input item-stacked-label" style="border: none;">
               <span class="input-label login__input bold">N° Personas: </span>
               <input class="login__input" type="text" ng-model="RegisterData.number_person" readonly>
             </label>
           </div>
           <div class="col col-50">
-            <label class="item item-input item-floating-label" style="border: none;">
+            <label class="item item-input item-stacked-label" style="border: none;">
               <span class="input-label login__input bold">Precio S/.: </span>
               <input class="login__input" type="text" ng-model="RegisterData.precio" readonly>
             </label>
           </div>
         </div>
-        <label class="item item-input item-floating-label">
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Fecha para reserva: </span>
           <input class="login__input" type="date" ng-model="RegisterData.fecha" required>
         </label>
-        <label class="item item-input item-floating-label">
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">N° de Documento: </span>
           <input class="login__input" type="number" maxlength="8" placeholder="N° de Documento" ng-model="RegisterData.documento" required>
         </label>
-        <label class="item item-input item-floating-label">
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Nombres:</span>
           <input class="login__input" type="text" placeholder="Nombres" ng-model="RegisterData.name" required >
         </label>
-        <label class="item item-input item-floating-label">
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Apellidos: </span>
           <input class="login__input" type="text" placeholder="Apellidos" ng-model="RegisterData.surname" required>
         </label>
-        <label class="item item-input item-floating-label">
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Correo electrónico:</span>
           <input class="login__input" type="email" placeholder="Correo electrónico" ng-model="RegisterData.email" required>
         </label>
-        <label class="item item-input item-floating-label">
+        <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">N° de Celular: </span>
           <input class="login__input" type="number" placeholder="N° de Celular" ng-model="RegisterData.celular" required>
         </label>

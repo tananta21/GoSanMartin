@@ -22,7 +22,6 @@ angular.module('starter.controllers', [])
         $state.go('app.home');
         $scope.$apply();
       })
-
       // listen for Offline event
       $rootScope.$on('$cordovaNetwork:offline', function (event, networkState) {
         console.log("got offline");
@@ -42,24 +41,25 @@ angular.module('starter.controllers', [])
     $scope.$on('$stateChangeSuccess',
       function () {
         var key = "user_token";
-        var surname = "surname";
         var name = "name";
+        var surname = "surname";
         var facebook = "facebook";
 
-        // if($window.localStorage.hasOwnProperty("accessToken") === true) {
         if(sessionService.get(facebook) != null) {
           $http.get("https://graph.facebook.com/v2.2/me", {
             params: {
               access_token: $window.localStorage.accessToken,
-              fields: "id,name,gender,picture,email",
+              fields: "id,name,first_name,last_name,email,age_range,gender,picture",
               format: "json"
             }
           }).then(function (result) {
-            $scope.perfil = result.data;
-            $scope.nombre_facebook = result.data.email;
+            sessionService.set("name", result.data.first_name);
+            sessionService.set("surname", result.data.last_name);
+            sessionService.set("email", result.data.email);
             $scope.token = sessionService.get(key);
-            $scope.nombre = result.data.name;
-            $scope.apellido = "";
+            $scope.nombre = sessionService.get(name);
+            $scope.apellido = sessionService.get(surname);
+            $scope.img_perfil = result.data.picture.data.url;
           }, function (error) {
             alert("Hubo un problema.");
             console.log(JSON.stringify(error));
@@ -69,6 +69,7 @@ angular.module('starter.controllers', [])
           $scope.token = sessionService.get(key);
           $scope.nombre = sessionService.get(name);
           $scope.apellido = sessionService.get(surname);
+          $scope.img_perfil = 'img/avatar5.png';
         }
       }
     );
@@ -84,6 +85,7 @@ angular.module('starter.controllers', [])
       confirmPopup.then(function (res) {
         if (res) {
           var key = "user_token";
+          var name = "name";
           var surname = "surname";
           var facebook = "facebook";
           $ionicLoading.show({
@@ -94,6 +96,7 @@ angular.module('starter.controllers', [])
               sessionService.destroy(facebook);
             }
             sessionService.destroy(key);
+            sessionService.destroy(name);
             sessionService.destroy(surname);
             $state.go('app.login');
             $ionicLoading.hide();
@@ -104,7 +107,6 @@ angular.module('starter.controllers', [])
       });
     }
   })
-
 
   .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate, Atractivos) {
     $scope.topAtractivos = Atractivos.getTopTenAtractivo();
@@ -706,4 +708,3 @@ angular.module('starter.controllers', [])
     //   $window.location.reload();
     // }
   })
-

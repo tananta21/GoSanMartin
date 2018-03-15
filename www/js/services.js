@@ -810,5 +810,29 @@ angular.module('starter.services', [])
 
 
 
+var transportes = [
+  {
+    nombre: 'Turismo Selva',
+    lema: 'Confianza, Seguridad y Puntualidad',
+    direccion: '	Jr. Alfonso Ugarte Cdra. 11',
+    horario: 'Todo el día',
+    telefono: '042-530100',
+    celular: '942414214',
+    correo: "selva@turismoselva.com",
+    img: "img/transporte/turismo_selva.jpg",
+    descripcion: 'La Empresa de transporte y servicios turisticos TURISMO SELVA S.A. es una empresa con amplia trayectoria en el rubro del transporte terrestre de pasajeros y envío de encomiendas en la Región San Martín, Loreto y Amazonas, y tiene por objetivo principal el satisfacer las necesidades de los clientes brindando un servicio de calidad, seguridad, comodidad y puntualidad.',
+  },
+  {
+    nombre: 'Turismo Cajamarca',
+    lema: 'Tu transporte seguro',
+    direccion: '	Jr. Alfonso Ugarte N° 1438',
+    horario: 'Todo el día',
+    telefono: '042 529122',
+    celular: '942436249',
+    correo: "info@transportescajamarca.com",
+    img: "img/transporte/turismo_cajamarca.jpg",
+    descripcion: 'La empresa de Transportes y Turismo Cajamarca S.A. es una empresa con muchos años de experiencia, ya que la conformamos choferes guías de pasajeros rurales y turistas acreditados, con la meta de ofrecer un servicio de transporte terrestre integral de calidad en todos los ámbitos. Contamos con automóviles de lujo, con capacidad desde 5 a más pasajeros, que ofrecen el servicio dentro y fuera de la región San Martín. Nuestra empresa está certificada por el sistema de gestión de calidad del Ministerio de Transportes y Comunicaciones del país; es por esto que podemos garantizarle que nuestro servicio es de una alta calidad y usted quedara totalmente satisfecho.',
+  },
 
+]
 
