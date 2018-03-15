@@ -43,6 +43,7 @@ angular.module('starter.controllers', [])
         var key = "user_token";
         var name = "name";
         var surname = "surname";
+        var email = "email";
         var facebook = "facebook";
 
         if(sessionService.get(facebook) != null) {
@@ -53,6 +54,7 @@ angular.module('starter.controllers', [])
               format: "json"
             }
           }).then(function (result) {
+            sessionService.set("facebook_user_id", result.data.id);
             sessionService.set("name", result.data.first_name);
             sessionService.set("surname", result.data.last_name);
             sessionService.set("email", result.data.email);
@@ -60,6 +62,54 @@ angular.module('starter.controllers', [])
             $scope.nombre = sessionService.get(name);
             $scope.apellido = sessionService.get(surname);
             $scope.img_perfil = result.data.picture.data.url;
+            if(sessionService.get('verified_user') === "true"){
+              $.ajax({
+                type: 'GET',
+                url: api + "usuario/verifyUserFacebook",
+                data: {
+                  facebook_user_id: sessionService.get('facebook_user_id'),
+                },
+                dataType: 'JSON',
+                error: function () {
+                  var alertPopup = $ionicPopup.alert({
+                    title: 'Error en inicio de Sesion!',
+                    template: 'Por favor, verificar si sus datos son correctos!'
+                  });
+                  $ionicLoading.hide();
+                },
+                success: function (response) {
+                  if(response === 0){
+                    sessionService.set("register_user", "true");
+                  }
+                }
+              });
+              sessionService.set("verified_user", "false");
+            }
+            if(sessionService.get('register_user') === "true"){
+              $.ajax({
+                type: 'GET',
+                url: api + "usuario/create",
+                data: {
+                  name: sessionService.get(name),
+                  surname: sessionService.get(surname),
+                  email: sessionService.get(email),
+                  password: sessionService.get(surname)
+                },
+                dataType: 'JSON',
+                error: function () {
+                  var alertPopup = $ionicPopup.alert({
+                    title: 'Error en inicio de Sesion!',
+                    template: 'Por favor, verificar si sus datos son correctos!'
+                  });
+                  $ionicLoading.hide();
+                },
+                success: function (response) {
+                  alert("correcticimo");
+                }
+              });
+              sessionService.set("register_user", "false");
+            }
+
           }, function (error) {
             alert("Hubo un problema.");
             console.log(JSON.stringify(error));
@@ -88,6 +138,8 @@ angular.module('starter.controllers', [])
           var name = "name";
           var surname = "surname";
           var facebook = "facebook";
+          var verified_user = "verified_user";
+          var register_user = "register_user";
           $ionicLoading.show({
             template: '<ion-spinner icon="ios"></ion-spinner><br/>Cerrando Sesión',
           });
@@ -98,6 +150,9 @@ angular.module('starter.controllers', [])
             sessionService.destroy(key);
             sessionService.destroy(name);
             sessionService.destroy(surname);
+            sessionService.destroy(facebook);
+            sessionService.destroy(verified_user);
+            sessionService.destroy(register_user);
             $state.go('app.login');
             $ionicLoading.hide();
           }, 2000);
@@ -623,6 +678,7 @@ angular.module('starter.controllers', [])
         $window.localStorage.accessToken = result.access_token;
         sessionService.set("facebook", facebook_token);
         sessionService.set("user_token", token);
+        sessionService.set("verified_user", "true");
         $location.path('/reload');
         $ionicHistory.nextViewOptions({
           disableAnimate: true,
