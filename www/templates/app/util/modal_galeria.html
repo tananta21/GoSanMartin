@@ -8,7 +8,7 @@
         <!--<a ng-click="open_link($event)" target="_system" href="{{url_imagen}}" class="galeria__modal__boxReturn__ancla">-->
           <!--<i class="ion ion-android-download"></i> Descargar-->
         <!--</a>-->
-        <button ng-click="closeModal()" class="galeria__modal__boxReturn__ancla">
+        <button ng-click="closeModal()" class="button button-dark galeria__modal__boxReturn__ancla">
           <i class="ion ion-close-round"></i>
         </button>
 
@@ -16,9 +16,14 @@
       <img class="galeria__modal__img"
            src="{{url_imagen}}" alt="">
 
-      <h3 class="galeria__modal__name">
-        {{descripcion}}
+      <h2 class="galeria__modal__name">
+        {{nombre}}
+      </h2>
+      <h3 ng-if="descripcion != ''" class="galeria__modal__name">
+        ({{descripcion}})
       </h3>
+
     </div>
   </ion-content>
 </ion-modal-view>
+

@@ -8,17 +8,20 @@
         Seleccione la provincia
       </h3>
       <form ng-submit="doFilterProvince()" id="formProvinces">
-        <ion-radio name="province"  ng-value="'2209'">San Martín</ion-radio>
-        <ion-radio name="province"  ng-value="'2201'">Moyobamba</ion-radio>
-        <ion-radio name="province"  ng-value="'2205'">Lamas</ion-radio>
-        <ion-radio name="province"  ng-value="'2208'">Rioja</ion-radio>
-        <ion-radio name="province"  ng-value="'2203'">El Dorado</ion-radio>
-        <ion-radio name="province"  ng-value="'2204'">Huallaga</ion-radio>
-        <ion-radio name="province"  ng-value="'2202'">Bellavista</ion-radio>
-        <ion-radio name="province"  ng-value="'2207'">Picota</ion-radio>
-        <ion-radio name="province"  ng-value="'2206'">Mariscal Cáceres</ion-radio>
-        <ion-radio name="province"  ng-value="'2210'">Tocache</ion-radio>
+        <ion-radio name="province" required ng-value="'2209'">San Martín</ion-radio>
+        <ion-radio name="province" required ng-value="'2201'">Moyobamba</ion-radio>
+        <ion-radio name="province" required ng-value="'2205'">Lamas</ion-radio>
+        <ion-radio name="province" required ng-value="'2208'">Rioja</ion-radio>
+        <ion-radio name="province" required ng-value="'2203'">El Dorado</ion-radio>
+        <ion-radio name="province" required ng-value="'2204'">Huallaga</ion-radio>
+        <ion-radio name="province" required ng-value="'2202'">Bellavista</ion-radio>
+        <ion-radio name="province" required ng-value="'2207'">Picota</ion-radio>
+        <ion-radio name="province" required ng-value="'2206'">Mariscal Cáceres</ion-radio>
+        <ion-radio name="province" required ng-value="'2210'">Tocache</ion-radio>
         <div class="list">
+          <h5 class="text-center alert_form_message" ng-if="error_msg != null">
+            {{error_msg}}
+          </h5>
           <div class="row padding__none">
             <div class="col col-100">
               <label class="formulario item" style="border: none">

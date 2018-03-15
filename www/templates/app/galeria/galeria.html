@@ -2,7 +2,7 @@
   <ion-content>
     <div class="galeria__content">
       <div class="galeria__item" ng-repeat="image in galeria[0]">
-        <a ng-click='openModal("http://{{dominio_img}}/{{image.url_imagen}}","{{image.descripcion}}")'>
+        <a ng-click='openModal("http://{{dominio_img}}/{{image.url_imagen}}","{{image.descripcion}}","{{image.nombre}}")'>
           <img class="galeria__img" src="http://{{dominio_img}}/{{image.url_imagen}}" alt="">
         </a>
       </div>

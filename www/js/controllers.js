@@ -81,19 +81,24 @@ angular.module('starter.controllers', [])
                   if(response === 0){
                     sessionService.set("register_user", "true");
                   }
+                  else{
+                    sessionService.set("register_user", "false");
+                  }
                 }
               });
+
               sessionService.set("verified_user", "false");
             }
             if(sessionService.get('register_user') === "true"){
               $.ajax({
                 type: 'GET',
-                url: api + "usuario/create",
+                url: api + "usuario/create/facebook",
                 data: {
                   name: sessionService.get(name),
                   surname: sessionService.get(surname),
                   email: sessionService.get(email),
-                  password: sessionService.get(surname)
+                  password: sessionService.get(surname),
+                  facebook_user_id: sessionService.get('facebook_user_id')
                 },
                 dataType: 'JSON',
                 error: function () {
@@ -226,17 +231,28 @@ angular.module('starter.controllers', [])
 
     $scope.doFilterProvince = function () {
       var provincia = $('input[name=province]:checked').val();
-      $scope.name_filter = "Provincia";
-      $scope.name_option_filter = $('input[name=province]:checked').parent('label').text();
-      $scope.modal.hide();
-      $scope.atractivos = Atractivos.getAtractivosByUbigeo(provincia);
+      if (provincia!=undefined){
+        $scope.name_filter = "Provincia";
+        $scope.name_option_filter = $('input[name=province]:checked').parent('label').text();
+        $scope.modal.hide();
+        $scope.atractivos = Atractivos.getAtractivosByUbigeo(provincia);
+      }
+      else{
+        $scope.error_msg = 'Por favor, seleccione una opción !!';
+      }
     }
 
-    $scope.doRefresh = function () {
+    $scope.doRefreshFilter = function () {
       document.getElementById('formProvinces').reset();
       $scope.atractivos = Atractivos.getAtractivos();
       $scope.$broadcast('scroll.refreshComplete');
       $scope.name_filter = null;
+      $scope.error_msg = null;
+    }
+
+    $scope.doRefresh = function () {
+      $scope.atractivos = Atractivos.getAtractivos();
+      $scope.$broadcast('scroll.refreshComplete');
     }
 
 
@@ -547,9 +563,10 @@ angular.module('starter.controllers', [])
     }).then(function (modal) {
       $scope.modal = modal;
     });
-    $scope.openModal = function (url_imagen, descripcion) {
+    $scope.openModal = function (url_imagen, descripcion,nombre) {
       $scope.url_imagen = url_imagen;
       $scope.descripcion = descripcion;
+      $scope.nombre = nombre;
 
       $scope.modal.show();
     };

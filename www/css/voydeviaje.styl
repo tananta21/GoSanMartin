@@ -263,16 +263,23 @@ body
     min-height 100%
     overflow-y auto
     &__boxReturn
+
       text-align right
-      padding 25px 20px
+      padding 18px 15px 0px
       //display flex
       justify-content space-between
       &__ancla
-        font-size 18px
+        font-size 23px !important
         color white
         background $dark
         border none
         text-decoration none
+        &:active
+          background $dark !important
+        &:focus
+          background $dark !important
+        &:visited
+          background $dark !important
     &__img
       margin-top 5%
       width 100%

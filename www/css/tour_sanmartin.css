@@ -78,6 +78,11 @@
   border-radius: 5px;
   background-color: rgba(0,0,0,0);
 }
+.alert_form_message {
+  background: #f00;
+  padding: 5px;
+  color: #fff;
+}
 .login {
   display: block;
 }
@@ -206,6 +211,11 @@
   padding: 20px;
   border-radius: 5px;
   background-color: rgba(0,0,0,0);
+}
+.alert_form_message {
+  background: #f00;
+  padding: 5px;
+  color: #fff;
 }
 .login {
   display: block;
@@ -544,15 +554,24 @@ body {
 }
 .galeria__modal__boxReturn {
   text-align: right;
-  padding: 25px 20px;
+  padding: 18px 15px 0px;
   justify-content: space-between;
 }
 .galeria__modal__boxReturn__ancla {
-  font-size: 18px;
+  font-size: 23px !important;
   color: #fff;
   background: #444;
   border: none;
   text-decoration: none;
+}
+.galeria__modal__boxReturn__ancla:active {
+  background: #444 !important;
+}
+.galeria__modal__boxReturn__ancla:focus {
+  background: #444 !important;
+}
+.galeria__modal__boxReturn__ancla:visited {
+  background: #444 !important;
 }
 .galeria__modal__img {
   margin-top: 5%;

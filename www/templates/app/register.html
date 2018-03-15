@@ -1,11 +1,11 @@
 <ion-view view-title="Registrarse">
   <ion-content class="body-login">
     <div class="card">
-      <h4 class="text-center">Complete el formulario</h4>
-      <form ng-submit="doRegister()">
+      <h3 class="text-center">Complete el formulario</h3>
+      <form name="formRegister" ng-submit="doRegister()">
         <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Nombres:</span>
-          <input class="login__input" type="text" placeholder="Nombres completos" ng-model="RegisterData.name" required>
+          <input class="login__input" type="text" name="names" placeholder="Nombres completos" ng-model="RegisterData.name" required>
         </label>
         <label class="item item-input item-stacked-label">
           <span class="input-label login__input bold">Apellidos: </span>
@@ -22,6 +22,9 @@
                  required>
         </label>
         <div class="list">
+          <h5 class="text-center alert_form_message" ng-if="formRegister.$valid == false">
+            ¡Todos los campos son requeridos!
+          </h5>
           <label class="formulario item">
             <button class="button button-block button-positive login__btnIniciarSesion" type="submit" required>
               <i class="ion ion-log-in"></i> Registrarse
