@@ -1,17 +1,7 @@
-//SERVIDOR ==================================
-// var dominio = "http://voydeviaje.tk";
-// var dominio_img = "voydeviaje.tk";
-
-//LOCALMENTE ================================
-var ip = "192.168.1.42";
-var dominio = "http://" + ip;
-var dominio_img = ip;
-
-var api = dominio + "/api/";
 
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicHistory, $window, $timeout, $ionicPopup, sessionService, $cordovaOauth, $location, $http) {
+  .controller('AppCtrl', function ($scope, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicHistory, $window, $timeout, $ionicPopup, sessionService, $cordovaOauth, $location, $http, HostConnect) {
     document.addEventListener("deviceready", function () {
       $scope.network = $cordovaNetwork.getNetwork();
       $scope.isOnline = $cordovaNetwork.isOnline();
@@ -65,7 +55,7 @@ angular.module('starter.controllers', [])
             if(sessionService.get('verified_user') === "true"){
               $.ajax({
                 type: 'GET',
-                url: api + "usuario/verifyUserFacebook",
+                url:HostConnect.getDomainApi()+"usuario/verifyUserFacebook",
                 data: {
                   facebook_user_id: sessionService.get('facebook_user_id'),
                 },
@@ -92,7 +82,7 @@ angular.module('starter.controllers', [])
             if(sessionService.get('register_user') === "true"){
               $.ajax({
                 type: 'GET',
-                url: api + "usuario/create/facebook",
+                url: HostConnect.getDomainApi()+"usuario/create/facebook",
                 data: {
                   name: sessionService.get(name),
                   surname: sessionService.get(surname),
@@ -109,7 +99,6 @@ angular.module('starter.controllers', [])
                   $ionicLoading.hide();
                 },
                 success: function (response) {
-                  alert("correcticimo");
                 }
               });
               sessionService.set("register_user", "false");
@@ -168,17 +157,16 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate, Atractivos) {
+  .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate, Atractivos, HostConnect) {
     $scope.topAtractivos = Atractivos.getTopTenAtractivo();
-    $scope.dominio_img = dominio_img;
-
+    $scope.dominio_img = HostConnect.getDomain();
     $scope.nextSlide = function () {
       $ionicSlideBoxDelegate.next();
     }
   })
 
-  .controller('AtractivosCtrl', function ($scope, $window, Atractivos, $ionicPopup, $ionicLoading, $ionicModal) {
-    $scope.dominio_img = dominio_img;
+  .controller('AtractivosCtrl', function ($scope, $window, Atractivos, $ionicPopup, $ionicLoading, $ionicModal, HostConnect) {
+    $scope.dominio_img =HostConnect.getDomain();
     $scope.atractivos = Atractivos.getAtractivos();
 
     $ionicModal.fromTemplateUrl('templates/app/util/modal_filter_provincias.html', {
@@ -258,11 +246,11 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos, Paquete) {
+  .controller('AtractivoCtrl', function ($http, $scope, $stateParams, $cordovaSocialSharing, $ionicModal, Atractivos, Paquete, HostConnect) {
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
     $scope.paquetes = Paquete.getTopPaqueteByAtractivo(atractivoId);
-    $scope.dominio_img = dominio_img;
+    $scope.dominio_img = HostConnect.getDomain();
 
     $scope.informacion = function () {
       $('.informacion').addClass("activo");
@@ -324,12 +312,12 @@ angular.module('starter.controllers', [])
     });
   })
 
-  .controller('AtractivoDetalleCtrl', function ($http, $scope, $stateParams, Atractivos) {
+  .controller('AtractivoDetalleCtrl', function ($http, $scope, $stateParams, Atractivos, HostConnect) {
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
     $scope.actividades = Atractivos.getActividadesByAtractivo(atractivoId);
     $scope.rutas = Atractivos.getRutasByAtractivo(atractivoId);
-    $scope.dominio_img = dominio_img;
+    $scope.dominio_img = HostConnect.getDomain();
   })
 
   .controller('RecomendacionCtrl', function ($http, $scope, $stateParams, Atractivos) {
@@ -339,17 +327,17 @@ angular.module('starter.controllers', [])
     $scope.gastos = Atractivos.getGastosByAtractivo(atractivoId);
   })
 
-  .controller('AgenciasCtrl', function ($scope, Agencias) {
+  .controller('AgenciasCtrl', function ($scope, Agencias, HostConnect) {
     $scope.agencias = Agencias.getAgencias();
-    $scope.dominio_img = dominio_img;
+    $scope.dominio_img = HostConnect.getDomain();
   })
 
-  .controller('AgenciaCtrl', function ($scope, $stateParams, Agencias, Paquete) {
+  .controller('AgenciaCtrl', function ($scope, $stateParams, Agencias, Paquete, HostConnect) {
     var AgenciaId = $stateParams.id;
     $scope.agencia = Agencias.getAgencia(AgenciaId);
     $scope.redes = Agencias.getRedesByAgencia(AgenciaId);
     $scope.paquetes = Paquete.getTopPaqueteByAgencia(AgenciaId);
-    $scope.dominio_img = dominio_img;
+    $scope.dominio_img = HostConnect.getDomain();
 
     $scope.open_link = function (event) {
       var href = event.target.href;
@@ -360,18 +348,18 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('PaqueteCtrl', function ($scope, Paquete) {
+  .controller('PaqueteCtrl', function ($scope, Paquete, HostConnect) {
     $scope.paquetes = Paquete.getAllPaquetes();
-    $scope.dominio_img = dominio_img;
+    $scope.dominio_img = HostConnect.getDomain();
   })
 
-  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, Paquete, sessionStatus, $state, $ionicModal, $ionicPopup, sessionService, $ionicLoading, $timeout, $window, $ionicHistory) {
+  .controller('PaqueteDetalleCtrl', function ($scope, $stateParams, Paquete, sessionStatus, $state, $ionicModal, $ionicPopup, sessionService, $ionicLoading, $timeout, $window, $ionicHistory, HostConnect) {
     var paqueteId = $stateParams.id;
     $scope.paquete = Paquete.getPaqueteById(paqueteId);
     $scope.galeria = Paquete.getImgPaqueteById(paqueteId);
     $scope.precios = Paquete.getPrecioPaqueteById(paqueteId);
     $scope.itinerario = Paquete.getItinerarioPaqueteById(paqueteId);
-    $scope.dominio_img = dominio_img;
+    $scope.dominio_img = HostConnect.getDomain();
 
     $scope.reserve = function (id, name, number_person, precio) {
       $scope.RegisterData = {};
@@ -418,7 +406,7 @@ angular.module('starter.controllers', [])
               var data = [];
               $.ajax({
                 type: 'GET',
-                url: api + "reservar/paquete",
+                url: HostConnect.getDomainApi()+"reservar/paquete",
                 data: {
                   user_id:  sessionService.get('id_user'),
                   paquete_id: $scope.RegisterData.paquete_id,
@@ -461,19 +449,19 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('PaquetesByAtractivoCtrl', function ($scope, $stateParams, Paquete, Atractivos) {
+  .controller('PaquetesByAtractivoCtrl', function ($scope, $stateParams, Paquete, Atractivos, HostConnect) {
     var atractivoId = $stateParams.id;
     $scope.atractivo = Atractivos.getAtractivo(atractivoId);
     $scope.paquetes = Paquete.getPaquetesByAtractivo(atractivoId);
-    $scope.dominio_img = dominio_img;
+    $scope.dominio_img = HostConnect.getDomain();
 
   })
 
-  .controller('PaquetesByAgenciaCtrl', function ($scope, $stateParams, Paquete, Agencias) {
+  .controller('PaquetesByAgenciaCtrl', function ($scope, $stateParams, Paquete, Agencias, HostConnect) {
     var agenciaId = $stateParams.id;
     $scope.agencia = Agencias.getAgencia(agenciaId)
     $scope.paquetes = Paquete.getPaquetesByAgencia(agenciaId);
-    $scope.dominio_img = dominio_img;
+    $scope.dominio_img = HostConnect.getDomain();
 
   })
 
@@ -547,10 +535,10 @@ angular.module('starter.controllers', [])
     //});
   })
 
-  .controller('GaleriaCtrl', function ($scope, $ionicModal, Galeria) {
+  .controller('GaleriaCtrl', function ($scope, $ionicModal, Galeria, HostConnect) {
 
     $scope.galeria = Galeria.getGaleria();
-    $scope.dominio_img = dominio_img;
+    $scope.dominio_img = HostConnect.getDomain();
 
     $scope.open_link = function (event) {
       var href = event.target.href;
@@ -592,9 +580,9 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('ImagenCtrl', function ($scope, $stateParams, $ionicSlideBoxDelegate, Atractivos) {
+  .controller('ImagenCtrl', function ($scope, $stateParams, $ionicSlideBoxDelegate, Atractivos, HostConnect) {
     var atractivoId = $stateParams.id;
-    $scope.dominio_img = dominio_img;
+    $scope.dominio_img = HostConnect.getDomain();
 
     $scope.data = {};
     $scope.data.currentPage = 0;
@@ -636,7 +624,7 @@ angular.module('starter.controllers', [])
     });
   })
 
-  .controller('LoginCtrl', function ($scope, $stateParams, $ionicPopup, $ionicLoading, sessionService, $ionicHistory, sessionStatus, $state, $cordovaOauth, $window, $location) {
+  .controller('LoginCtrl', function ($scope, $stateParams, $ionicPopup, $ionicLoading, sessionService, $ionicHistory, sessionStatus, $state, $cordovaOauth, $window, $location, HostConnect) {
     $scope.loginData = {};
     $scope.doLogin = function () {
       if (($("#username").val()) == '' || ($("#password").val()) == '') {
@@ -651,7 +639,7 @@ angular.module('starter.controllers', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "usuario/loguear",
+          url: HostConnect.getDomainApi()+ "usuario/loguear",
           data: {
             email: $scope.loginData.username,
             password: $scope.loginData.password
@@ -708,7 +696,7 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('RegisterCtrl', function ($scope, $stateParams, $ionicPopup, $ionicLoading, sessionService, $ionicHistory, sessionStatus, $state) {
+  .controller('RegisterCtrl', function ($scope, $stateParams, $ionicPopup, $ionicLoading, sessionService, $ionicHistory, sessionStatus, $state, HostConnect) {
     $scope.RegisterData = {};
     $scope.doRegister = function () {
       $ionicLoading.show({
@@ -717,7 +705,7 @@ angular.module('starter.controllers', [])
       var data = [];
       $.ajax({
         type: 'GET',
-        url: api + "usuario/create",
+        url:HostConnect.getDomainApi()+ "usuario/create",
         data: {
           name: $scope.RegisterData.name,
           surname: $scope.RegisterData.surname,

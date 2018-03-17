@@ -1,16 +1,7 @@
-//SERVIDOR ==================================
-// var dominio = "voydeviaje.tk";
-
-//LOCALMENTE ================================
-var ip = "192.168.1.42";
-var dominio = ip;
-
-var api = "http://" + dominio + "/api/";
-
 angular.module('starter.services', [])
 
 //PETICIONES  ATRACTIVOS
-  .factory('Atractivos', function ($ionicLoading, $ionicPopup) {
+  .factory('Atractivos', function ($ionicLoading, $ionicPopup, HostConnect) {
     return {
       getAtractivos: function () {
         $ionicLoading.show({
@@ -19,7 +10,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "atractivos",
+          url: HostConnect.getDomainApi()+"atractivos",
           dataType: 'JSON',
           error: function () {
             var alertPopup = $ionicPopup.alert({
@@ -43,7 +34,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "atractivo/by_id",
+          url:HostConnect.getDomainApi()+"atractivo/by_id",
           data:{
             id :atractivo_id
           },
@@ -70,7 +61,7 @@ angular.module('starter.services', [])
         var atractivo_id = id;
         $.ajax({
           type: 'GET',
-          url: api + "atractivo/imagen/by_id",
+          url: HostConnect.getDomainApi()+"atractivo/imagen/by_id",
           data:{
             id :atractivo_id
           },
@@ -96,7 +87,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "actividades/atractivo/by_id",
+          url:HostConnect.getDomainApi()+"actividades/atractivo/by_id",
           data:{
             id :id
           },
@@ -122,7 +113,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "consejos/atractivo/by_id",
+          url: HostConnect.getDomainApi()+"consejos/atractivo/by_id",
           data:{
             id :id
           },
@@ -148,7 +139,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "gastos/atractivo/by_id",
+          url:HostConnect.getDomainApi()+"gastos/atractivo/by_id",
           data:{
             id :id
           },
@@ -174,7 +165,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "rutas/atractivo/by_id",
+          url:HostConnect.getDomainApi()+"rutas/atractivo/by_id",
           data:{
             id :id
           },
@@ -200,7 +191,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "atractivos/top_ten",
+          url: HostConnect.getDomainApi()+"atractivos/top_ten",
           dataType: 'JSON',
           error: function () {
             var alertPopup = $ionicPopup.alert({
@@ -224,7 +215,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "atractivos/by_ubigeo_id",
+          url:HostConnect.getDomainApi()+"atractivos/by_ubigeo_id",
           data:{
             numubigeo :numubigeo
           },
@@ -247,7 +238,7 @@ angular.module('starter.services', [])
 
   })
 
-  .factory('Paquete', function ($ionicLoading, $ionicPopup) {
+  .factory('Paquete', function ($ionicLoading, $ionicPopup, HostConnect) {
     return {
       getAllPaquetes: function () {
         $ionicLoading.show({
@@ -256,7 +247,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "paquetes_turisticos",
+          url:HostConnect.getDomainApi()+"paquetes_turisticos",
           dataType: 'JSON',
           error: function () {
             var alertPopup = $ionicPopup.alert({
@@ -280,7 +271,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "paquete/by_id",
+          url:HostConnect.getDomainApi()+"paquete/by_id",
           data:{
             id :id
           },
@@ -307,7 +298,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "paquetes/by_atractivo_id",
+          url:HostConnect.getDomainApi()+"paquetes/by_atractivo_id",
           data:{
             id :atractivo
           },
@@ -334,7 +325,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "paquetes/by_agencia_id",
+          url:HostConnect.getDomainApi()+"paquetes/by_agencia_id",
           data:{
             id :agencia
           },
@@ -361,7 +352,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "paquete/img/by_id",
+          url:HostConnect.getDomainApi()+"paquete/img/by_id",
           data:{
             id :id
           },
@@ -388,7 +379,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "paquete/itinerario/by_id",
+          url:HostConnect.getDomainApi()+"paquete/itinerario/by_id",
           data:{
             id :id
           },
@@ -415,7 +406,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "itinerario/by_id",
+          url:HostConnect.getDomainApi()+"itinerario/by_id",
           data:{
             id :id
           },
@@ -442,7 +433,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "itinerario/lugar/by_id",
+          url:HostConnect.getDomainApi()+"itinerario/lugar/by_id",
           data:{
             id :id
           },
@@ -469,7 +460,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "paquete/precio/by_id",
+          url: HostConnect.getDomainApi() + "paquete/precio/by_id",
           data:{
             id :id
           },
@@ -496,7 +487,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "paquetes_turisticos/by_atractivo",
+          url: HostConnect.getDomainApi() + "paquetes_turisticos/by_atractivo",
           data:{
             id :atractivo_id
           },
@@ -523,7 +514,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "paquetes_turisticos/by_agencia",
+          url: HostConnect.getDomainApi() + "paquetes_turisticos/by_agencia",
           data:{
             id :agencia_id
           },
@@ -547,7 +538,7 @@ angular.module('starter.services', [])
 
   })
 
-  .factory('Galeria', function ($ionicLoading, $ionicPopup) {
+  .factory('Galeria', function ($ionicLoading, $ionicPopup, HostConnect) {
     return {
       getGaleria: function () {
         $ionicLoading.show({
@@ -556,7 +547,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "galeria",
+          url: HostConnect.getDomainApi() + "galeria",
           dataType: 'JSON',
           error: function () {
             var alertPopup = $ionicPopup.alert({
@@ -577,7 +568,7 @@ angular.module('starter.services', [])
 
   })
 
-  .factory('Agencias', function ($ionicLoading) {
+  .factory('Agencias', function ($ionicLoading, $ionicPopup,HostConnect ) {
     return {
       getAgencias: function () {
         $ionicLoading.show({
@@ -586,7 +577,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "agencias",
+          url: HostConnect.getDomainApi() + "agencias",
           dataType: 'JSON',
           error: function () {
             var alertPopup = $ionicPopup.alert({
@@ -609,7 +600,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "agencia/by_id",
+          url: HostConnect.getDomainApi() + "agencia/by_id",
           data:{
             id :id
           },
@@ -635,7 +626,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "redes/by_agencia",
+          url: HostConnect.getDomainApi() + "redes/by_agencia",
           data:{
             id :id
           },
@@ -668,7 +659,7 @@ angular.module('starter.services', [])
     }
   })
 
-  .factory('LoginUser', function ($ionicLoading, $ionicPopup, sessionService) {
+  .factory('LoginUser', function ($ionicLoading, $ionicPopup, sessionService, HostConnect) {
     return {
       getLoginUser: function (email, password) {
         $ionicLoading.show({
@@ -677,7 +668,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "usuario/loguear",
+          url: HostConnect.getDomainApi() + "usuario/loguear",
           data:{
             email :email,
             password :password
@@ -716,7 +707,7 @@ angular.module('starter.services', [])
         var data = [];
         $.ajax({
           type: 'GET',
-          url: api + "usuario/create",
+          url: HostConnect.getDomainApi() + "usuario/create",
           data:{
             name :name,
             surname :surname,
@@ -807,6 +798,20 @@ angular.module('starter.services', [])
       },
     };
   }])
+
+  .service("HostConnect", function () {
+    return{
+      getDomain : function() {
+        return "voydeviaje.ml";
+      },
+      getDomainHttp: function () {
+        return "http://voydeviaje.ml";
+      },
+      getDomainApi: function () {
+        return "http://voydeviaje.ml/api/";
+      }
+    }
+  })
 
 
 
