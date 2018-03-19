@@ -579,6 +579,10 @@ angular.module('starter.controllers', [])
   .controller('ValoracionCtrl', function ($scope) {
 
   })
+  .controller('SugerenciaCtrl', function ($scope) {
+
+  })
+
 
   .controller('ImagenCtrl', function ($scope, $stateParams, $ionicSlideBoxDelegate, Atractivos, HostConnect) {
     var atractivoId = $stateParams.id;

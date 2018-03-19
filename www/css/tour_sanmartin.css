@@ -30,6 +30,9 @@
 .mr_0_5r {
   margin-right: 0.5rem;
 }
+.width_100 {
+  width: 100%;
+}
 .box1,
 .box2,
 .box3 {
@@ -163,6 +166,9 @@
 }
 .mr_0_5r {
   margin-right: 0.5rem;
+}
+.width_100 {
+  width: 100%;
 }
 .box1,
 .box2,
@@ -817,6 +823,10 @@ body {
 .reserve__content__title {
   padding-top: 30px;
   padding-bottom: 20px;
+}
+.sugerency__textArea {
+  width: 100%;
+  margin-top: 20px;
 }
 .modal-backdrop,
 .modal-backdrop-bg {

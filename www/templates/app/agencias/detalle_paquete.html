@@ -44,11 +44,21 @@
       <i class="ion-ios-information mr_0_5r"></i> Itinerario para el paquete
     </div>
     <div class="item item-text-wrap">
-      <div class="detallePaquete__iti__item" ng-repeat="item in itinerario[0]">
-        <a class="detallePaquete__iti__ancla" ui-sref="app.detalle_itinerario({ id: item.id })">
-          <p class="detallePaquete__iti__text">{{item.nro_dia}} | {{item.titulo}} <i class="ion ion-arrow-graph-up-right"></i></p>
-        </a>
+      <div ng-repeat="item in itinerario[0]" class="card atractivoDetail__boxCompartir__btn" style="margin: 0px 8px 0px 8px"
+           ui-sref="app.detalle_itinerario({ id: item.id })">
+        <div class="item item-text-wrap" style="padding: 2px">
+          <div class="row padding__none">
+            <p class="detallePaquete__iti__text width_100 text-center">
+              {{item.nro_dia}} | {{item.titulo}} <i class="ion ion-arrow-graph-up-right"></i>
+            </p>
+          </div>
+        </div>
       </div>
+      <!--<div class="detallePaquete__iti__item" ng-repeat="item in itinerario[0]">-->
+        <!--<a class="detallePaquete__iti__ancla" ui-sref="app.detalle_itinerario({ id: item.id })">-->
+          <!--<p class="detallePaquete__iti__text">{{item.nro_dia}} | {{item.titulo}} <i class="ion ion-arrow-graph-up-right"></i></p>-->
+        <!--</a>-->
+      <!--</div>-->
     </div>
 
   </ion-content>

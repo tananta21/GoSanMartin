@@ -52,6 +52,11 @@
           Paquetes Turísticos
         </ion-item>
 
+        <ion-item class="item_menu" menu-close ui-sref="app.evento" ui-sref-active="active">
+          <i class=" icon-menu ion ion-calendar"></i>
+          Eventos
+        </ion-item>
+
         <ion-item class="item_menu" menu-close ui-sref="app.galeria" ui-sref-active="active">
           <i class=" icon-menu ion ion-image"></i>
           Galería de fotos
@@ -64,11 +69,14 @@
           <i class=" icon-menu ion ion-android-phone-portrait"></i>
           Emergencias
         </ion-item>
+        <ion-item class="item_menu" menu-close ui-sref="app.sugerencia" ui-sref-active="active" >
+          <i class=" icon-menu ion ion-speakerphone"></i>
+          Sugerencias
+        </ion-item>
         <ion-item class="item_menu" menu-close ui-sref="app.acerca" ui-sref-active="active" >
           <i class=" icon-menu ion ion-help"></i>
           Acerca de
         </ion-item>
-
         <ion-item ng-if="token != null" ng-click="cerrarSesion()" class="item_menu" menu-close >
           <i class=" icon-menu ion ion-log-out"></i>
           Cerrar Sesión
