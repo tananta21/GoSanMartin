@@ -1,16 +1,29 @@
 <ion-modal-view>
   <ion-header-bar>
-    <h1 class="title">My Modal title</h1>
-    <button class="button button-positive"  ng-click="closeModal()">
-      <span class="share-button">Share</span>
+    <h1 class="title">Compartir en :</h1>
+    <button style="font-size: 17px" class="button button-light"  ng-click="closeModal()">
+      <i class="ion ion-close"></i>
     </button>
   </ion-header-bar>
   <ion-content>
-    <h3>{{atractivo[0].nombre}}</h3>
-    <div style="text-align: center">
-      <a data-ng-click='shareFacebook(atractivo[0].nombre)' class="button button-positive">
-        <span class="share-button">Facebook</span>
-      </a>
+      <div class="row row-wrap share__boxItems">
+        <div class="col col-33 text-center" data-ng-click='shareFacebook(atractivo[0].nombre)' >
+          <img class="share__img" src="img/log/facebook.png" alt="">
+          <p class="share-button">Facebook</p>
+        </div>
+        <div class="col col-33 text-center" data-ng-click='shareFacebook(atractivo[0].nombre)' >
+          <img class="share__img" src="img/log/messenger.png" alt="">
+          <p class="share-button">Messenger</p>
+        </div>
+        <div class="col col-33 text-center" data-ng-click='shareFacebook(atractivo[0].nombre)' >
+          <img class="share__img" src="img/log/whatsapp.png" alt="">
+          <p class="share-button">Whatsapp</p>
+        </div>
+        <div class="col col-33 text-center" data-ng-click='shareFacebook(atractivo[0].nombre)' >
+          <img class="share__img" src="img/log/instagram.png" alt="">
+          <p class="share-button">Instagram</p>
+        </div>
+
       <!--<button onclick="window.plugins.socialsharing.shareViaFacebookWithPasteMessageHint('Message via Facebook', null /* img */, null /* url */, 'Paste it dude!', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>-->
       <!--<button onclick="window.plugins.socialsharing.shareViaInstagram('Message via Instagram', null, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Instagram</button>-->
       <!--<button onclick="window.plugins.socialsharing.shareViaWhatsApp('Message via WhatsApp', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via WhatsApp (with errcallback)</button>-->

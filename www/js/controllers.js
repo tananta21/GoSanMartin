@@ -252,19 +252,15 @@ angular.module('starter.controllers', [])
     $scope.paquetes = Paquete.getTopPaqueteByAtractivo(atractivoId);
     $scope.dominio_img = HostConnect.getDomain();
 
-    // $scope.shareAnywhere = function () {
-    //   var msg = 'Descubre lo maravilloso de San martín, conozca descarga la aplicación en el siguiente enlace';
-    //   $cordovaSocialSharing.share('Message, subject, image and link', 'The subject','https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl');
-    // }
+    var url_download = 'https://play.google.com/store/apps/developer?id=TripAdvisor&hl=es';
 
     $scope.shareFacebook = function(atractivo) {
-      var msg = 'Descubre "' + atractivo + '" , ¿Qué esperas?, descarga la aplicación en el siguiente enlace y conoce muchos lugares más en tu visita a Tarapoto!!';
+      var msg = 'Descubre "' + atractivo + '" , ¿Qué esperas?, descarga la aplicación de Play Store en el siguiente enlace y conoce muchos lugares más en tu visita a Tarapoto!!';
       $cordovaSocialSharing.shareViaFacebookWithPasteMessageHint(
         msg,
         null /* img */,
-        'https://play.google.com/store/apps/developer?id=TripAdvisor&hl=es' /* url */,
+        url_download /* url */,
         'Pega el contenido del mensaje!',
-
         function () {
           console.log('share ok')
         }, function (errormsg) {

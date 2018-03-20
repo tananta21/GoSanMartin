@@ -839,6 +839,13 @@ body {
   margin-top: 20px;
   font-size: 16px;
 }
+.share__boxItems {
+  margin-top: 20px;
+}
+.share__img {
+  width: 50px;
+  height: 50px;
+}
 .modal-backdrop,
 .modal-backdrop-bg {
   top: 0% !important;

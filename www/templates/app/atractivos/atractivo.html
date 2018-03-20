@@ -28,7 +28,7 @@
             <p class="atractivoDetail__boxBtns__span">Videos</p>
           </div>
           <div class="col text-center">
-            <button ng-click="shareAnywhere()" class="button button-calm atractivoDetail__boxBtns__btn">
+            <button ng-click='openModal()' class="button button-calm atractivoDetail__boxBtns__btn">
               <i class="ion ion-android-share-alt"></i>
             </button>
             <p class="atractivoDetail__boxBtns__span">Compartir</p>
@@ -36,11 +36,6 @@
         </div>
       </div>
     </div>
-
-    <button class="button button-positive" ng-click='openModal()'>
-      <span class="share-button">Share</span>
-    </button>
-
     <div ng-if="atractivo[0].descripcion != '' " class="atractivoDetail__boxDescription">
       <p class="atractivoDetail__boxDescription__text">
         {{atractivo[0].descripcion}}
