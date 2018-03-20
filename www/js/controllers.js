@@ -252,14 +252,14 @@ angular.module('starter.controllers', [])
     $scope.paquetes = Paquete.getTopPaqueteByAtractivo(atractivoId);
     $scope.dominio_img = HostConnect.getDomain();
 
-    var url_download = 'https://play.google.com/store/apps/developer?id=TripAdvisor&hl=es';
+    $scope.url_download = 'https://play.google.com/store/apps/developer?id=TripAdvisor&hl=es';
 
     $scope.shareFacebook = function(atractivo) {
       var msg = 'Descubre "' + atractivo + '" , ¿Qué esperas?, descarga la aplicación de Play Store en el siguiente enlace y conoce muchos lugares más en tu visita a Tarapoto!!';
       $cordovaSocialSharing.shareViaFacebookWithPasteMessageHint(
         msg,
         null /* img */,
-        url_download /* url */,
+        $scope.url_download /* url */,
         'Pega el contenido del mensaje!',
         function () {
           console.log('share ok')
@@ -267,6 +267,35 @@ angular.module('starter.controllers', [])
           alert(errormsg)
         })
     }
+    $scope.shareWhatsApp = function(atractivo) {
+      var msg = 'Descubre "' + atractivo + '" , ¿Qué esperas?, descarga la aplicación de Play Store en el siguiente enlace y conoce muchos lugares más en tu visita a Tarapoto!!';
+      $cordovaSocialSharing.shareViaWhatsApp(
+        msg,
+        null /* img */,
+        $scope.url_download /* url */,
+        function() {console.log('share ok')}, function(errormsg){alert(errormsg)})
+    }
+
+    $scope.shareMessenger = function(atractivo) {
+      var msg = 'Descubre "' + atractivo + '" , ¿Qué esperas?, descarga la aplicación de Play Store en el siguiente enlace y conoce muchos lugares más en tu visita a Tarapoto!!';
+      $cordovaSocialSharing.shareVia('com.facebook.orca',
+        msg,
+        null,
+        null,
+        $scope.url_download,
+        function () { console.log('share ok') }, function (errormsg) { alert(errormsg) })
+    }
+
+    $scope.shareInstagram = function(atractivo) {
+      var msg = 'Descubre "' + atractivo + '" , ¿Qué esperas?, descarga la aplicación de Play Store en el siguiente enlace y conoce muchos lugares más en tu visita a Tarapoto!!';
+      $cordovaSocialSharing.shareVia('com.instagram.android',
+        msg,
+        null,
+        null,
+        $scope.url_download,
+        function () { console.log('share ok') }, function (errormsg) { alert(errormsg) })
+    }
+
 
 
     $ionicModal.fromTemplateUrl('templates/app/util/modal_share.html', {

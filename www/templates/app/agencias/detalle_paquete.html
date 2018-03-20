@@ -31,7 +31,8 @@
       <div ng-if="precios[0].length > 0 " class="row detallePaquete__boxPrecios__content">
         <div class="col col-50 detallePaquete__boxPrecios__item" ng-repeat="item in precios[0]">
           <p class="detallePaquete__boxPrecios__descrip">{{item.number_person}} persona(s)</p>
-          <button ng-click="reserve(paquete[0].id, paquete[0].nombre,item.number_person, item.precio)" class="button button-calm detallePaquete__boxPrecios__btn">
+          <!--<button ng-click="reserve(paquete[0].id, paquete[0].nombre,item.number_person, item.precio)" class="button button-calm detallePaquete__boxPrecios__btn">-->
+          <button class="button button-calm detallePaquete__boxPrecios__btn">
             Res: S/.{{item.precio}}
           </button>
         </div>
