@@ -23,6 +23,7 @@
     <allow-navigation href="http://192.168.1.39:8101" />
     <allow-navigation href="http://192.168.1.46:8101" />
     <allow-navigation href="http://192.168.1.42:8100" />
+    <allow-navigation href="http://192.168.1.45:8100" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -55,6 +56,7 @@
     </platform>
     <icon src="resources\android\icon\drawable-xhdpi-icon.png" />
     <engine name="android" spec="^6.2.3" />
+    <plugin name="InAppBrowser" />
     <plugin name="cordova-plugin-file" spec="^4.0.0" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
     <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />

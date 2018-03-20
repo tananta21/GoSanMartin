@@ -340,8 +340,9 @@ angular.module('starter.controllers', [])
     $scope.dominio_img = HostConnect.getDomain();
 
     $scope.open_link = function (event) {
-      var href = event.target.href;
-      var browserRef = window.open("fb://pages/" + href, '_system', 'location=no');
+      var linkHref = $("#linkFb").attr('href');
+      // var href = event.target.href;
+      var browserRef = window.open(linkHref, '_system', 'location=no');
       // var browserRef = window.open(href, '_system', 'location=no,clearsessioncache=no,clearcache=no');
       event.preventDefault();
     }

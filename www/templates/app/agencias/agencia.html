@@ -65,7 +65,7 @@
           <div class="item item-text-wrap">
             <div class="agencia__detalle__boxRedes">
               <div ng-repeat="item in redes[0]">
-                <a ng-if="item.abr =='facebook'" ng-click="open_link($event)" target="_system" href="{{item.value_contact}}" class="agencia__detalle__linkRed">
+                <a id="linkFb" ng-if="item.abr =='facebook'" ng-click="open_link($event)" target="_system" href="{{item.value_contact}}" class="agencia__detalle__linkRed">
                   <p>
                     <i class="ion ion-social-facebook agencia__detalle__linkRed__icon"></i>
                         <span class="agencia__detalle__linkRed__red">
@@ -73,6 +73,9 @@
                     </span>
                   </p>
                 </a>
+                <!--<a ng-if="item.abr =='facebook'" class="item" href="#" onclick="window.open('http://www.nraboy.com/contact', '_system', 'location=yes'); return false;">-->
+                  <!--Open a Browser-->
+                <!--</a>-->
                 <a ng-if="item.abr =='celular'" href="tel:{{item.value_contact}}" target="_blank" class="agencia__detalle__linkRed">
                   <p>
                     <i class="ion ion-android-phone-portrait agencia__detalle__linkRed__icon"></i>

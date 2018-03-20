@@ -824,9 +824,20 @@ body {
   padding-top: 30px;
   padding-bottom: 20px;
 }
+.sugerency__description {
+  font-size: 16px;
+  text-align: justify;
+}
+.sugerency__warning {
+  background: #ffa500;
+  font-size: 14px;
+  padding: 5px;
+  color: #fff;
+}
 .sugerency__textArea {
   width: 100%;
   margin-top: 20px;
+  font-size: 16px;
 }
 .modal-backdrop,
 .modal-backdrop-bg {

@@ -43,7 +43,8 @@
             "cordova-plugin-inappbrowser": {},
             "cordova-plugin-file": {},
             "cordova-plugin-whitelist": {},
-            "ionic-plugin-keyboard": {}
+            "ionic-plugin-keyboard": {},
+            "InAppBrowser": {}
         }
     }
 }
