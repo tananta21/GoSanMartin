@@ -252,32 +252,19 @@ angular.module('starter.controllers', [])
     $scope.paquetes = Paquete.getTopPaqueteByAtractivo(atractivoId);
     $scope.dominio_img = HostConnect.getDomain();
 
-    $scope.informacion = function () {
-      $('.informacion').addClass("activo");
-      $('.descripcion').removeClass("activo");
-      $('.content-descripcion').css("display", "none");
-      $('.content-informacion').css("display", "block");
-    };
-    $scope.descripcion = function () {
-      $('.descripcion').addClass("activo");
-      $('.informacion').removeClass("activo");
-      $('.content-descripcion').css("display", "block");
-      $('.content-informacion').css("display", "none");
-    };
+    // $scope.shareAnywhere = function () {
+    //   var msg = 'Descubre lo maravilloso de San martín, conozca descarga la aplicación en el siguiente enlace';
+    //   $cordovaSocialSharing.share('Message, subject, image and link', 'The subject','https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl');
+    // }
 
-    var pelota = 'http://tusimagenesde.com/wp-content/uploads/2017/02/pelota-1.png'
-    var message = 'Descubre lo maravilloso de San martín, conozca ' + $scope.atractivo.nombre + 'descarga la aplicación en el siguiente enlace'
+    $scope.shareFacebook = function(atractivo) {
+      var msg = 'Descubre "' + atractivo + '" , ¿Qué esperas?, descarga la aplicación en el siguiente enlace y conoce muchos lugares más en tu visita a Tarapoto!!';
+      $cordovaSocialSharing.shareViaFacebookWithPasteMessageHint(
+        msg,
+        null /* img */,
+        'https://play.google.com/store/apps/developer?id=TripAdvisor&hl=es' /* url */,
+        'Pega el contenido del mensaje!',
 
-    $scope.shareAnywhere = function () {
-      $cordovaSocialSharing.share(
-        message,
-        'Subject string', null,
-        'https://firebasestorage.googleapis.com/v0/b/tour-san-martin.appspot.com/o/atractivos%2Fatractivo0%2Fimg%2F1.jpg?alt=media&token=c6d8b422-7283-4aaf-b1c9-fa286b2885f6');
-    }
-    $scope.shareFacebook = function () {
-      $cordovaSocialSharing.shareViaFacebook(
-        'Message via Facebook', null /* img */,
-        null /* url */,
         function () {
           console.log('share ok')
         }, function (errormsg) {
@@ -285,10 +272,9 @@ angular.module('starter.controllers', [])
         })
     }
 
+
     $ionicModal.fromTemplateUrl('templates/app/util/modal_share.html', {
       scope: $scope,
-      animation: 'slide-in-up',
-      focusFirstInput: true
     }).then(function (modal) {
       $scope.modal = modal;
     });
@@ -556,7 +542,6 @@ angular.module('starter.controllers', [])
       $scope.url_imagen = url_imagen;
       $scope.descripcion = descripcion;
       $scope.nombre = nombre;
-
       $scope.modal.show();
     };
     $scope.closeModal = function () {
@@ -580,10 +565,6 @@ angular.module('starter.controllers', [])
   .controller('ValoracionCtrl', function ($scope) {
 
   })
-  .controller('SugerenciaCtrl', function ($scope) {
-
-  })
-
 
   .controller('ImagenCtrl', function ($scope, $stateParams, $ionicSlideBoxDelegate, Atractivos, HostConnect) {
     var atractivoId = $stateParams.id;

@@ -13,6 +13,20 @@
       </div>
     </div>
 
+    <div class="card atractivoDetail__boxCompartir__btn" style="margin: 13px 8px 0px 8px"
+         ui-sref="app.mapa({ lat: agencia[0].latitud, long:agencia[0].longitud,name:agencia[0].nombre })">
+      <div class="item item-text-wrap" style="padding: 7px">
+        <div class="row padding__none">
+          <div class="col text-right">
+            <i class="ion ion-ios-location atractivoDetail__boxCompartir__icono"></i>
+          </div>
+          <div class="col col-75 text-left atractivoDetail__boxCompartir__text">
+            Ver ubicación en el mapa
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="atractivoDetail__boxPaquetes" ng-if="paquetes[0].length > 0 ">
       <div class="atractivoDetail__boxPaquetes__header">
         <h3 class="atractivoDetail__boxPaquetes__header__text">
@@ -43,19 +57,6 @@
           <div class="item item-text-wrap">
             <span>{{agencia[0].horario}}</span>
             <span ng-if="agencia[0].horario == '' ">Sin especificar.</span>
-            <div class="card atractivoDetail__boxCompartir__btn" style="margin: 13px 8px 0px 8px"
-                 ui-sref="app.mapa({ lat: agencia[0].latitud, long:agencia[0].longitud,name:agencia[0].nombre })">
-              <div class="item item-text-wrap" style="padding: 7px">
-                <div class="row padding__none">
-                  <div class="col text-right">
-                    <i class="ion ion-ios-location atractivoDetail__boxCompartir__icono"></i>
-                  </div>
-                  <div class="col col-75 text-left atractivoDetail__boxCompartir__text">
-                    Ver ubicación en el mapa
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <div ng-if="redes[0].length > 0 " >
@@ -73,9 +74,6 @@
                     </span>
                   </p>
                 </a>
-                <!--<a ng-if="item.abr =='facebook'" class="item" href="#" onclick="window.open('http://www.nraboy.com/contact', '_system', 'location=yes'); return false;">-->
-                  <!--Open a Browser-->
-                <!--</a>-->
                 <a ng-if="item.abr =='celular'" href="tel:{{item.value_contact}}" target="_blank" class="agencia__detalle__linkRed">
                   <p>
                     <i class="ion ion-android-phone-portrait agencia__detalle__linkRed__icon"></i>

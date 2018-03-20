@@ -263,15 +263,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           }
         }
       })
-      .state('app.sugerencia', {
-        url: '/sugerencia',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/app/sugerencia/sugerencia.html',
-            controller: 'SugerenciaCtrl'
-          }
-        }
-      })
+
       .state('app.login', {
         url: '/login',
         views: {

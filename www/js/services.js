@@ -802,13 +802,13 @@ angular.module('starter.services', [])
   .service("HostConnect", function () {
     return{
       getDomain : function() {
-        return "192.168.1.45";
+        return "voydeviaje.site";
       },
       getDomainHttp: function () {
-        return "http://192.168.1.45";
+        return "http://voydeviaje.site";
       },
       getDomainApi: function () {
-        return "http://192.168.1.45/api/";
+        return "http://voydeviaje.site/api/";
       }
     }
   })
