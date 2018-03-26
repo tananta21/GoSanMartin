@@ -94,3 +94,37 @@
     font-size 19px !important
     background $green !important
     color white
+
+
+
+// css  for menu ionic 1
+
+$time = 350ms
+
+.menu.menu-left {
+  opacity: 0;
+  //-webkit-transform: translate3d(-30px,0,0);
+  //transform: translate3d(-30px,0,0);
+  transition: -webkit-transform $time ease, opacity $time ease;
+  transition: transform $time ease, opacity $time ease;
+  -webkit-box-shadow: 10px 0px 5px -2px rgba(0,0,0,0.3);
+}
+
+.menu-open .menu.menu-left {
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0) !important;
+  transform: translate3d(0,0,0) !important;
+}
+
+
+.menu-content.menu-open {
+  transform: translate3d(0px, 0px, 0px) !important;
+  z-index: -1;
+  opacity: 0.7;
+}
+//
+//.menu.menu-left {
+//  opacity: 1;
+//  transition: transform 1500ms ease !important;
+//  -webkit-box-shadow: 10px 0px 5px -2px rgba(0,0,0,0.3);
+//}

@@ -1,7 +1,7 @@
 
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicHistory, $window, $timeout, $ionicPopup, sessionService, $cordovaOauth, $location, $http, HostConnect) {
+  .controller('AppCtrl', function ($scope,$ionicSideMenuDelegate, $ionicLoading, $cordovaNetwork, $rootScope, $state, $ionicHistory, $window, $timeout, $ionicPopup, sessionService, $cordovaOauth, $location, $http, HostConnect) {
     document.addEventListener("deviceready", function () {
       $scope.network = $cordovaNetwork.getNetwork();
       $scope.isOnline = $cordovaNetwork.isOnline();
@@ -155,6 +155,10 @@ angular.module('starter.controllers', [])
         }
       });
     }
+
+    $scope.isMenuOpen = function() {
+      return $ionicSideMenuDelegate.isOpen();
+    };
   })
 
   .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate, Atractivos, HostConnect) {

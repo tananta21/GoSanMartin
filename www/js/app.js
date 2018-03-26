@@ -99,6 +99,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
               }
             }
           })
+
       .state('app.modal_share', {
         url: '/share',
         views: {
