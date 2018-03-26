@@ -800,15 +800,16 @@ angular.module('starter.services', [])
   }])
 
   .service("HostConnect", function () {
+    var host = "192.168.43.133";
     return{
       getDomain : function() {
-        return "voydeviaje.site";
+        return host;
       },
       getDomainHttp: function () {
-        return "http://voydeviaje.site";
+        return "http://"+host;
       },
       getDomainApi: function () {
-        return "http://voydeviaje.site/api/";
+        return "http://"+host+"/api/";
       }
     }
   })

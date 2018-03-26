@@ -266,6 +266,29 @@ body {
 }
 .home__content {
   height: 100%;
+  padding: 2px;
+}
+.home__item {
+  height: 25%;
+  position: relative;
+  padding: 2px;
+}
+.home__item__img {
+  height: 100%;
+  width: 100%;
+  filter: brightness(0.5);
+}
+.home__item__boxName {
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  text-align: center;
+}
+.home__item__boxName__name {
+  color: #fff;
+  font-size: 18px;
+  z-index: 1000;
+  line-height: 21px;
 }
 .home__boxSlider {
   display: block;
