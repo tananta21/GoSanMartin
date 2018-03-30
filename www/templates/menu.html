@@ -1,6 +1,6 @@
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content ng-class="isMenuOpen() ? 'menu-open' : ''">
-    <ion-nav-bar class="bar-stable bar-calm bg-green">
+    <ion-nav-bar class="bar-stable bar-calm bg-green-dark">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
@@ -13,67 +13,65 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable bar-calm bg-green">
-      <h1 class="title" style="text-align: center">Menu</h1>
-    </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item class="item_menu" menu-close style="padding: 0px; border: none; border-color: white; display: none;" >
-            <img src="" alt="" style="width: 100%; height: 185px">
-        </ion-item>
-        <ion-item class="item_menu text-center" menu-close>
-            <img ng-if="token != null" src="{{img_perfil}}" class="login__img" alt="">
-            <img ng-if="token == null" src="{{img_perfil}}" class="login__img" alt="">
-          <h3 ng-if="token != null" class="login__nombre">
-            {{nombre}} {{apellido}}
-          </h3>
-          <h3>
-            <button ng-if="token == null" ng-click="iniciarSesion()" class="button button-stable login__btnLogin">
+        <ion-item class="item_menu grafMenu" menu-close>
+          <div class="grafMenu__boxImgPerfil">
+            <img ng-if="token != null" src="{{img_perfil}}" class="grafMenu__boxImgPerfil__img">
+            <img ng-if="token == null" src="{{img_perfil}}" class="grafMenu__boxImgPerfil__img">
+            <h3 ng-if="token != null" class="grafMenu__boxImgPerfil__name">
+              {{nombre}} {{apellido}}
+            </h3>
+          </div>
+          <div class="grafMenu__boxBtn">
+            <button ng-if="token == null" ng-click="iniciarSesion()"
+                    class="button button-stable grafMenu__boxBtn__btn">
               Iniciar Sesión <i class="ion ion-log-in"></i>
             </button>
-          </h3>
+          </div>
+          <img class="grafMenu__imgFondo" src="img/landscape2.jpg" alt="">
         </ion-item>
-        <ion-item class="item_menu"  menu-close  ui-sref="app.home" ui-sref-active="active">
+        <ion-item class="item_menu" menu-close ui-sref="app.home" ui-sref-active="active">
           <i class=" icon-menu ion ion-home"></i>
-          Inicio {{url_imagen}}
+          Inicio
         </ion-item>
-        <ion-item class="item_menu" menu-close  ui-sref="app.atractivos" ui-sref-active="active">
-          <i class=" icon-menu ion ion-map"></i>
-          Atractivos Turísticos
-        </ion-item>
+        <!--<ion-item class="item_menu" menu-close ui-sref="app.atractivos" ui-sref-active="active">-->
+          <!--<i class=" icon-menu ion ion-map"></i>-->
+          <!--Atractivos Turísticos-->
+        <!--</ion-item>-->
 
-        <ion-item class="item_menu" menu-close ui-sref="app.agencias" ui-sref-active="active">
-          <i class=" icon-menu ion ion-android-bus"></i>
-          Agencias de Viajes
-        </ion-item>
+        <!--<ion-item class="item_menu" menu-close ui-sref="app.agencias" ui-sref-active="active">-->
+          <!--<i class=" icon-menu ion ion-android-bus"></i>-->
+          <!--Agencias de Viajes-->
+        <!--</ion-item>-->
 
-        <ion-item class="item_menu" menu-close ui-sref="app.paquetes" ui-sref-active="active">
-          <i class=" icon-menu ion ion-social-buffer"></i>
-          Paquetes Turísticos
-        </ion-item>
+        <!--<ion-item class="item_menu" menu-close ui-sref="app.paquetes" ui-sref-active="active">-->
+          <!--<i class=" icon-menu ion ion-social-buffer"></i>-->
+          <!--Paquetes Turísticos-->
+        <!--</ion-item>-->
 
-        <ion-item class="item_menu" menu-close ui-sref="app.evento" ui-sref-active="active">
-          <i class=" icon-menu ion ion-calendar"></i>
-          Eventos
-        </ion-item>
+        <!--<ion-item class="item_menu" menu-close ui-sref="app.evento" ui-sref-active="active">-->
+          <!--<i class=" icon-menu ion ion-calendar"></i>-->
+          <!--Eventos-->
+        <!--</ion-item>-->
 
-        <ion-item class="item_menu" menu-close ui-sref="app.galeria" ui-sref-active="active">
-          <i class=" icon-menu ion ion-image"></i>
-          Galería de fotos
-        </ion-item>
+        <!--<ion-item class="item_menu" menu-close ui-sref="app.galeria" ui-sref-active="active">-->
+          <!--<i class=" icon-menu ion ion-image"></i>-->
+          <!--Galería de fotos-->
+        <!--</ion-item>-->
         <ion-item class="item_menu" menu-close ui-sref="app.transportes" ui-sref-active="active">
           <i class=" icon-menu ion ion-android-car"></i>
           Servicio de Transporte
         </ion-item>
-        <ion-item class="item_menu" menu-close ui-sref="app.emergencias" ui-sref-active="active" >
+        <ion-item class="item_menu" menu-close ui-sref="app.emergencias" ui-sref-active="active">
           <i class=" icon-menu ion ion-android-phone-portrait"></i>
           Emergencias
         </ion-item>
-        <ion-item class="item_menu" menu-close ui-sref="app.acerca" ui-sref-active="active" >
+        <ion-item class="item_menu" menu-close ui-sref="app.acerca" ui-sref-active="active">
           <i class=" icon-menu ion ion-help"></i>
           Acerca de
         </ion-item>
-        <ion-item ng-if="token != null" ng-click="cerrarSesion()" class="item_menu" menu-close >
+        <ion-item ng-if="token != null" ng-click="cerrarSesion()" class="item_menu" menu-close>
           <i class=" icon-menu ion ion-log-out"></i>
           Cerrar Sesión
         </ion-item>

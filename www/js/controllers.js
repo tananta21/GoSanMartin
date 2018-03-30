@@ -113,7 +113,7 @@ angular.module('starter.controllers', [])
           $scope.token = sessionService.get(key);
           $scope.nombre = sessionService.get(name);
           $scope.apellido = sessionService.get(surname);
-          $scope.img_perfil = 'img/avatar5.png';
+          $scope.img_perfil = 'img/profile2.png';
         }
       }
     );
@@ -162,8 +162,8 @@ angular.module('starter.controllers', [])
   })
 
   .controller('HomeCtrl', function ($scope, $window, $ionicSlideBoxDelegate, Atractivos, HostConnect) {
-    $scope.topAtractivos = Atractivos.getTopTenAtractivo();
-    $scope.dominio_img = HostConnect.getDomain();
+    // $scope.topAtractivos = Atractivos.getTopTenAtractivo();
+    // $scope.dominio_img = HostConnect.getDomain();
     $scope.nextSlide = function () {
       $ionicSlideBoxDelegate.next();
     }

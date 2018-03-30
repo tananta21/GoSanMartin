@@ -22,6 +22,11 @@
   color: #fff;
   border-color: #3ab7b8 !important;
 }
+.bg-green-dark {
+  background: #349697 !important;
+  color: #fff;
+  border-color: #349697 !important;
+}
 .bg-azul {
   background: #2e3c50 !important;
   color: #fff;
@@ -123,6 +128,42 @@
   font-size: 19px !important;
   background: #3ab7b8 !important;
   color: #fff;
+}
+.grafMenu {
+  padding: 0px !important;
+  border: none !important;
+  border-color: #fff !important;
+  position: relative;
+}
+.grafMenu__imgFondo {
+  height: 210px;
+  width: 100%;
+}
+.grafMenu__boxImgPerfil {
+  position: absolute;
+  left: 17px;
+  top: 5px;
+}
+.grafMenu__boxImgPerfil__img {
+  width: 105px;
+}
+.grafMenu__boxImgPerfil__name {
+  color: #fff !important;
+}
+.grafMenu__boxBtn {
+  position: absolute;
+  right: 15px;
+  bottom: 14px;
+}
+.grafMenu__boxBtn__btn {
+  font-size: 14px !important;
+  padding: 0px 12px !important;
+  width: 100% !important;
+  border-radius: 4px !important;
+  background: #349697 !important;
+  color: #fff !important;
+  min-height: 40px !important;
+  line-height: 20px !important;
 }
 .menu.menu-left {
   opacity: 0;
@@ -175,6 +216,11 @@
   color: #fff;
   border-color: #3ab7b8 !important;
 }
+.bg-green-dark {
+  background: #349697 !important;
+  color: #fff;
+  border-color: #349697 !important;
+}
 .bg-azul {
   background: #2e3c50 !important;
   color: #fff;
@@ -277,6 +323,42 @@
   background: #3ab7b8 !important;
   color: #fff;
 }
+.grafMenu {
+  padding: 0px !important;
+  border: none !important;
+  border-color: #fff !important;
+  position: relative;
+}
+.grafMenu__imgFondo {
+  height: 210px;
+  width: 100%;
+}
+.grafMenu__boxImgPerfil {
+  position: absolute;
+  left: 17px;
+  top: 5px;
+}
+.grafMenu__boxImgPerfil__img {
+  width: 105px;
+}
+.grafMenu__boxImgPerfil__name {
+  color: #fff !important;
+}
+.grafMenu__boxBtn {
+  position: absolute;
+  right: 15px;
+  bottom: 14px;
+}
+.grafMenu__boxBtn__btn {
+  font-size: 14px !important;
+  padding: 0px 12px !important;
+  width: 100% !important;
+  border-radius: 4px !important;
+  background: #349697 !important;
+  color: #fff !important;
+  min-height: 40px !important;
+  line-height: 20px !important;
+}
 .menu.menu-left {
   opacity: 0;
   transition: -webkit-transform 350ms ease, opacity 350ms ease;
@@ -308,7 +390,7 @@ body {
 .home__item__img {
   height: 100%;
   width: 100%;
-  filter: brightness(0.4);
+  filter: brightness(0.6);
 }
 .home__item__boxName {
   position: absolute;
@@ -318,7 +400,7 @@ body {
 }
 .home__item__boxName__name {
   color: #fff;
-  font-size: 18px;
+  font-size: 22px;
   z-index: 1000;
   line-height: 21px;
   font-family: cursive;
