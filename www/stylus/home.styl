@@ -1,0 +1,74 @@
+.home
+  &__content
+    height 100%
+    padding 2px
+  &__item
+    height 25%
+    position relative
+    padding 3px
+    &__divDark
+      position absolute
+      left 3px
+      right 3px
+      top 3px
+      bottom 3px
+      border-radius 7px
+      background-color rgba(0,0,0,0.6)
+    &__img
+      height 100%
+      width 100%
+      //filter: brightness(0.2);
+      border-radius 7px
+    &__boxName
+      position absolute
+      width 100%
+      top 40%
+      text-align center
+      &__name
+        color white
+        font-size 22px
+        z-index: 1000
+        line-height 21px
+        font-family cursive
+        font-weight 500
+  &__boxSlider
+    display block
+    height 50%
+    &__slider
+      height 100%
+      &__boxImg
+        height 100%
+        text-align center
+      &__text
+        width 100%
+        position: absolute;
+        top: 20%;
+        z-index: 3000;
+        text-align: center
+        color white
+        padding 0px 10px
+        font-size 20px
+      &__img
+        filter: brightness(1);
+        width 100%
+        height 100%
+
+  &__boxModulos
+    height 50%
+    display block
+    &__row
+      height 50%
+      padding-top 25px !important
+    &__item
+      &__ancla
+        display block
+        width 100%
+        height 100%
+        text-decoration none
+      &__icon
+        color $green
+        font-size 43px
+      &__name
+        color $azulOscuro
+        font-size 16px
+        font-weight bold

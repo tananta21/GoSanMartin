@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b97bdd9-1b9a-44ec-a403-7dcef68280be" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/www/img/landscape2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/www/img/profile2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/www/stylus/home.styl" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/www/css/tour_sanmartin.css" afterPath="$PROJECT_DIR$/www/css/tour_sanmartin.css" />
-      <change beforePath="$PROJECT_DIR$/www/css/utils.styl" afterPath="$PROJECT_DIR$/www/css/utils.styl" />
       <change beforePath="$PROJECT_DIR$/www/css/voydeviaje.styl" afterPath="$PROJECT_DIR$/www/css/voydeviaje.styl" />
-      <change beforePath="$PROJECT_DIR$/www/js/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers.js" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
       <change beforePath="$PROJECT_DIR$/www/js/services.js" afterPath="$PROJECT_DIR$/www/js/services.js" />
       <change beforePath="$PROJECT_DIR$/www/templates/app/menu/home2.html" afterPath="$PROJECT_DIR$/www/templates/app/menu/home2.html" />
-      <change beforePath="$PROJECT_DIR$/www/templates/menu.html" afterPath="$PROJECT_DIR$/www/templates/menu.html" />
     </list>
     <ignored path="appTurismo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,31 +26,56 @@
     <favorites_list name="appTurismo" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home2.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/templates/app/menu/home2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="voydeviaje.styl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/css/voydeviaje.styl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-              <folding>
-                <element signature="e#570#973#0" expanded="false" />
-                <element signature="e#994#1348#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6495536">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="home2.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/www/templates/app/menu/home2.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="231">
+                  <caret line="74" column="47" lean-forward="false" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="245">
+                  <caret line="44" column="102" lean-forward="false" selection-start-line="44" selection-start-column="102" selection-end-line="44" selection-end-column="102" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="home.styl" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/www/stylus/home.styl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="273">
+                  <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="voydeviaje.styl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/www/css/voydeviaje.styl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-189">
+                  <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -105,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/www/css/not_internet.styl" />
         <option value="$PROJECT_DIR$/www/lib/ionic/scss/_variables.scss" />
         <option value="$PROJECT_DIR$/www/css/tour_sanmartin.styl" />
         <option value="$PROJECT_DIR$/www/templates/app/menu/emergencias.html" />
@@ -136,7 +157,6 @@
         <option value="$PROJECT_DIR$/www/templates/app/register.html" />
         <option value="$PROJECT_DIR$/www/templates/app/galeria/galeria.html" />
         <option value="$PROJECT_DIR$/www/js/get_api.js" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/templates/app/evento/evento.html" />
         <option value="$PROJECT_DIR$/www/templates/app/menu/agencias.html" />
         <option value="$PROJECT_DIR$/www/templates/app/sugerencia/sugerencia.html" />
@@ -150,12 +170,14 @@
         <option value="$PROJECT_DIR$/www/templates/app/agencias/detalle_paquete.html" />
         <option value="$PROJECT_DIR$/www/templates/app/agencias/agencia.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
-        <option value="$PROJECT_DIR$/www/js/services.js" />
         <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/css/utils.styl" />
         <option value="$PROJECT_DIR$/www/templates/menu.html" />
-        <option value="$PROJECT_DIR$/www/templates/app/menu/home2.html" />
+        <option value="$PROJECT_DIR$/www/js/services.js" />
+        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/css/voydeviaje.styl" />
+        <option value="$PROJECT_DIR$/www/templates/app/menu/home2.html" />
+        <option value="$PROJECT_DIR$/www/stylus/home.styl" />
       </list>
     </option>
   </component>
@@ -197,6 +219,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -214,30 +237,38 @@
               <item name="appTurismo" type="b2602c69:ProjectViewProjectNode" />
               <item name="appTurismo" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appTurismo" type="b2602c69:ProjectViewProjectNode" />
               <item name="appTurismo" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appTurismo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appTurismo" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../VoyDeViaje" />
+    <property name="last_opened_file_path" value="D:/DESARROLLO/react" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="editor.config.accepted" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/menu/appTurismo/www/index.html&#10;home&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/home2.html&#10;menu&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/menu.html&#10;hom&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/home2.html&#10;util&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;uti&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;controlle&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;services&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;app&#9;FILE&#9;file://E:/menu/appTurismo/www/js/app.js&#10;serv&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;voyde&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;ho&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/home2.html&#10;modal&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/util/modal_share.html&#10;atractivos&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/atractivos.html&#10;contro&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;agencia&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/agencia.html&#10;detalle&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;vo&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;contr&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;deta&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;atra&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;config&#9;FILE&#9;file://E:/menu/appTurismo/config.xml&#10;galeria&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/galeria/galeria.html&#10;atractivo&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;agenci&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/agencia.html&#10;service&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;moda&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/util/modal_galeria.html&#10;galer&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/galeria/galeria.html&#10;acerc&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/acerca.html&#10;det&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;sugere&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/sugerencia/sugerencia.html&#10;agenc&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/agencia.html&#10;ace&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/acerca.html&#10;reg&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/register.html&#10;valoracio&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/valoracion/valoracion.html&#10;control&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;servi&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;voy&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;modal_galeria&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/util/modal_galeria.html&#10;gale&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/galeria/galeria.html&#10;register&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/register.html&#10;men&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/menu.html&#10;recomen&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/recomendacion.html&#10;logi&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/util/login.html&#10;recomendac&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/recomendacion.html&#10;agencias&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/agencias.html&#10;login&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/login.html&#10;agen&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/agencia.html&#10;paquetes&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/paquetes.html&#10;atracti&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;index&#9;FILE&#9;file://E:/menu/appTurismo/www/index.html&#10;home&#9;null&#9;null&#10;service&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;menu&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/menu.html&#10;hom&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/home2.html&#10;util&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;uti&#9;FILE&#9;file://E:/menu/appTurismo/www/css/utils.styl&#10;controlle&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;services&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;app&#9;FILE&#9;file://E:/menu/appTurismo/www/js/app.js&#10;serv&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;voyde&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;ho&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/home2.html&#10;modal&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/util/modal_share.html&#10;atractivos&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/atractivos.html&#10;contro&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;agencia&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/agencia.html&#10;detalle&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;vo&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;contr&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;deta&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;atra&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;config&#9;FILE&#9;file://E:/menu/appTurismo/config.xml&#10;galeria&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/galeria/galeria.html&#10;atractivo&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/atractivo.html&#10;agenci&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/agencia.html&#10;moda&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/util/modal_galeria.html&#10;galer&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/galeria/galeria.html&#10;acerc&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/acerca.html&#10;det&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/detalle_paquete.html&#10;sugere&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/sugerencia/sugerencia.html&#10;agenc&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/agencia.html&#10;ace&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/acerca.html&#10;reg&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/register.html&#10;valoracio&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/valoracion/valoracion.html&#10;control&#9;FILE&#9;file://E:/menu/appTurismo/www/js/controllers.js&#10;servi&#9;FILE&#9;file://E:/menu/appTurismo/www/js/services.js&#10;voy&#9;FILE&#9;file://E:/menu/appTurismo/www/css/voydeviaje.styl&#10;modal_galeria&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/util/modal_galeria.html&#10;gale&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/galeria/galeria.html&#10;register&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/register.html&#10;men&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/menu.html&#10;recomen&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/recomendacion.html&#10;logi&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/util/login.html&#10;recomendac&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/atractivos/recomendacion.html&#10;agencias&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/menu/agencias.html&#10;login&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/login.html&#10;agen&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/agencia.html&#10;paquetes&#9;FILE&#9;file://E:/menu/appTurismo/www/templates/app/agencias/paquetes.html" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -366,12 +397,16 @@
       <workItem from="1521681643973" duration="1273000" />
       <workItem from="1521962098141" duration="3298000" />
       <workItem from="1522077652569" duration="15377000" />
-      <workItem from="1522361019350" duration="7332000" />
+      <workItem from="1522361019350" duration="8114000" />
+      <workItem from="1522692186227" duration="996000" />
+      <workItem from="1522949393685" duration="429000" />
+      <workItem from="1524756901744" duration="629000" />
+      <workItem from="1525236945914" duration="4379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="394913000" />
+    <option name="totallyTimeSpent" value="402128000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -387,16 +422,16 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23660715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23660715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.49702382" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1299342" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34539473" sideWeight="0.49702382" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44407895" sideWeight="0.49702382" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -449,13 +484,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/templates/app/agencias/paquetes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="40" column="22" lean-forward="false" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/app/agencias/paquetes_by_agencia.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -614,7 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,13 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/app/menu/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/app/util/modal_share.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -662,7 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2328">
           <caret line="64695" column="0" lean-forward="false" selection-start-line="64695" selection-start-column="0" selection-end-line="64695" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -670,25 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding>
-            <element signature="e#1295#1485#0" expanded="false" />
-            <element signature="e#1519#1726#0" expanded="false" />
-            <element signature="e#1762#2008#0" expanded="false" />
-            <element signature="e#2042#2301#0" expanded="false" />
-            <element signature="e#2339#2606#0" expanded="false" />
-            <element signature="e#2646#2914#0" expanded="false" />
-            <element signature="e#2962#3239#0" expanded="false" />
-            <element signature="e#3274#3477#0" expanded="false" />
-            <element signature="e#3508#3709#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="802" column="30" lean-forward="false" selection-start-line="802" selection-start-column="30" selection-end-line="802" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,7 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,10 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="115" column="43" lean-forward="false" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
-          <folding>
-            <element signature="e#4824#4861#0" expanded="false" />
-            <element signature="e#4901#6092#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -730,7 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3178">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,33 +746,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="802" column="29" lean-forward="false" selection-start-line="802" selection-start-column="29" selection-end-line="802" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/app/menu/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-588">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="36" column="50" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+        <state relative-caret-position="245">
+          <caret line="44" column="102" lean-forward="false" selection-start-line="44" selection-start-column="102" selection-end-line="44" selection-end-column="102" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/voydeviaje.styl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding>
-            <element signature="e#570#973#0" expanded="false" />
-            <element signature="e#994#1348#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-189">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/app/menu/home2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state relative-caret-position="231">
+          <caret line="74" column="47" lean-forward="false" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/stylus/home.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
           <folding />
         </state>
       </provider>

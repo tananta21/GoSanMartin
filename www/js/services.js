@@ -800,7 +800,7 @@ angular.module('starter.services', [])
   }])
 
   .service("HostConnect", function () {
-    var host = "192.168.43.133";
+    var host = "192.168.8.107";
     return{
       getDomain : function() {
         return host;
